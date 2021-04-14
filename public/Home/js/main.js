@@ -58,57 +58,6 @@
 
 	};
 
-
-	// Burger Menu
-	var burgerMenu = function() {
-
-		$('body').on('click', '.js-nav-toggle', function(event){
-
-			var $this = $(this);
-
-			$('body').toggleClass('overflow offcanvas-visible');
-			$this.toggleClass('active');
-			event.preventDefault();
-
-		});
-
-	};
-
-	var scrolledWindow = function() {
-
-		$(window).scroll(function(){
-
-			var scrollPos = $(this).scrollTop();
-
-
-			$('#home .text').css({
-		      'opacity' : 1-(scrollPos/300),
-		      'margin-top' : (-212) + (scrollPos/1)
-		   });
-
-		   $('#home .flexslider .overlay').css({
-				'opacity' : (.5)+(scrollPos/2000)
-		   });
-
-		   if (scrollPos > 300) {
-				$('#home .text').css('display', 'none');
-			} else {
-				$('#home .text').css('display', 'block');
-			}
-		   
-
-		});
-
-		$(window).resize(function() {
-			if ( $('body').hasClass('offcanvas-visible') ) {
-		   	$('body').removeClass('offcanvas-visible');
-		   	$('.js-nav-toggle').removeClass('active');
-		   }
-		});
-		
-	};
-
-
 	var goToTop = function() {
 
 		$('.js-gotop').on('click', function(event){
@@ -122,33 +71,6 @@
 			return false;
 		});
 	
-	};
-
-
-	// Page Nav
-	var clickMenu = function() {
-		var topVal = ( $(window).width() < 769 ) ? 0 : 58;
-
-		$(window).resize(function(){
-			topVal = ( $(window).width() < 769 ) ? 0 : 58;		
-		});
-		$('.main-nav a:not([class="external"]), #offcanvas a:not([class="external"])').click(function(event){
-			var section = $(this).data('nav-section');
-
-				if ( $('div[data-section="' + section + '"]').length ) {
-
-					$('html, body').animate({
-			        	scrollTop: $('div[data-section="' + section + '"]').offset().top - topVal
-			    	}, 500);	
-			    	
-			   }
-
-		    event.preventDefault();
-
-		    // return false;
-		});
-
-
 	};
 
 	// Reflect scrolling in navigation
@@ -242,46 +164,6 @@
 		}
 	};
 
-	var foodMenusAnimate = function() {
-		var menus = $('#menus');
-		if ( menus.length > 0 ) {	
-
-			menus.waypoint( function( direction ) {
-										
-				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-
-
-					setTimeout(function() {
-						menus.find('.to-animate').each(function( k ) {
-							var el = $(this);
-							
-							setTimeout ( function () {
-								el.addClass('fadeInUp animated');
-							},  k * 200, 'easeInOutExpo' );
-							
-						});
-					}, 200);
-
-					setTimeout(function() {
-						menus.find('.to-animate-2').each(function( k ) {
-							var el = $(this);
-							
-							setTimeout ( function () {
-								el.addClass('fadeIn animated');
-							},  k * 200, 'easeInOutExpo' );
-							
-						});
-					}, 500);
-
-					$(this.element).addClass('animated');
-						
-				}
-			} , { offset: '80%' } );
-
-		}
-	};
-
-
 	var eventsAnimate = function() {
 		var events = $('#events');
 		if ( events.length > 0 ) {	
@@ -369,9 +251,6 @@
 		sliderMain();
 		offcanvasMenu();
 		parallax();
-		burgerMenu();
-		scrolledWindow();
-		clickMenu();
 		navigationSection();
 		goToTop();
 
@@ -379,7 +258,6 @@
 		// Animations
 		homeAnimate();		
 		typeAnimate();
-		foodMenusAnimate();
 		eventsAnimate();
 		footerAnimate();
 	});
