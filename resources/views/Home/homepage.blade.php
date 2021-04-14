@@ -100,7 +100,7 @@
 					</div>
 					<div class="menu-2">
 						<a href="#">Ô tìm kiếm</a>
-						<a href="#" class="header__login">Đăng nhập</a>
+						<a href="{{ route('login') }}" class="header__login">Đăng nhập</a>
 					</div>
 
 				</div>
