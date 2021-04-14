@@ -1,0 +1,13 @@
+.main-nav .menu-2 a.header__login {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 5px;
+    padding: 20px 10px;
+}
+.main-nav .menu-2 a.header__login:hover {
+    color: rgb(202, 202, 202);
+    background-color: rgb(41, 41, 41);
+}
+.main-nav{
+    border-bottom: 1px solid rgb(223, 223, 223);
+}

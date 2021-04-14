@@ -1,6 +1,6 @@
 ## WEB REVIEW FOOD
 
-`by`
+`by:`
 
     Tran Manh Hung
 
@@ -8,4 +8,4 @@
 
     Le Ba Vinh
 
--- Web project
+-- Web project 20202 --
