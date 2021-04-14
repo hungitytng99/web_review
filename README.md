@@ -1,9 +1,11 @@
 ## WEB REVIEW FOOD
 
-`by`Tran Manh Hung
+`by`
+
+    Tran Manh Hung
 
     Que Hoai Vu
-    
+
     Le Ba Vinh
 
 -- Web project
