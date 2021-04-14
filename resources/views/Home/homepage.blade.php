@@ -24,9 +24,7 @@
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
 
-	<link
-		href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
-		rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="Home/css/animate.css">
@@ -73,8 +71,7 @@
 					<div class="container">
 						<div class="row --center">
 							<h1 class="to-animate">Foodee</h1>
-							<h2 class="to-animate">Sức khỏe và sự hài lòng <span> với</span> <a href="#"
-									target="_blank">Foodee.co</a></h2>
+							<h2 class="to-animate">Sức khỏe và sự hài lòng <span> với</span> <a href="#" target="_blank">Foodee.co</a></h2>
 						</div>
 					</div>
 				</div>
@@ -87,22 +84,44 @@
 		</div>
 
 		<!-- Header -->
-		<div class="js-sticky">
-			<div class="main-nav">
-				<div class="container-fluid">
-					<div class="menu-1">
-						<a class="active" href="#">Trang chủ</a>
-						<a href="#">Giới thiệu</a>
-						<a href="#">Thực đơn</a>
+		<div class="header__sticky">
+			<div class="container-fluid">
+				<div class="header">
+					<div class="header__nav">
+						<ul class="header__nav-list --left">
+							<li class="header__nav-item --active">
+								<a href="#">
+									Trang chủ
+								</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#">
+									Giới thiệu
+								</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#">
+									Thực đơn
+								</a>
+							</li>
+						</ul>
 					</div>
-					<div class="logo">
-						<a href="#">Foodee</a>
+					<div class="header__logo">
+						foodee
 					</div>
-					<div class="menu-2">
-						<a href="#">Ô tìm kiếm</a>
-						<a href="{{ route('login') }}" class="header__login">Đăng nhập</a>
+					<div class="header__nav">
+						<ul class="header__nav-list --right">
+							<li class="header__nav-item">
+								<div class="header__nav-search">
+									<input type="text" class="header__nav-search-input" placeholder="Tìm món ăn, nhà hàng...">
+									<i class="header__nav-search-icon fas fa-search"></i>
+								</div>
+							</li>
+							<li class="header__nav-item">
+								<a href="/login" class="header__nav-item-login">Đăng nhập</a>
+							</li>
+						</ul>
 					</div>
-
 				</div>
 
 			</div>
@@ -231,9 +250,7 @@
 								<div class="bt-content__item">
 									<div class="restaurant">
 										<a href="#">
-											<img class="restaurant__img"
-												src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg"
-												alt="res">
+											<img class="restaurant__img" src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg" alt="res">
 											<div class="restaurant__info">
 												<div class="restaurant__name">Lẩu Phan - Buffet Bò- Nguyễn Văn Cừ
 												</div>
@@ -328,9 +345,7 @@
 											<div class="bt-content__item">
 												<div class="restaurant">
 													<a href="#">
-														<img class="restaurant__img"
-															src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg"
-															alt="res">
+														<img class="restaurant__img" src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg" alt="res">
 														<div class="restaurant__info">
 															<div class="restaurant__name">Lẩu Phan - Buffet Bò- Nguyễn
 																Văn
@@ -347,8 +362,7 @@
 														<div class="home-comment__user">
 															<div>
 																<a href="#">
-																	<img src="https://images.foody.vn/usr/g836/8359063/avt/c100x100/qhmai-avatar-114-637186600244578770.jpg"
-																		alt="" class="home-comment__user-avatar">
+																	<img src="https://images.foody.vn/usr/g836/8359063/avt/c100x100/qhmai-avatar-114-637186600244578770.jpg" alt="" class="home-comment__user-avatar">
 																</a>
 															</div>
 															<div>
@@ -364,13 +378,11 @@
 														<div class="home-comment__interactive">
 															<div class="home-comment__interactive-box">
 																<div class="home-comment__comment">
-																	<i
-																		class="home-comment__interactive-comment fas fa-comment"></i>
+																	<i class="home-comment__interactive-comment fas fa-comment"></i>
 																	<span>3</span>
 																</div>
 																<div class="home-comment__comment">
-																	<i
-																		class="home-comment__interactive-comment fas fa-camera"></i>
+																	<i class="home-comment__interactive-comment fas fa-camera"></i>
 																	<span>30</span>
 																</div>
 															</div>
@@ -466,7 +478,7 @@
 			<!-- Flexslider -->
 			<script src="Home/js/jquery.flexslider-min.js"></script>
 			<script>
-				$(function () {
+				$(function() {
 					$('#date').datetimepicker();
 				});
 			</script>

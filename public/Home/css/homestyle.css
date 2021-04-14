@@ -19,6 +19,7 @@ html {
 ul {
     list-style: none;
     padding-left: 0px;
+    margin-bottom: 0px;
 }
 
 p {
@@ -33,10 +34,15 @@ button {
 a:hover {
     cursor: pointer;
     text-decoration: none !important;
+    color: var(--tertiary);
 }
 
 h2 {
     margin-bottom: 0px;
+}
+input:focus{
+    outline: none;
+
 }
 
 .col-2-4 {

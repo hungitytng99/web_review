@@ -1,13 +1,83 @@
-.main-nav .menu-2 a.header__login {
+/* My header */
+.header__sticky{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    background: #fff;
+   
+    border-bottom: 1px solid rgb(223, 223, 223);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+}
+.header__nav{
+    width: 39%;
+}
+.header__nav-list{
+   
+    display: flex;
+    align-items: center;
+}
+.header__nav-list.--left{
+    justify-content: flex-end;
+}
+.header__nav-list.--right .header__nav-item{
+    margin-left: 15px;
+}
+.header__nav-list.--right .header__nav-item:first-child{
+    margin-left: 0px;
+}
+
+.header__nav-item{
+    margin-left: 25px;
+}
+.header__nav-item.--active a{
+    color: var(--tertiary);
+}
+.header__logo{
+    font-size: 3.6rem;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.header__nav-item-login{
     background-color: var(--primary);
     color: white;
     border-radius: 5px;
-    padding: 20px 10px;
+    padding: 9px 10px;
+    display: block;
+    /* margin-top: 10px; */
 }
-.main-nav .menu-2 a.header__login:hover {
+.header__nav-item-login:hover{
     color: rgb(202, 202, 202);
-    background-color: rgb(41, 41, 41);
+    background-color: rgb(41, 41, 41)
 }
-.main-nav{
-    border-bottom: 1px solid rgb(223, 223, 223);
+.header__nav-search{
+    border: 1px solid #999;
+    height: 32px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header__nav-search-input{
+    border: none;
+    height: 30px;
+    padding: 0px 15px 0px 10px;
+    background-color: transparent;
+    width: 190px;
+}
+
+.header__nav-search-icon{
+    padding-right: 10px;
+    font-size: 1.6rem;
+}
+.header__nav-search-icon:hover{
+    cursor: pointer;
 }
