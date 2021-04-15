@@ -1,6 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
 
-  <!-- Header -->
-  <div class="header__sticky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Home/css/header.css">
+    <link rel="stylesheet" href="Home/css/responsive.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header__sticky">
         <div class="container-fluid">
             <div class="header">
                 <!-- For mobile -->
@@ -70,13 +81,6 @@
 
         </div>
     </div>
+</body>
 
-
-
-<!-- Show login or logout button -->
-<!-- @if (Auth::check())
-<a href="{{ route('logout') }}" style="text-decoration: underline" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng xuất</a>
-<form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>@csrf</form>
-@else
-<a href="{{ url('/login') }}" class="header__login">Đăng nhập</a>
-@endif -->
+</html>

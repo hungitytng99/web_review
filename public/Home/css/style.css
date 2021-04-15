@@ -268,120 +268,6 @@ p {
   display: none;
 }
 
-.main-nav {
-  position: relative;
-  background: #fff;
-  height: var(--header-height);
-}
-.main-nav.shadow {
-  -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
-  -ms-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
-}
-/* .main-nav:before, .main-nav:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background: #e6e6e6;
-} */
-.main-nav:before {
-  top: 2px;
-}
-.main-nav:after {
-  bottom: 2px;
-}
-.main-nav .menu-1,
-.main-nav .menu-2,
-.main-nav .logo {
-  vertical-align: middle;
-  float: left;
-  line-height: 0;
-}
-.main-nav .menu-1 a,
-.main-nav .menu-2 a,
-.main-nav .logo a {
-  padding: 30px 10px;
-  color: #130d08;
-  display: -moz-inline-stack;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-}
-.main-nav .menu-1 a:hover, .main-nav .menu-1 a:focus, .main-nav .menu-1 a:active,
-.main-nav .menu-2 a:hover,
-.main-nav .menu-2 a:focus,
-.main-nav .menu-2 a:active,
-.main-nav .logo a:hover,
-.main-nav .logo a:focus,
-.main-nav .logo a:active {
-  outline: none;
-  text-decoration: none;
-}
-.main-nav .menu-1 a.active,
-.main-nav .menu-2 a.active,
-.main-nav .logo a.active {
-  color: var(--tertiary);
-}
-.main-nav .menu-1 {
-  text-align: right;
-  width: 40.33%;
-}
-.main-nav .menu-1 a {
-  vertical-align: middle;
-}
-.main-nav .logo {
-  text-align: center;
-  width: 19.33%;
-  font-size: 3.6rem;
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  font-style: italic;
-}
-.main-nav .logo a {
-  position: relative;
-  top: -5px;
-  display: inline-block;
-}
-.main-nav .menu-2 {
-  text-align: left;
-  width: 40.33%;
-}
-
-.heading .heading {
-  font-size: 50px;
-  font-style: italic;
-  position: relative;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-}
-@media screen and (max-width: 768px) {
-  .heading .heading {
-    font-size: 30px;
-  }
-}
-.heading .heading:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 40px;
-  height: 2px;
-  left: 50%;
-  background: #fb6e14;
-  margin-left: -20px;
-}
-.heading .sub-heading {
-  font-size: 20px;
-  line-height: 1.5;
-  margin-bottom: 30px;
-}
-@media screen and (max-width: 768px) {
-  .heading .sub-heading {
-    font-size: 18px;
-  }
-}
 /* Menu */
 #menus {
   padding: 7em 0;
@@ -626,6 +512,7 @@ p {
 }
 
 #offcanvas {
+  --offcanvas-width: 275px;
   display: block;
   height: 100%;
   left: 0;
@@ -633,31 +520,31 @@ p {
   position: fixed;
   z-index: 1;
   top: 0;
-  width: 275px;
+  width: var(--offcanvas-width);
   background: rgba(0, 0, 0, 0.9);
-  padding: 0.75em 1.25em;
-  -moz-transform: translateX(-275px);
-  -webkit-transform: translateX(-275px);
-  -ms-transform: translateX(-275px);
-  -o-transform: translateX(-275px);
-  transform: translateX(-275px);
+  padding:  20px;
+  -moz-transform: translateX(- var(--offcanvas-width));
+  -webkit-transform: translateX(- var(--offcanvas-width));
+  -ms-transform: translateX(- var(--offcanvas-width));
+  -o-transform: translateX(- var(--offcanvas-width));
+  transform: translateX(- var(--offcanvas-width));
   -webkit-transition: 0.9s;
   -o-transition: 0.9s;
   transition: 0.9s;
 }
 #offcanvas a {
   display: block;
-  color: rgba(255, 255, 255, 0.4);
   text-align: center;
   padding: 7px 0;
+  color: rgb(172, 172, 172)
 }
 #offcanvas a:hover, #offcanvas a:focus, #offcanvas a:active {
   outline: none;
   text-decoration: none;
-  color: #fb6e14;
+  color: var(--tertiary);
 }
-#offcanvas a.active {
-  color: #fb6e14;
+#offcanvas .header__nav-item.--active a {
+  color: var(--tertiary);
 }
 @media screen and (max-width: 768px) {
   #offcanvas {
@@ -784,15 +671,15 @@ p {
 
 .nav-toggle {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 11px;
+  left: 10px;
   z-index: 9999;
   display: block;
   margin: 0 auto;
   display: none;
   border-bottom: none !important;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 0px 10px 10px 10px;
+  background: var(--primary);
+  padding: 8px 7px 15px 7px;
   cursor: pointer;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;

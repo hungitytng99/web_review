@@ -44,3 +44,28 @@
 // $(function () {
 //     reviewNavAnimate([nav_l, nav_r]);
 // })
+
+// js for focus header search nav 
+let headerSearch = $('input.header__nav-search-input');
+let headerSeacrhBorder = $('div.header__nav-search');
+headerSearch.focus(() => {
+
+    headerSeacrhBorder.css('border', '1px solid var(--tertiary)');
+})
+headerSearch.blur(() => {
+    headerSeacrhBorder.css('border', '1px solid #999');
+})
+//prevent scroll when open mobile nav
+let mobileNavControl = $('#mobile-nav-check');
+mobileNavControl.prop('checked',false);
+mobileNavControl.change(() => {
+    if(mobileNavControl.prop('checked')){
+        $('body').css('overflow','hidden');
+        console.log("prevent scroll");
+    }else{
+        $('body').css('overflow','scroll');
+    }
+})
+
+
+

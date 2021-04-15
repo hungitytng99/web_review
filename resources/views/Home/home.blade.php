@@ -11,8 +11,7 @@
 				<div class="container">
 					<div class="row --center">
 						<h1 class="to-animate">Foodee</h1>
-						<h2 class="to-animate">Sức khỏe và sự hài lòng <span> với</span> <a href="#"
-								target="_blank">Foodee.co</a></h2>
+						<h2 class="to-animate">Sức khỏe và sự hài lòng <span> với</span> <a href="#" target="_blank">Foodee.co</a></h2>
 					</div>
 				</div>
 			</div>
@@ -30,7 +29,7 @@
 	<div class="banner__carousel">
 		<div class="owl-carousel owl-theme">
 			<div class="banner__carousel-item">
-				<img src="https://media.foody.vn/images/beauty-upload-api-675x355-210408001004.jpg">
+				<img src="Home/images/carousel_1.jpg">
 				<div id="owl-item-0" class="banner__carousel-text">
 					<div class="banner__carousel-title">HEALTYTABLE X MỒI NGON ĐỈNH</div>
 					<div class="banner__carousel-content">Ưu đãi đến 25%</div>
@@ -38,21 +37,21 @@
 				</div>
 			</div>
 			<div class="banner__carousel-item">
-				<img src="https://images.foody.vn/biz_banner/foody-upload-api-food-biz-210405101503.jpg">
-				<div id="owl-item-1" class="banner__carousel-text">
-					<div class="banner__carousel-title">Trang Tròn - Chà hiện đại, trà sữa & đồ ăn vặt.</div>
-					<div class="banner__carousel-content">Giảm giá sâu</div>
-				</div>
-			</div>
-			<div class="banner__carousel-item">
-				<img src="https://images.foody.vn/biz_banner/foody-675x355_foodyappbanner-636530746968443602.jpg">
+				<img src="Home/images/carousel_2.jpg">
 				<div id="owl-item-2" class="banner__carousel-text">
 					<div class="banner__carousel-title">Foody App trên Mobile</div>
 					<div class="banner__carousel-content">Khám phá, đặt bàn, giao tận nơi</div>
 				</div>
 			</div>
 			<div class="banner__carousel-item">
-				<img src="https://images.foody.vn/biz_banner/foody-675x355_foodyappbanner-636530746968443602.jpg">
+				<img src="Home/images/carousel_3.jpg">
+				<div id="owl-item-1" class="banner__carousel-text">
+					<div class="banner__carousel-title">Trang Tròn - Chà hiện đại, trà sữa & đồ ăn vặt.</div>
+					<div class="banner__carousel-content">Giảm giá sâu</div>
+				</div>
+			</div>
+			<div class="banner__carousel-item">
+				<img src="Home/images/carousel_4.jpg">
 				<div id="owl-item-2" class="banner__carousel-text">
 					<div class="banner__carousel-title">Foody App trên Mobile</div>
 					<div class="banner__carousel-content">Khám phá, đặt bàn, giao tận nơi</div>
@@ -82,7 +81,7 @@
 			</div>
 			<div class="bt-content">
 				<div class="row">
-					<div class="col-2-4">
+					<div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
 						<div class="bt-content__item">
 							<div class="restaurant">
 								<a href="#">
@@ -103,18 +102,19 @@
 									<span> Địa điểm hot ở Hà Nội </span>
 								</div>
 								<ul class="dish__location-list">
-									<li class="dish__location-item">Chả cá Lã Vọng: 14 phố Chả Cá và 107 Nguyễn
+									<li class="dish__location-item"><span>Chả cá Lã Vọng:</span> 14 phố Chả Cá và 107 Nguyễn
 										Trường Tộ</li>
-									<li class="dish__location-item">Cửa hàng chả cá Anh Vũ : Số 120 K1 Giảng Võ,
+									<li class="dish__location-item"><span>Cửa hàng chả cá Anh Vũ</span> : Số 120 K1 Giảng Võ,
 										Quận Ba Đình.</li>
 								</ul>
 								<!-- <a href="#" class="restaurant__discount-more">
-								Xem thêm ưu đãi...
-							</a> -->
+									Xem thêm ưu đãi...
+								</a> -->
 							</div>
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 		<!-- Booking( sale )  -->
@@ -145,13 +145,11 @@
 				</div>
 				<div class="bt-content">
 					<div class="row">
-						<div class="col-2-4">
+						<div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
 							<div class="bt-content__item">
 								<div class="restaurant">
 									<a href="#">
-										<img class="restaurant__img"
-											src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg"
-											alt="res">
+										<img class="restaurant__img" src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg" alt="res">
 										<div class="restaurant__info">
 											<div class="restaurant__name">Lẩu Phan - Buffet Bò- Nguyễn Văn Cừ
 											</div>
@@ -242,13 +240,11 @@
 							</div>
 							<div class="review-content__container">
 								<div class="small-row row">
-									<div class="small-gutter col-lg-3">
+									<div class="small-gutter col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
 										<div class="bt-content__item">
 											<div class="restaurant">
 												<a href="#">
-													<img class="restaurant__img"
-														src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg"
-														alt="res">
+													<img class="restaurant__img" src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg" alt="res">
 													<div class="restaurant__info">
 														<div class="restaurant__name">Lẩu Phan - Buffet Bò- Nguyễn
 															Văn
@@ -265,8 +261,7 @@
 													<div class="home-comment__user">
 														<div>
 															<a href="#">
-																<img src="https://images.foody.vn/usr/g836/8359063/avt/c100x100/qhmai-avatar-114-637186600244578770.jpg"
-																	alt="" class="home-comment__user-avatar">
+																<img src="https://images.foody.vn/usr/g836/8359063/avt/c100x100/qhmai-avatar-114-637186600244578770.jpg" alt="" class="home-comment__user-avatar">
 															</a>
 														</div>
 														<div>
@@ -282,13 +277,11 @@
 													<div class="home-comment__interactive">
 														<div class="home-comment__interactive-box">
 															<div class="home-comment__comment">
-																<i
-																	class="home-comment__interactive-comment fas fa-comment"></i>
+																<i class="home-comment__interactive-comment fas fa-comment"></i>
 																<span>3</span>
 															</div>
 															<div class="home-comment__comment">
-																<i
-																	class="home-comment__interactive-comment fas fa-camera"></i>
+																<i class="home-comment__interactive-comment fas fa-camera"></i>
 																<span>30</span>
 															</div>
 														</div>
@@ -346,7 +339,6 @@
 				</div>
 			</div>
 		</div>
-
 		@include('Layouts.footer')
 
 		<!-- jQuery -->
@@ -366,7 +358,7 @@
 		<!-- Flexslider -->
 		<script src="Home/js/jquery.flexslider-min.js"></script>
 		<script>
-			$(function () {
+			$(function() {
 				$('#date').datetimepicker();
 			});
 		</script>
@@ -378,4 +370,4 @@
 		<!-- Main JS -->
 		<script src="Home/js/main.js"></script>
 		<script src="Home/js/home.js"></script>
-@endsection
+		@endsection
