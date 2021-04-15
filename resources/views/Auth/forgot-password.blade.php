@@ -1,4 +1,4 @@
-@extends('Auth.layout.auth')
+@extends('Layouts.auth')
 
 @section('title', 'Quên mật khẩu')
 
@@ -10,24 +10,32 @@
                     <h2 class="heading-section">Lấy lại mật khẩu</h2>
                 </div>
             </div>
-            @if (session('status'))
+            
+            <!-- Notification -->
+            @if (session('status-error'))
             <div class="row justify-content-center mb-5">
-                <span class="text-danger">{{ session('status') }}</span>
+                <span class="text-danger">{{ session('status-error') }}</span>
             </div>
             @endif
+            @if (session('status-success'))
+            <div class="row justify-content-center mb-5">
+                <span class="text-success">{{ session('status-success') }}</span>
+            </div>
+            @endif
+            
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
-                        <form action="{{ route('password.reset') }}" id="forgot_password_form" class="signin-form" method="POST" novalidate>
+                        <form action="{{ url('/forgot-password') }}" id="forgot_password_form" class="signin-form" method="POST" novalidate>
                             @csrf
                             <div class="form-group mb-4">
                                 <input type="email" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}" required>
-                                @if ($errors->has('email'))
-                                <div class="row justify-content-center">
-                                    <span class="text-danger">{{ $errors->first('email') }}</span>
-                                </div>
-                                @endif
                             </div>
+                            @if ($errors->has('email'))
+                            <div class="row justify-content-center mb-4">
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                            </div>
+                            @endif
                             <div class="form-group mt-5">
                                 <button type="submit" class="form-control btn btn-primary submit px-3">Gửi</button>
                             </div>
@@ -37,7 +45,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="mt-4 text-center">
-                    <a href="{{ route('login') }}" style="font-size: 2rem">Quay lại trang đăng nhập</a>
+                    <a href="{{ url('/login') }}" style="font-size: 2rem">Quay lại trang đăng nhập</a>
                 </div>
             </div>
         </div>
