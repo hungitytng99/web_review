@@ -7,7 +7,7 @@
 	<title>Foodee</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="A product of review food and restaurant " />
-	<meta name="keywords" content="review food shop restaurant star"/>
+	<meta name="keywords" content="review food shop restaurant star" />
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
 
@@ -37,7 +37,6 @@
 
 	<!-- My css -->
 	<link rel="stylesheet" href="Home/css/style.css">
-	<link rel="stylesheet" href="Home/css/header.css">
 	<link rel="stylesheet" href="Home/css/homestyle.css">
 	<link rel="stylesheet" href="Home/css/responsive.css">
 	<!-- Modernizr JS -->
@@ -52,6 +51,7 @@
 
 <body>
 	<div id="container">
+		<!-- Banner intro -->
 		<div id="home" class="js-fullheight" data-section="home">
 			<div class="flexslider">
 				<div class="overlay"></div>
@@ -72,54 +72,12 @@
 		</div>
 
 		<!-- Header -->
-		<div class="header__sticky">
-			<div class="container-fluid">
-				<div class="header">
-					<div class="header__nav">
-						<ul class="header__nav-list --left">
-							<li class="header__nav-item --active">
-								<a href="#">
-									Trang chủ
-								</a>
-							</li>
-							<li class="header__nav-item">
-								<a href="#">
-									Giới thiệu
-								</a>
-							</li>
-							<li class="header__nav-item">
-								<a href="#">
-									Thực đơn
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="header__logo">
-						foodee
-					</div>
-					<div class="header__nav">
-						<ul class="header__nav-list --right">
-							<li class="header__nav-item">
-								<div class="header__nav-search">
-									<input type="text" class="header__nav-search-input" placeholder="Tìm món ăn, nhà hàng...">
-									<i class="header__nav-search-icon fas fa-search"></i>
-								</div>
-							</li>
-							<li class="header__nav-item">
-								<a href="/login" class="header__nav-item-login">Đăng nhập</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
+		@include('Header.header')
 		<!-- Carousel -->
 		<div class="banner__carousel">
 			<div class="owl-carousel owl-theme">
 				<div class="banner__carousel-item">
-					<img src="https://media.foody.vn/images/beauty-upload-api-675x355-210408001004.jpg">
+					<img src="Home/images/carousel_1.jpg">
 					<div id="owl-item-0" class="banner__carousel-text">
 						<div class="banner__carousel-title">HEALTYTABLE X MỒI NGON ĐỈNH</div>
 						<div class="banner__carousel-content">Ưu đãi đến 25%</div>
@@ -127,21 +85,21 @@
 					</div>
 				</div>
 				<div class="banner__carousel-item">
-					<img src="https://images.foody.vn/biz_banner/foody-upload-api-food-biz-210405101503.jpg">
-					<div id="owl-item-1" class="banner__carousel-text">
-						<div class="banner__carousel-title">Trang Tròn - Chà hiện đại, trà sữa & đồ ăn vặt.</div>
-						<div class="banner__carousel-content">Giảm giá sâu</div>
-					</div>
-				</div>
-				<div class="banner__carousel-item">
-					<img src="https://images.foody.vn/biz_banner/foody-675x355_foodyappbanner-636530746968443602.jpg">
+					<img src="Home/images/carousel_2.jpg">
 					<div id="owl-item-2" class="banner__carousel-text">
 						<div class="banner__carousel-title">Foody App trên Mobile</div>
 						<div class="banner__carousel-content">Khám phá, đặt bàn, giao tận nơi</div>
 					</div>
 				</div>
 				<div class="banner__carousel-item">
-					<img src="https://images.foody.vn/biz_banner/foody-675x355_foodyappbanner-636530746968443602.jpg">
+					<img src="Home/images/carousel_3.jpg">
+					<div id="owl-item-1" class="banner__carousel-text">
+						<div class="banner__carousel-title">Trang Tròn - Chà hiện đại, trà sữa & đồ ăn vặt.</div>
+						<div class="banner__carousel-content">Giảm giá sâu</div>
+					</div>
+				</div>
+				<div class="banner__carousel-item">
+					<img src="Home/images/carousel_4.jpg">
 					<div id="owl-item-2" class="banner__carousel-text">
 						<div class="banner__carousel-title">Foody App trên Mobile</div>
 						<div class="banner__carousel-content">Khám phá, đặt bàn, giao tận nơi</div>
@@ -192,9 +150,9 @@
 										<span> Địa điểm hot ở Hà Nội </span>
 									</div>
 									<ul class="dish__location-list">
-										<li class="dish__location-item">Chả cá Lã Vọng: 14 phố Chả Cá và 107 Nguyễn
+										<li class="dish__location-item"><span>Chả cá Lã Vọng:</span> 14 phố Chả Cá và 107 Nguyễn
 											Trường Tộ</li>
-										<li class="dish__location-item">Cửa hàng chả cá Anh Vũ : Số 120 K1 Giảng Võ,
+										<li class="dish__location-item"><span>Cửa hàng chả cá Anh Vũ</span> : Số 120 K1 Giảng Võ,
 											Quận Ba Đình.</li>
 									</ul>
 									<!-- <a href="#" class="restaurant__discount-more">
@@ -204,7 +162,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 			<!-- Booking( sale )  -->

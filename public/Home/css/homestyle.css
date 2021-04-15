@@ -40,7 +40,8 @@ a:hover {
 h2 {
     margin-bottom: 0px;
 }
-input:focus{
+
+input:focus {
     outline: none;
 
 }
@@ -69,12 +70,24 @@ input:focus{
     padding: 0px;
 }
 
+
+@media screen and (max-width:768px) {
+    .hide-on-768 {
+        display: none;
+    }
+    .show-on-768{
+        display: block;
+    }
+}
+
+
 .my-row {
     display: flex;
     flex-wrap: wrap;
     margin: 0px;
 }
-.row.--center{
+
+.row.--center {
     justify-content: center;
 }
 
@@ -109,28 +122,6 @@ button:focus {
     position: relative;
     background-color: rgba(0, 0, 0, 1);
     padding: 30px 0px 10px 0px;
-}
-
-.banner__carousel:after {
-    position: absolute;
-    content: '';
-    background-color: black;
-    top: 75%;
-    left: 0px;
-    width: 500px;
-    height: 60px;
-    z-index: 1;
-}
-
-.banner__carousel:before {
-    position: absolute;
-    content: '';
-    background-color: black;
-    top: 75%;
-    right: 0px;
-    width: 500px;
-    height: 60px;
-    z-index: 2;
 }
 
 .owl-carousel .owl-nav button.owl-next,
@@ -358,15 +349,16 @@ button:focus {
 }
 
 /* Review */
-.review-nav__animated{
+.review-nav__animated {
     animation: nav_down 0.3s linear;
 }
 
-@keyframes nav_down{
+@keyframes nav_down {
     from {
         transform: translateY(-30px);
     }
-    to{
+
+    to {
         transform: translateY(0px);
     }
 }
@@ -542,10 +534,12 @@ button:focus {
     display: flex;
     align-items: center;
 }
-.home-comment__comment:hover{
+
+.home-comment__comment:hover {
     cursor: pointer;
     color: black;
 }
+
 .home-comment__comment span {
     display: block;
     padding-top: 2px;
@@ -559,9 +553,10 @@ button:focus {
 
 .home-comment__interactive-box {}
 
-.home-comment__interactive-btn i{
+.home-comment__interactive-btn i {
     padding-left: 4px;
 }
-.home-comment__interactive-btn:hover{
+
+.home-comment__interactive-btn:hover {
     color: black;
 }
