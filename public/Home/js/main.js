@@ -50,14 +50,6 @@
 		});
 		// $('#offcanvas').append
 	};
-
-	// Parallax
-	var parallax = function() {
-
-		$(window).stellar();
-
-	};
-
 	var goToTop = function() {
 
 		$('.js-gotop').on('click', function(event){
@@ -250,7 +242,7 @@
 		fullHeight();
 		sliderMain();
 		offcanvasMenu();
-		parallax();
+		// parallax();
 		navigationSection();
 		goToTop();
 

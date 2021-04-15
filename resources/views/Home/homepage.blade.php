@@ -6,21 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Foodee</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
-
-	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:site_name" content="" />
-	<meta property="og:description" content="" />
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
+	<meta name="description" content="A product of review food and restaurant " />
+	<meta name="keywords" content="review food shop restaurant star"/>
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
 
@@ -52,6 +39,7 @@
 	<link rel="stylesheet" href="Home/css/style.css">
 	<link rel="stylesheet" href="Home/css/header.css">
 	<link rel="stylesheet" href="Home/css/homestyle.css">
+	<link rel="stylesheet" href="Home/css/responsive.css">
 	<!-- Modernizr JS -->
 
 	<script src="Home/js/modernizr-2.6.2.min.js"></script>
@@ -70,8 +58,8 @@
 				<div class="text">
 					<div class="container">
 						<div class="row --center">
-							<h1 class="to-animate">Foodee</h1>
-							<h2 class="to-animate">Sức khỏe và sự hài lòng <span> với</span> <a href="#" target="_blank">Foodee.co</a></h2>
+							<h1 class="to-animate">foodee</h1>
+							<h2 class="to-animate">Sức khỏe và sự hài lòng <span> với</span> <a href="/">foodee.co</a></h2>
 						</div>
 					</div>
 				</div>
@@ -183,7 +171,7 @@
 				</div>
 				<div class="bt-content">
 					<div class="row">
-						<div class="col-2-4">
+						<div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
 							<div class="bt-content__item">
 								<div class="restaurant">
 									<a href="#">
@@ -216,6 +204,7 @@
 							</div>
 						</div>
 					</div>
+					
 				</div>
 			</div>
 			<!-- Booking( sale )  -->
@@ -246,7 +235,7 @@
 					</div>
 					<div class="bt-content">
 						<div class="row">
-							<div class="col-2-4">
+							<div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
 								<div class="bt-content__item">
 									<div class="restaurant">
 										<a href="#">
@@ -341,7 +330,7 @@
 								</div>
 								<div class="review-content__container">
 									<div class="small-row row">
-										<div class="small-gutter col-lg-3">
+										<div class="small-gutter col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
 											<div class="bt-content__item">
 												<div class="restaurant">
 													<a href="#">
