@@ -1,74 +1,3 @@
-:root {
-    --primary: #282828;
-    --secondary: #6E7E85;
-    --tertiary: #E94F37;
-    --quaternary: #BBBAC6;
-    --quinary: #E2E2E2;
-
-    --header-height: 60px;
-}
-
-
-html {
-    font-size: 62.5%;
-    line-height: 1.6rem;
-    box-sizing: border-box;
-    color: black;
-}
-
-ul {
-    list-style: none;
-    padding-left: 0px;
-    margin-bottom: 0px;
-}
-
-p {
-    margin: 0;
-}
-
-button {
-    border: none;
-    background-color: white;
-}
-
-a:hover {
-    cursor: pointer;
-    text-decoration: none !important;
-    color: var(--tertiary);
-}
-
-h2 {
-    margin-bottom: 0px;
-}
-
-input:focus {
-    outline: none;
-
-}
-
-.col-2-4 {
-    flex: 0 0 20%;
-    max-width: 20%;
-    padding: 0px 5px;
-}
-
-.col-9-6 {
-    width: 80%;
-    padding: 0px 5px;
-}
-
-.small-gutter {
-    padding: 5px;
-}
-
-.small-row.row {
-    margin-left: -5px;
-    margin-right: -5px;
-}
-
-.container {
-    padding: 0px;
-}
 
 
 @media screen and (max-width:768px) {
@@ -112,46 +41,10 @@ input:focus {
     background: url('/Home/images/icon-logo.png') no-repeat;
     background-size: contain;
 }
-
-/* Carousel */
 button:focus {
     outline: none;
 }
-
-.banner__carousel {
-    position: relative;
-    background-color: rgba(0, 0, 0, 1);
-    padding: 30px 0px 10px 0px;
-}
-
-.owl-carousel .owl-nav button.owl-next,
-.owl-carousel .owl-nav button.owl-prev {
-    margin-top: 30px;
-    width: 60px;
-    height: 40px;
-}
-
-.owl-carousel .owl-nav button.owl-next span,
-.owl-carousel .owl-nav button.owl-prev span {
-    font-size: 3rem;
-}
-
-.owl-theme .owl-nav {
-    margin-top: 0px;
-}
-
-.banner__carousel-text {
-    font-size: 1.3rem;
-    color: white;
-    text-align: center;
-    /* display: none; */
-}
-
-.banner__carousel-title {
-    font-weight: bold;
-    margin-top: 15px;
-    text-transform: uppercase;
-}
+/* Carousel */
 
 /* Booking( sale ) */
 /* 1. Header */
