@@ -6,29 +6,32 @@
     {{-- Image intro --}}
     <div id="container">
         @if (!Auth::check())
-        <div id="home" class="js-fullheight" data-section="home">
-            <div class="flexslider">
-                <div class="overlay"></div>
-                <div class="text">
-                    <div class="container">
-                        <div class="row --center">
-                            <h1 class="to-animate">Foodee</h1>
-                            <h2 class="to-animate">Sức khỏe và sự hài lòng <span> với</span> <a href="#"
-                                    target="_blank">Foodee.co</a></h2>
+            <div id="home" class="js-fullheight" data-section="home">
+                <div class="flexslider">
+                    <div class="overlay"></div>
+                    <div class="text">
+                        <div class="container">
+                            <div class="row --center">
+                                <h1 class="to-animate">Foodee</h1>
+                                <h2 class="to-animate">Sức khỏe và sự hài lòng <span> với</span> <a href="#"
+                                        target="_blank">Foodee.co</a></h2>
+                            </div>
                         </div>
                     </div>
+                    <ul class="slides">
+                        <li style="background-image: url(Home/images/slide_1.jpg);" data-stellar-background-ratio="0.5">
+                        </li>
+                        <li style="background-image: url(Home/images/slide_2.jpg);" data-stellar-background-ratio="0.5">
+                        </li>
+                        <li style="background-image: url(Home/images/slide_3.jpg);" data-stellar-background-ratio="0.5">
+                        </li>
+                    </ul>
                 </div>
-                <ul class="slides">
-                    <li style="background-image: url(Home/images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
-                    <li style="background-image: url(Home/images/slide_2.jpg);" data-stellar-background-ratio="0.5"></li>
-                    <li style="background-image: url(Home/images/slide_3.jpg);" data-stellar-background-ratio="0.5"></li>
-                </ul>
             </div>
-        </div>
         @endif
         {{-- Header --}}
         @include('Layouts.header')
-        
+
         <!-- Carousel -->
         @php
             $carouselLists = [
@@ -53,8 +56,8 @@
                 [
                     'img' => 'Home/images/carousel_4.jpg',
                     'linkTo' => '#',
-                    'title' => 'Hàng ngàn thương hiệu xịn khuyến mãi',
-                    'description' => 'Lên đến 50%',
+                    'title' => 'Foody App trên Mobile',
+                    'description' => 'Khám phá, đặt bàn, giao tận nơi',
                 ],
             ];
         @endphp
@@ -84,7 +87,11 @@
                             <div class="bt-content__item">
                                 <div class="restaurant">
                                     <a href="#">
-                                        <img class="restaurant__img" src="{{ url('Home/images/cha-ca.jpg') }}" alt="res">
+                                        <div class="product__img-box">
+
+                                            <img class="restaurant__img" src="{{ url('Home/images/cha-ca.jpg') }}"
+                                                alt="res">
+                                        </div>
                                         <div class="restaurant__info">
                                             <div class="restaurant__name">Chả cá Hà Nội</div>
                                             <div class="dish__description">Chả cá từ lâu đã trở thành món đặc sản
@@ -100,16 +107,17 @@
                                         <span> Địa điểm hot ở Hà Nội </span>
                                     </div>
                                     <ul class="dish__location-list">
-                                        <li class="dish__location-item"><span>Chả cá Lã Vọng:</span> 14 phố Chả Cá và 107
+                                        <li class="dish__location-item"><span>Chả cá Lã Vọng: </span>14 phố Chả Cá và 107
                                             Nguyễn
                                             Trường Tộ</li>
-                                        <li class="dish__location-item"><span>Cửa hàng chả cá Anh Vũ</span> : Số 120 K1
+                                        <li class="dish__location-item"><span>Cửa hàng chả cá Anh Vũ: </span>Số 120 K1
                                             Giảng Võ,
                                             Quận Ba Đình.</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                 </div>
@@ -147,9 +155,11 @@
                             <div class="bt-content__item">
                                 <div class="restaurant">
                                     <a href="#">
-                                        <img class="restaurant__img"
-                                            src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg"
-                                            alt="res">
+                                        <div class="product__img-box">
+                                            <img class="restaurant__img"
+                                                src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg"
+                                                alt="res">
+                                        </div>
                                         <div class="restaurant__info">
                                             <div class="restaurant__name">Lẩu Phan - Buffet Bò- Nguyễn Văn Cừ
                                             </div>
@@ -244,9 +254,11 @@
                                         <div class="bt-content__item">
                                             <div class="restaurant">
                                                 <a href="#">
-                                                    <img class="restaurant__img"
-                                                        src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg"
-                                                        alt="res">
+                                                    <div class="product__img-box">
+                                                        <img class="restaurant__img"
+                                                            src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg"
+                                                            alt="res">
+                                                    </div>
                                                     <div class="restaurant__info">
                                                         <div class="restaurant__name">Lẩu Phan - Buffet Bò- Nguyễn
                                                             Văn
@@ -311,39 +323,43 @@
             </div>
         </div>
         <!-- ... -->
-        <div id="type" style="background-image: url(Home/images/slide_3.jpg);" data-stellar-background-ratio="0.5">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 to-animate">
-                        <div class="type">
-                            <h3 class="with-icon icon-1">Review</h3>
-                            <p>Tập hợp cảm nhận về những quán ăn, món ăn. Đem lại sự lựa chọn hoàn hảo cho bạn.</p>
+        @if (!Auth::check())
+            <div id="type" style="background-image: url(Home/images/slide_3.jpg);" data-stellar-background-ratio="0.5">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 to-animate">
+                            <div class="type">
+                                <h3 class="with-icon icon-1">Review</h3>
+                                <p>Tập hợp cảm nhận về những quán ăn, món ăn. Đem lại sự lựa chọn hoàn hảo cho bạn.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 to-animate">
-                        <div class="type">
-                            <h3 class="with-icon icon-2">Quán ăn</h3>
-                            <p>Quán ăn, nhà hàng ngon, nổi tiếng, thường xuyên có khuyến mãi, giúp bạn tiết kiệm chi
-                                phí một cách tối đa nhất.</p>
+                        <div class="col-md-3 to-animate">
+                            <div class="type">
+                                <h3 class="with-icon icon-2">Quán ăn</h3>
+                                <p>Quán ăn, nhà hàng ngon, nổi tiếng, thường xuyên có khuyến mãi, giúp bạn tiết kiệm chi
+                                    phí một cách tối đa nhất.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 to-animate">
-                        <div class="type">
-                            <h3 class="with-icon icon-3">Món ăn</h3>
-                            <p>Những món ăn hấp dẫn, ngon miệng, thu hút người mua trong tuần, trong tháng.</p>
+                        <div class="col-md-3 to-animate">
+                            <div class="type">
+                                <h3 class="with-icon icon-3">Món ăn</h3>
+                                <p>Những món ăn hấp dẫn, ngon miệng, thu hút người mua trong tuần, trong tháng.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 to-animate">
-                        <div class="type">
-                            <h3 class="with-icon icon-4">Thực đơn</h3>
-                            <p>Đem laị cho bạn thực đơn theo chế độ dinh dưỡng, phù hợp với công việc và lối sống
-                                của bạn.</p>
+                        <div class="col-md-3 to-animate">
+                            <div class="type">
+                                <h3 class="with-icon icon-4">Thực đơn</h3>
+                                <p>Đem laị cho bạn thực đơn theo chế độ dinh dưỡng, phù hợp với công việc và lối sống
+                                    của bạn.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
+        
+        {{-- Footer --}}
         @include('Layouts.footer')
 
         <!-- jQuery -->

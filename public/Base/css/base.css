@@ -45,11 +45,18 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
     margin-bottom: 0px;
 }
+a{
+    text-decoration: none;
+}
 
 a:hover, a:focus, a:active {
     cursor: pointer;
     text-decoration: none !important;
     color: var(--tertiary);
+}
+select:focus, select:active{
+    outline: none;
+    border: none;
 }
 .btn {
     margin-right: 4px;

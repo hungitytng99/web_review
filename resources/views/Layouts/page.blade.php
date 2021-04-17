@@ -29,7 +29,6 @@
 	<!-- My css -->
 	<link rel="stylesheet" href="Base/css/base.css">
 	<link rel="stylesheet" href="Home/css/style.css">
-	<link rel="stylesheet" href="Home/css/header.css">
 	<link rel="stylesheet" href="Home/css/homestyle.css">
 	<!-- Modernizr JS -->
 

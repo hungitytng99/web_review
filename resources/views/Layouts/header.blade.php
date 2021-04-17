@@ -1,4 +1,5 @@
 <!-- Header -->
+<link rel="stylesheet" href="Home/css/header.css">
 <div class="header__sticky">
     <div class="container-fluid">
         <div class="header">
@@ -23,7 +24,15 @@
                                 <a href="#">Liên hệ</a>
                             </li>
                             <li class="mobile__nav-item">
-                                <a href="/login">Đăng nhập</a>
+                                @if (Auth::check())
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng
+                                        xuất</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>@csrf
+                                    </form>
+                                @else
+                                    <a href="/login">Đăng nhập</a>
+                                @endif
                             </li>
                         </ul>
                     </div>
@@ -62,12 +71,14 @@
                     </li>
                     <li class="header__nav-item hide-on-768">
                         @if (Auth::check())
-                        <a href="{{ route('logout') }}" style="text-decoration: underline" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng xuất</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>@csrf</form>
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng
+                                xuất</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>@csrf
+                            </form>
                         @else
-                        <a href="/login" class="header__nav-item-login">Đăng nhập</a>
+                            <a href="/login" class="header__nav-item-login">Đăng nhập</a>
                         @endif
-
                     </li>
                 </ul>
             </div>
@@ -75,4 +86,3 @@
 
     </div>
 </div>
-<!-- Show login or logout button -->
