@@ -34,6 +34,11 @@
 
 	<script src="Home/js/modernizr-2.6.2.min.js"></script>
 
+	<!-- jQuery -->
+	<script src="Home/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="Home/js/jquery.easing.1.3.js"></script>
+
 </head>
 
 <body>

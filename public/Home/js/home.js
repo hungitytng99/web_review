@@ -55,17 +55,7 @@ headerSearch.focus(() => {
 headerSearch.blur(() => {
     headerSeacrhBorder.css('border', '1px solid #999');
 })
-//prevent scroll when open mobile nav
-let mobileNavControl = $('#mobile-nav-check');
-mobileNavControl.prop('checked',false);
-mobileNavControl.change(() => {
-    if(mobileNavControl.prop('checked')){
-        $('body').css('overflow','hidden');
-        console.log("prevent scroll");
-    }else{
-        $('body').css('overflow','scroll');
-    }
-})
+
 
 
 
