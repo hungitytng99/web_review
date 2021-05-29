@@ -2,10 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Home\HomeController;
 
-Route::get('/', function () {
-    return view('Home/home');
-})->name('home');
+Route::get('/', [HomeController::class,'index']);
 
 Route::redirect('/home', '/');
 
