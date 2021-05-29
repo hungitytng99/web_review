@@ -6,7 +6,15 @@ use App\Http\Controllers\Auth\AuthController;
 Route::get('/', function () {
     return view('Home/home');
 })->name('home');
-
+Route::get('/review', function () {
+    return view('Review/review');
+})->name('review');
+Route::get('/test', function () {
+    return view('Review/test');
+})->name('test');
+Route::get('/test2', function () {
+    return view('Review/test2');
+})->name('test2');
 Route::redirect('/home', '/');
 
 Route::namespace('auth')->group(function () {

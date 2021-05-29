@@ -1,5 +1,28 @@
 
 
+#block_container
+{
+    display: flex;
+    justify-content: center;
+}
+#block1
+{
+    display:inline;
+    text-align: center;
+    float: left;
+    background-color: chocolate;
+    width: 300pt;
+    
+}
+#block2
+{
+    display:inline;
+    text-align: center;
+    float: right;
+    background-color: blue;
+    width: 600pt;
+    height: 100pt;
+}
 @media screen and (max-width:768px) {
     .hide-on-768 {
         display: none;
@@ -284,7 +307,7 @@ button:focus {
 .review__menu-category-item {
     display: flex;
     justify-content: space-between;
-    padding: 13px;
+    padding: 30px;
 }
 
 .review__menu-category-item:hover {

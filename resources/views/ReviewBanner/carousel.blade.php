@@ -6,15 +6,14 @@
 <div class="banner__carousel">
     <div class="owl-carousel owl-theme">
         @foreach ($carouselLists as $carouselItem)
-            <div class="banner__carousel-item">
-                <img src={{$carouselItem['img']}}>
-                <div id="owl-item-0" class="banner__carousel-text">
-                    <div class="banner__carousel-title">{{ $carouselItem['title']}}</div>
-                    <div class="banner__carousel-content">{{ $carouselItem['description']}}</div>
-                    <div >test </div>
-                </div>
+        <div class="banner__carousel-item">
+            <img src={{$carouselItem['img']}}>
+            <div id="owl-item-0" class="banner__carousel-text">
+                <div class="banner__carousel-title">{{ $carouselItem['user']}}</div>
+                <div class="banner__carousel-content">{{ $carouselItem['comment']}}</div>
+                <div>vi tri </div>
             </div>
+        </div>
         @endforeach
     </div>
 </div>
-
