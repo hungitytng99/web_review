@@ -234,6 +234,37 @@ class DishesSeeder extends Seeder
                 'image' => '/assets/images/deli-dish-no-image.png',
                 'price' => '80.000',
             ],
+            //
+            [
+                'id' => 30,
+                'name' => 'Chả Cá',
+                'description' => 'Suất',
+                'type' => 1,
+                'image' => '/assets/images/deli-dish-no-image.png',
+                'price' => '130.000',
+            ], [
+                'id' => 31,
+                'name' => 'Pepsi',
+                'description' => '',
+                'type' => 1,
+                'image' => '/assets/images/deli-dish-no-image.png',
+                'price' => '20.000',
+            ], [
+                'id' => 32,
+                'name' => 'Coca Light',
+                'description' => '',
+                'type' => 1,
+                'image' => '/assets/images/deli-dish-no-image.png',
+                'price' => '20.000',
+            ], [
+                'id' => 33,
+                'name' => 'Khăn Ướt',
+                'description' => '10 cái',
+                'type' => 1,
+                'image' => '/assets/images/deli-dish-no-image.png',
+                'price' => '20.000',
+            ],
+
 
         ]);
     }

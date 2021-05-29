@@ -16,7 +16,7 @@ class RestaurantsSeeder extends Seeder
     {
         DB::table('restaurants')->insert([
             [
-                'id' => 1,
+                'id' => 'nom-ong-phuc-nghia-tan',
                 'name' => 'Nộm Ông Phúc - Nghĩa Tân',
                 'location' => 'Ngõ 1 Nghĩa Tân, Cầu Giấy, Hà Nội',
                 'rate' => 4.5,
@@ -24,7 +24,7 @@ class RestaurantsSeeder extends Seeder
                 'image' => '/assets/images/nom-ong-phuc.jpg',
                 'sale_percent' => 15,
             ], [
-                'id' => 2,
+                'id' => 'chan-ga-rut-xuong-cau-giay-shop-online',
                 'name' => 'Chân Gà Rút Xương - Cầu Giấy - Shop Online',
                 'location' => '92B Yên Hoà, Cầu Giấy, Hà Nội',
                 'rate' => 4.5,
@@ -32,7 +32,7 @@ class RestaurantsSeeder extends Seeder
                 'image' => '/assets/images/foody-upload-api-foody-mobile-chan-ga-2-jpg-180928192552.jpg',
                 'sale_percent' => 0,
             ], [
-                'id' => 3,
+                'id' => 'cha-ca-la-vong-pho-cha-ca',
                 'name' => 'Chả Cá Lã Vọng - Phố Chả Cá',
                 'location' => '107 Nguyễn Trường Tộ, Quận Ba Đình, Hà Nội',
                 'rate' => 4.9,
@@ -40,7 +40,7 @@ class RestaurantsSeeder extends Seeder
                 'image' => '/assets/images/foody-mobile-cha-ca-la-vong.jpg',
                 'sale_percent' => 0,
             ], [
-                'id' => 4,
+                'id' => 'cha-ca-anh-vu-giang-vo-ba-dinh',
                 'name' => 'Chả Cá Anh Vũ',
                 'location' => '120 K1 Giảng Võ, quận Ba Đình, Hà Nội',
                 'rate' => 4.5,
