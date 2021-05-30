@@ -37,3 +37,8 @@
 [29-May-2021 10:10:58] NOTICE: fpm is running, pid 18
 [29-May-2021 10:10:58] NOTICE: ready to handle connections
 [29-May-2021 10:10:58] NOTICE: systemd monitor interval set to 10000ms
+[30-May-2021 04:38:01] NOTICE: fpm is running, pid 18
+[30-May-2021 04:38:01] NOTICE: ready to handle connections
+[30-May-2021 04:38:01] NOTICE: systemd monitor interval set to 10000ms
+[30-May-2021 07:31:54] NOTICE: Terminating ...
+[30-May-2021 07:31:54] NOTICE: exiting, bye-bye!

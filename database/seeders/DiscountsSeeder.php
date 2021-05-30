@@ -16,11 +16,7 @@ class DiscountsSeeder extends Seeder
     {
         DB::table('discounts')->insert([
             [
-                'name' => 'Nộm Bò Khô',
-                'description' => 'Chỉ có bò',
-                'type' => 1,
-                'image' => '/assets/images/b53e9c3e-bfaf-434f-8365-0bcf449ca7c0.jpg',
-                'price' => '35.000',
+                'name' => 'Ăn 4 trả tiền 3.',
             ]
         ]);
     }

@@ -17,6 +17,7 @@ class DishesRestaurantsTable extends Migration
             $table->id();
             $table->integer('dishes_id');
             $table->string('restaurants_id');
+            $table->boolean('isOutstandingDish')->default(false);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });

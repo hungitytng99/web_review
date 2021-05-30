@@ -59,7 +59,6 @@
 
     <!-- Featured dishes -->
 
-
     <div class="booking-table">
         <div class="container">
             <div class="row">
@@ -79,37 +78,37 @@
             </div>
             <div class="bt-content">
                 <div class="row">
-
+                    @foreach($outstandingDishes as $outstandingDish)
                     <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
                         <div class="bt-content__item">
                             <div class="restaurant">
-                                <a href="#">
-                                    <img class="restaurant__img" src="{{ url('Home/images/cha-ca.jpg') }}" alt="res">
+                                <a href={{$outstandingDish->href}}>
+                                    <div class="restaurant__img-box">
+                                        <img class="restaurant__img" src={{$outstandingDish->image}} alt="res">
+                                    </div>
                                     <div class="restaurant__info">
-                                        <div class="restaurant__name">Chả cá Hà Nội</div>
-                                        <div class="dish__description">Chả cá từ lâu đã trở thành món đặc sản
-                                            riêng của Hà Nội. Những cái tên như chả cá Lã Vọng, chả cá Anh Vũ
-                                            hay chả cá Lão Ngư được xem là những thương hiệu chả cá siêu ngon
-                                            không thể không nhắc tới.</div>
+                                        <div class="restaurant__name">{{$outstandingDish->name}}</div>
+                                        <div class="dish__description">{{$outstandingDish->description}}</div>
                                     </div>
                                 </a>
                             </div>
                             <div class="restaurant__discount">
                                 <div class="restaurant__discount-item dishes__location">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <span> Địa điểm hot ở Hà Nội </span>
+                                    <span> Địa điểm ăn ngon, giá rẻ </span>
                                 </div>
                                 <ul class="dish__location-list">
-                                    <li class="dish__location-item"><span>Chả cá Lã Vọng:</span> 14 phố Chả Cá và 107
-                                        Nguyễn
-                                        Trường Tộ</li>
-                                    <li class="dish__location-item"><span>Cửa hàng chả cá Anh Vũ</span> : Số 120 K1
-                                        Giảng Võ,
-                                        Quận Ba Đình.</li>
+                                    @foreach($outstandingDish->location as $location)
+                                    <li class="dish__location-item">
+                                        <a href={{$location[1]}}> {{$location[0]}}</a>
+                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    @endforeach
+
                 </div>
 
             </div>
@@ -144,32 +143,34 @@
             <div class="bt-content">
                 <div class="row">
                     @foreach($restaurants as $restaurant)
-                        <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
-                            <div class="bt-content__item">
-                                <div class="restaurant">
-                                    <a href="#">
+                    <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
+                        <div class="bt-content__item">
+                            <div class="restaurant">
+                                <a href="#">
+                                    <div class="restaurant__img-box">
                                         <img class="restaurant__img" src="{{ $restaurant->image }}" alt="res">
-                                        <div class="restaurant__info">
-                                            <div class="restaurant__name">{{$restaurant->name}}
-                                            </div>
-                                            <div class="restaurant__address">{{$restaurant->location}}
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                </div>
-                                <div class="restaurant__discount">
-                                    <div class="restaurant__discount-item">
-                                        <i class="fas fa-tag"></i>
-                                        <span> Ăn trưa - Đi 4 tính 3</span>
                                     </div>
-                                    <a href="#" class="restaurant__discount-more">
-                                        Xem thêm ưu đãi...
-                                    </a>
-                                </div>
-                            </div>
+                                    <div class="restaurant__info">
+                                        <div class="restaurant__name">{{$restaurant->name}}
+                                        </div>
+                                        <div class="restaurant__address">{{$restaurant->location}}
+                                        </div>
+                                    </div>
+                                </a>
 
+                            </div>
+                            <div class="restaurant__discount">
+                                <div class="restaurant__discount-item">
+                                    <i class="fas fa-tag"></i>
+                                    <span> Ăn trưa - Đi 4 tính 3</span>
+                                </div>
+                                <a href="#" class="restaurant__discount-more">
+                                    Xem thêm ưu đãi...
+                                </a>
+                            </div>
                         </div>
+
+                    </div>
                     @endforeach
                 </div>
             </div>
