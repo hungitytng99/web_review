@@ -101,7 +101,8 @@
                 </div>
                 <div class="menu-restaurant-content-tab">
                     <div class="menu-restaurant-container">
-                        <div class="menu-restaurant-category">
+                        <<<<<<< Updated upstream <div class="menu-restaurant-categor">
+                            >>>>>>> Stashed changes
                             <div class="list-category" id="scroll-spy">
                                 <div class="scrollbar-container ps">
                                     <div class="item"><span id="-1" title="Món Đang Giảm" class="item-link active">Danh
@@ -124,333 +125,321 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="menu-restaurant-detail">
-                            <div class="menu-restaurant-list">
-                                <div class="search-items">
-                                    <p class="input-group"><i class="fas fa-search"></i><input type="search"
-                                            name="searchKey" placeholder="Tìm món" value=""></p>
-                                </div>
-                                <div id="restaurant-item">
-                                    <div aria-label="grid" aria-readonly="true"
-                                        class="ReactVirtualized__Grid ReactVirtualized__List" role="grid" tabindex="0"
-                                        style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 558px; will-change: transform; overflow: auto; outline: none;">
-                                        <div class="ReactVirtualized__Grid__innerScrollContainer" role="rowgroup"
-                                            style="width: auto; height: 2486px; max-width: 558px; max-height: 2486px; overflow: hidden; position: relative;">
-                                            <div class="menu-group" id="section-group-menu--1"
-                                                style="height: 56px; left: 0px; position: absolute; top: 0px; width: 100%;">
-                                                <div class="title-menu">Món Đang Giảm</div>
-                                            </div>
-                                            <div class="item-restaurant-row"
-                                                style="height: 81px; left: 0px; position: absolute; top: 56px; width: 100%;">
-                                                <div class="row">
-                                                    <div class="col-auto item-restaurant-img"><button
-                                                            class="inline"><img
-                                                                src="https://images.foody.vn/res/g27/269188/s120x120/7d8331f7-96fb-4376-be0b-75ef75e2-022b0ed4-201014091131.jpeg"
-                                                                alt="Nâu lắc" width="60" height="60"></button></div>
-                                                    <div class="col item-restaurant-info">
-                                                        <h2 class="item-restaurant-name">Nâu lắc</h2>
-                                                    </div>
-                                                    <div class="col-auto item-restaurant-more">
-                                                        <div class="row ">
-                                                            <div class="col-auto product-price">
-                                                                <div class="old-price">15,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
-                                                                <div class="current-price">10,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
+                    </div>
+                    <div class="menu-restaurant-detail">
+                        <div class="menu-restaurant-list">
+                            <div class="search-items">
+                                <p class="input-group"><i class="fas fa-search"></i><input type="search"
+                                        name="searchKey" placeholder="Tìm món" value=""></p>
+                            </div>
+                            <div id="restaurant-item">
+                                <div aria-label="grid" aria-readonly="true"
+                                    class="ReactVirtualized__Grid ReactVirtualized__List" role="grid" tabindex="0"
+                                    style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 558px; will-change: transform; overflow: auto; outline: none;">
+                                    <div class="ReactVirtualized__Grid__innerScrollContainer" role="rowgroup"
+                                        style="width: auto; height: 2486px; max-width: 558px; max-height: 2486px; overflow: hidden; position: relative;">
+                                        <div class="menu-group" id="section-group-menu--1"
+                                            style="height: 56px; left: 0px; position: absolute; top: 0px; width: 100%;">
+                                            <div class="title-menu">Món Đang Giảm</div>
+                                        </div>
+                                        <div class="item-restaurant-row"
+                                            style="height: 81px; left: 0px; position: absolute; top: 56px; width: 100%;">
+                                            <div class="row">
+                                                <div class="col-auto item-restaurant-img"><button class="inline"><img
+                                                            src="https://images.foody.vn/res/g27/269188/s120x120/7d8331f7-96fb-4376-be0b-75ef75e2-022b0ed4-201014091131.jpeg"
+                                                            alt="Nâu lắc" width="60" height="60"></button></div>
+                                                <div class="col item-restaurant-info">
+                                                    <h2 class="item-restaurant-name">Nâu lắc</h2>
+                                                </div>
+                                                <div class="col-auto item-restaurant-more">
+                                                    <div class="row ">
+                                                        <div class="col-auto product-price">
+                                                            <div class="old-price">15,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
-                                                            <div class="col-auto adding-food-cart txt-right">
-                                                                <div class="btn-adding">+</div>
+                                                            <div class="current-price">10,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-auto adding-food-cart txt-right">
+                                                            <div class="btn-adding">+</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item-restaurant-row"
-                                                style="height: 81px; left: 0px; position: absolute; top: 137px; width: 100%;">
-                                                <div class="row">
-                                                    <div class="col-auto item-restaurant-img"><button
-                                                            class="inline"><img
-                                                                src="https://images.foody.vn/res/g27/269188/s120x120/b19d2a32-4103-4bd5-9f1b-5896720b90b6.jpeg"
-                                                                alt="Cafe Nâu xay nguyên chất" width="60"
-                                                                height="60"></button></div>
-                                                    <div class="col item-restaurant-info">
-                                                        <h2 class="item-restaurant-name">Cafe Nâu xay nguyên chất</h2>
-                                                    </div>
-                                                    <div class="col-auto item-restaurant-more">
-                                                        <div class="row ">
-                                                            <div class="col-auto product-price">
-                                                                <div class="old-price">20,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
-                                                                <div class="current-price">10,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
+                                        </div>
+                                        <div class="item-restaurant-row"
+                                            style="height: 81px; left: 0px; position: absolute; top: 137px; width: 100%;">
+                                            <div class="row">
+                                                <div class="col-auto item-restaurant-img"><button class="inline"><img
+                                                            src="https://images.foody.vn/res/g27/269188/s120x120/b19d2a32-4103-4bd5-9f1b-5896720b90b6.jpeg"
+                                                            alt="Cafe Nâu xay nguyên chất" width="60"
+                                                            height="60"></button></div>
+                                                <div class="col item-restaurant-info">
+                                                    <h2 class="item-restaurant-name">Cafe Nâu xay nguyên chất</h2>
+                                                </div>
+                                                <div class="col-auto item-restaurant-more">
+                                                    <div class="row ">
+                                                        <div class="col-auto product-price">
+                                                            <div class="old-price">20,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
-                                                            <div class="col-auto adding-food-cart txt-right">
-                                                                <div class="btn-adding">+</div>
+                                                            <div class="current-price">10,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-auto adding-food-cart txt-right">
+                                                            <div class="btn-adding">+</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item-restaurant-row"
-                                                style="height: 81px; left: 0px; position: absolute; top: 218px; width: 100%;">
-                                                <div class="row">
-                                                    <div class="col-auto item-restaurant-img"><button
-                                                            class="inline"><img
-                                                                src="https://images.foody.vn/res/g27/269188/s120x120/2b41f95d-95bd-4409-a85e-75b7d5d0-53ac5964-201014091619.jpeg"
-                                                                alt="Đen phin truyền thống" width="60"
-                                                                height="60"></button></div>
-                                                    <div class="col item-restaurant-info">
-                                                        <h2 class="item-restaurant-name">Đen phin truyền thống</h2>
-                                                    </div>
-                                                    <div class="col-auto item-restaurant-more">
-                                                        <div class="row ">
-                                                            <div class="col-auto product-price">
-                                                                <div class="old-price">20,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
-                                                                <div class="current-price">10,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
+                                        </div>
+                                        <div class="item-restaurant-row"
+                                            style="height: 81px; left: 0px; position: absolute; top: 218px; width: 100%;">
+                                            <div class="row">
+                                                <div class="col-auto item-restaurant-img"><button class="inline"><img
+                                                            src="https://images.foody.vn/res/g27/269188/s120x120/2b41f95d-95bd-4409-a85e-75b7d5d0-53ac5964-201014091619.jpeg"
+                                                            alt="Đen phin truyền thống" width="60" height="60"></button>
+                                                </div>
+                                                <div class="col item-restaurant-info">
+                                                    <h2 class="item-restaurant-name">Đen phin truyền thống</h2>
+                                                </div>
+                                                <div class="col-auto item-restaurant-more">
+                                                    <div class="row ">
+                                                        <div class="col-auto product-price">
+                                                            <div class="old-price">20,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
-                                                            <div class="col-auto adding-food-cart txt-right">
-                                                                <div class="btn-adding">+</div>
+                                                            <div class="current-price">10,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-auto adding-food-cart txt-right">
+                                                            <div class="btn-adding">+</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item-restaurant-row"
-                                                style="height: 81px; left: 0px; position: absolute; top: 299px; width: 100%;">
-                                                <div class="row">
-                                                    <div class="col-auto item-restaurant-img"><button
-                                                            class="inline"><img
-                                                                src="https://images.foody.vn/res/g27/269188/s120x120/630bfef0-48d1-4fe5-9c09-cfb62d3dd526.jpeg"
-                                                                alt="Cafe Đen xay nguyên chất" width="60"
-                                                                height="60"></button></div>
-                                                    <div class="col item-restaurant-info">
-                                                        <h2 class="item-restaurant-name">Cafe Đen xay nguyên chất</h2>
-                                                    </div>
-                                                    <div class="col-auto item-restaurant-more">
-                                                        <div class="row ">
-                                                            <div class="col-auto product-price">
-                                                                <div class="old-price">20,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
-                                                                <div class="current-price">10,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
+                                        </div>
+                                        <div class="item-restaurant-row"
+                                            style="height: 81px; left: 0px; position: absolute; top: 299px; width: 100%;">
+                                            <div class="row">
+                                                <div class="col-auto item-restaurant-img"><button class="inline"><img
+                                                            src="https://images.foody.vn/res/g27/269188/s120x120/630bfef0-48d1-4fe5-9c09-cfb62d3dd526.jpeg"
+                                                            alt="Cafe Đen xay nguyên chất" width="60"
+                                                            height="60"></button></div>
+                                                <div class="col item-restaurant-info">
+                                                    <h2 class="item-restaurant-name">Cafe Đen xay nguyên chất</h2>
+                                                </div>
+                                                <div class="col-auto item-restaurant-more">
+                                                    <div class="row ">
+                                                        <div class="col-auto product-price">
+                                                            <div class="old-price">20,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
-                                                            <div class="col-auto adding-food-cart txt-right">
-                                                                <div class="btn-adding">+</div>
+                                                            <div class="current-price">10,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-auto adding-food-cart txt-right">
+                                                            <div class="btn-adding">+</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item-restaurant-row"
-                                                style="height: 81px; left: 0px; position: absolute; top: 380px; width: 100%;">
-                                                <div class="row">
-                                                    <div class="col-auto item-restaurant-img"><button
-                                                            class="inline"><img
-                                                                src="https://images.foody.vn/res/g27/269188/s120x120/569af9f7-0c8d-47cd-a3d7-803f4d27-d02992ab-201014092100.jpeg"
-                                                                alt="Nâu phin truyền thống" width="60"
-                                                                height="60"></button></div>
-                                                    <div class="col item-restaurant-info">
-                                                        <h2 class="item-restaurant-name">Nâu phin truyền thống</h2>
-                                                    </div>
-                                                    <div class="col-auto item-restaurant-more">
-                                                        <div class="row ">
-                                                            <div class="col-auto product-price">
-                                                                <div class="old-price">20,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
-                                                                <div class="current-price">10,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
+                                        </div>
+                                        <div class="item-restaurant-row"
+                                            style="height: 81px; left: 0px; position: absolute; top: 380px; width: 100%;">
+                                            <div class="row">
+                                                <div class="col-auto item-restaurant-img"><button class="inline"><img
+                                                            src="https://images.foody.vn/res/g27/269188/s120x120/569af9f7-0c8d-47cd-a3d7-803f4d27-d02992ab-201014092100.jpeg"
+                                                            alt="Nâu phin truyền thống" width="60" height="60"></button>
+                                                </div>
+                                                <div class="col item-restaurant-info">
+                                                    <h2 class="item-restaurant-name">Nâu phin truyền thống</h2>
+                                                </div>
+                                                <div class="col-auto item-restaurant-more">
+                                                    <div class="row ">
+                                                        <div class="col-auto product-price">
+                                                            <div class="old-price">20,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
-                                                            <div class="col-auto adding-food-cart txt-right">
-                                                                <div class="btn-adding">+</div>
+                                                            <div class="current-price">10,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-auto adding-food-cart txt-right">
+                                                            <div class="btn-adding">+</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="menu-group" id="section-group-menu-1228514"
-                                                style="height: 56px; left: 0px; position: absolute; top: 461px; width: 100%;">
-                                                <div class="title-menu">Cà phê</div>
-                                            </div>
-                                            <div class="item-restaurant-row"
-                                                style="height: 81px; left: 0px; position: absolute; top: 517px; width: 100%;">
-                                                <div class="row">
-                                                    <div class="col-auto item-restaurant-img"><button
-                                                            class="inline"><img
-                                                                src="https://images.foody.vn/res/g27/269188/s120x120/7d8331f7-96fb-4376-be0b-75ef75e2-022b0ed4-201014091131.jpeg"
-                                                                alt="Nâu lắc" width="60" height="60"></button></div>
-                                                    <div class="col item-restaurant-info">
-                                                        <h2 class="item-restaurant-name">Nâu lắc</h2>
-                                                    </div>
-                                                    <div class="col-auto item-restaurant-more">
-                                                        <div class="row ">
-                                                            <div class="col-auto product-price">
-                                                                <div class="old-price">15,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
-                                                                <div class="current-price">10,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
+                                        </div>
+                                        <div class="menu-group" id="section-group-menu-1228514"
+                                            style="height: 56px; left: 0px; position: absolute; top: 461px; width: 100%;">
+                                            <div class="title-menu">Cà phê</div>
+                                        </div>
+                                        <div class="item-restaurant-row"
+                                            style="height: 81px; left: 0px; position: absolute; top: 517px; width: 100%;">
+                                            <div class="row">
+                                                <div class="col-auto item-restaurant-img"><button class="inline"><img
+                                                            src="https://images.foody.vn/res/g27/269188/s120x120/7d8331f7-96fb-4376-be0b-75ef75e2-022b0ed4-201014091131.jpeg"
+                                                            alt="Nâu lắc" width="60" height="60"></button></div>
+                                                <div class="col item-restaurant-info">
+                                                    <h2 class="item-restaurant-name">Nâu lắc</h2>
+                                                </div>
+                                                <div class="col-auto item-restaurant-more">
+                                                    <div class="row ">
+                                                        <div class="col-auto product-price">
+                                                            <div class="old-price">15,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
-                                                            <div class="col-auto adding-food-cart txt-right">
-                                                                <div class="btn-adding">+</div>
+                                                            <div class="current-price">10,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-auto adding-food-cart txt-right">
+                                                            <div class="btn-adding">+</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item-restaurant-row"
-                                                style="height: 81px; left: 0px; position: absolute; top: 598px; width: 100%;">
-                                                <div class="row">
-                                                    <div class="col-auto item-restaurant-img"><button
-                                                            class="inline"><img
-                                                                src="https://images.foody.vn/res/g27/269188/s120x120/b19d2a32-4103-4bd5-9f1b-5896720b90b6.jpeg"
-                                                                alt="Cafe Nâu xay nguyên chất" width="60"
-                                                                height="60"></button></div>
-                                                    <div class="col item-restaurant-info">
-                                                        <h2 class="item-restaurant-name">Cafe Nâu xay nguyên chất</h2>
-                                                    </div>
-                                                    <div class="col-auto item-restaurant-more">
-                                                        <div class="row ">
-                                                            <div class="col-auto product-price">
-                                                                <div class="old-price">20,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
-                                                                <div class="current-price">10,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
+                                        </div>
+                                        <div class="item-restaurant-row"
+                                            style="height: 81px; left: 0px; position: absolute; top: 598px; width: 100%;">
+                                            <div class="row">
+                                                <div class="col-auto item-restaurant-img"><button class="inline"><img
+                                                            src="https://images.foody.vn/res/g27/269188/s120x120/b19d2a32-4103-4bd5-9f1b-5896720b90b6.jpeg"
+                                                            alt="Cafe Nâu xay nguyên chất" width="60"
+                                                            height="60"></button></div>
+                                                <div class="col item-restaurant-info">
+                                                    <h2 class="item-restaurant-name">Cafe Nâu xay nguyên chất</h2>
+                                                </div>
+                                                <div class="col-auto item-restaurant-more">
+                                                    <div class="row ">
+                                                        <div class="col-auto product-price">
+                                                            <div class="old-price">20,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
-                                                            <div class="col-auto adding-food-cart txt-right">
-                                                                <div class="btn-adding">+</div>
+                                                            <div class="current-price">10,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-auto adding-food-cart txt-right">
+                                                            <div class="btn-adding">+</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item-restaurant-row"
-                                                style="height: 81px; left: 0px; position: absolute; top: 679px; width: 100%;">
-                                                <div class="row">
-                                                    <div class="col-auto item-restaurant-img"><button
-                                                            class="inline"><img
-                                                                src="https://images.foody.vn/res/g27/269188/s120x120/bc914ac9-919f-44bd-8ea6-1e57af7c-e1473a8f-201014091014.jpeg"
-                                                                alt="Bạc xỉu" width="60" height="60"></button></div>
-                                                    <div class="col item-restaurant-info">
-                                                        <h2 class="item-restaurant-name">Bạc xỉu</h2>
-                                                    </div>
-                                                    <div class="col-auto item-restaurant-more">
-                                                        <div class="row ">
-                                                            <div class="col-auto product-price">
-                                                                <div class="current-price">20,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
+                                        </div>
+                                        <div class="item-restaurant-row"
+                                            style="height: 81px; left: 0px; position: absolute; top: 679px; width: 100%;">
+                                            <div class="row">
+                                                <div class="col-auto item-restaurant-img"><button class="inline"><img
+                                                            src="https://images.foody.vn/res/g27/269188/s120x120/bc914ac9-919f-44bd-8ea6-1e57af7c-e1473a8f-201014091014.jpeg"
+                                                            alt="Bạc xỉu" width="60" height="60"></button></div>
+                                                <div class="col item-restaurant-info">
+                                                    <h2 class="item-restaurant-name">Bạc xỉu</h2>
+                                                </div>
+                                                <div class="col-auto item-restaurant-more">
+                                                    <div class="row ">
+                                                        <div class="col-auto product-price">
+                                                            <div class="current-price">20,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
-                                                            <div class="col-auto adding-food-cart txt-right">
-                                                                <div class="btn-adding">+</div>
-                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto adding-food-cart txt-right">
+                                                            <div class="btn-adding">+</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item-restaurant-row"
-                                                style="height: 81px; left: 0px; position: absolute; top: 760px; width: 100%;">
-                                                <div class="row">
-                                                    <div class="col-auto item-restaurant-img"><button
-                                                            class="inline"><img
-                                                                src="https://images.foody.vn/res/g27/269188/s120x120/2b41f95d-95bd-4409-a85e-75b7d5d0-53ac5964-201014091619.jpeg"
-                                                                alt="Đen phin truyền thống" width="60"
-                                                                height="60"></button></div>
-                                                    <div class="col item-restaurant-info">
-                                                        <h2 class="item-restaurant-name">Đen phin truyền thống</h2>
-                                                    </div>
-                                                    <div class="col-auto item-restaurant-more">
-                                                        <div class="row ">
-                                                            <div class="col-auto product-price">
-                                                                <div class="old-price">20,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
-                                                                <div class="current-price">10,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
+                                        </div>
+                                        <div class="item-restaurant-row"
+                                            style="height: 81px; left: 0px; position: absolute; top: 760px; width: 100%;">
+                                            <div class="row">
+                                                <div class="col-auto item-restaurant-img"><button class="inline"><img
+                                                            src="https://images.foody.vn/res/g27/269188/s120x120/2b41f95d-95bd-4409-a85e-75b7d5d0-53ac5964-201014091619.jpeg"
+                                                            alt="Đen phin truyền thống" width="60" height="60"></button>
+                                                </div>
+                                                <div class="col item-restaurant-info">
+                                                    <h2 class="item-restaurant-name">Đen phin truyền thống</h2>
+                                                </div>
+                                                <div class="col-auto item-restaurant-more">
+                                                    <div class="row ">
+                                                        <div class="col-auto product-price">
+                                                            <div class="old-price">20,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
-                                                            <div class="col-auto adding-food-cart txt-right">
-                                                                <div class="btn-adding">+</div>
+                                                            <div class="current-price">10,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-auto adding-food-cart txt-right">
+                                                            <div class="btn-adding">+</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item-restaurant-row"
-                                                style="height: 81px; left: 0px; position: absolute; top: 841px; width: 100%;">
-                                                <div class="row">
-                                                    <div class="col-auto item-restaurant-img"><button
-                                                            class="inline"><img
-                                                                src="https://images.foody.vn/res/g27/269188/s120x120/630bfef0-48d1-4fe5-9c09-cfb62d3dd526.jpeg"
-                                                                alt="Cafe Đen xay nguyên chất" width="60"
-                                                                height="60"></button></div>
-                                                    <div class="col item-restaurant-info">
-                                                        <h2 class="item-restaurant-name">Cafe Đen xay nguyên chất</h2>
-                                                    </div>
-                                                    <div class="col-auto item-restaurant-more">
-                                                        <div class="row ">
-                                                            <div class="col-auto product-price">
-                                                                <div class="old-price">20,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
-                                                                <div class="current-price">10,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
+                                        </div>
+                                        <div class="item-restaurant-row"
+                                            style="height: 81px; left: 0px; position: absolute; top: 841px; width: 100%;">
+                                            <div class="row">
+                                                <div class="col-auto item-restaurant-img"><button class="inline"><img
+                                                            src="https://images.foody.vn/res/g27/269188/s120x120/630bfef0-48d1-4fe5-9c09-cfb62d3dd526.jpeg"
+                                                            alt="Cafe Đen xay nguyên chất" width="60"
+                                                            height="60"></button></div>
+                                                <div class="col item-restaurant-info">
+                                                    <h2 class="item-restaurant-name">Cafe Đen xay nguyên chất</h2>
+                                                </div>
+                                                <div class="col-auto item-restaurant-more">
+                                                    <div class="row ">
+                                                        <div class="col-auto product-price">
+                                                            <div class="old-price">20,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
-                                                            <div class="col-auto adding-food-cart txt-right">
-                                                                <div class="btn-adding">+</div>
+                                                            <div class="current-price">10,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-auto adding-food-cart txt-right">
+                                                            <div class="btn-adding">+</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item-restaurant-row"
-                                                style="height: 81px; left: 0px; position: absolute; top: 922px; width: 100%;">
-                                                <div class="row">
-                                                    <div class="col-auto item-restaurant-img"><button
-                                                            class="inline"><img
-                                                                src="https://images.foody.vn/res/g27/269188/s120x120/569af9f7-0c8d-47cd-a3d7-803f4d27-d02992ab-201014092100.jpeg"
-                                                                alt="Nâu phin truyền thống" width="60"
-                                                                height="60"></button></div>
-                                                    <div class="col item-restaurant-info">
-                                                        <h2 class="item-restaurant-name">Nâu phin truyền thống</h2>
-                                                    </div>
-                                                    <div class="col-auto item-restaurant-more">
-                                                        <div class="row ">
-                                                            <div class="col-auto product-price">
-                                                                <div class="old-price">20,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
-                                                                <div class="current-price">10,000<span
-                                                                        style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                                                </div>
+                                        </div>
+                                        <div class="item-restaurant-row"
+                                            style="height: 81px; left: 0px; position: absolute; top: 922px; width: 100%;">
+                                            <div class="row">
+                                                <div class="col-auto item-restaurant-img"><button class="inline"><img
+                                                            src="https://images.foody.vn/res/g27/269188/s120x120/569af9f7-0c8d-47cd-a3d7-803f4d27-d02992ab-201014092100.jpeg"
+                                                            alt="Nâu phin truyền thống" width="60" height="60"></button>
+                                                </div>
+                                                <div class="col item-restaurant-info">
+                                                    <h2 class="item-restaurant-name">Nâu phin truyền thống</h2>
+                                                </div>
+                                                <div class="col-auto item-restaurant-more">
+                                                    <div class="row ">
+                                                        <div class="col-auto product-price">
+                                                            <div class="old-price">20,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
-                                                            <div class="col-auto adding-food-cart txt-right">
-                                                                <div class="btn-adding">+</div>
+                                                            <div class="current-price">10,000<span
+                                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-auto adding-food-cart txt-right">
+                                                            <div class="btn-adding">+</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="menu-group" id="section-group-menu-1228515"
-                                                style="height: 56px; left: 0px; position: absolute; top: 1003px; width: 100%;">
-                                                <div class="title-menu">Sinh tố hoa quả</div>
-                                            </div>
+                                        </div>
+                                        <div class="menu-group" id="section-group-menu-1228515"
+                                            style="height: 56px; left: 0px; position: absolute; top: 1003px; width: 100%;">
+                                            <div class="title-menu">Sinh tố hoa quả</div>
                                         </div>
                                     </div>
                                 </div>
@@ -458,37 +447,38 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal fade modal-topping" id="modal-topping" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <div class="row align-items-center">
-                                    <div class="col-auto topping-dish-image"><img src=""></div>
-                                    <div class="col topping-summary">
-                                        <div class="topping-dish-name"></div>
-                                        <div class="topping-dish-price">Giá: </div>
-                                    </div>
+            </div>
+            <div class="modal fade modal-topping" id="modal-topping" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row align-items-center">
+                                <div class="col-auto topping-dish-image"><img src=""></div>
+                                <div class="col topping-summary">
+                                    <div class="topping-dish-name"></div>
+                                    <div class="topping-dish-price">Giá: </div>
                                 </div>
                             </div>
-                            <div class="modal-body">
-                                <div class="topping-category"></div>
-                            </div>
-                            <div class="modal-footer">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <div class="topping-add-sub">
-                                            <div class="btn-sub">-</div><input type="text" disabled="" value="1">
-                                            <div class="btn-adding">+</div>
-                                        </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="topping-category"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <div class="topping-add-sub">
+                                        <div class="btn-sub">-</div><input type="text" disabled="" value="1">
+                                        <div class="btn-adding">+</div>
                                     </div>
-                                    <div class="col-auto"><button type="button" class="btn btn-over"><span>Hết
-                                                hàng</span></button></div>
                                 </div>
+                                <div class="col-auto"><button type="button" class="btn btn-over"><span>Hết
+                                            hàng</span></button></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="modal fade modal-alert" id="modal-delivery-alert-MenuAlertModal" tabindex="-1" role="dialog"
+            </div>
+            <!-- <div class="modal fade modal-alert" id="modal-delivery-alert-MenuAlertModal" tabindex="-1" role="dialog"
                     aria-hidden="true" data-backdrop="static">
                     <div class="modal-dialog modal-noti" role="document">
                         <div class="modal-content"><span class="close" data-dismiss="modal">x</span>
@@ -523,9 +513,9 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
+        </div>
 
-            <!-- <div class="row">
+        <!-- <div class="row">
                     <div class="bt-header">
                         <div class="bt-header__book">
                             <div class="bt-header__book-img">
@@ -575,96 +565,96 @@
                     </div>
 
                 </div> -->
-        </div>
     </div>
+</div>
 
-    <!-- Carousel -->
-    @php
-    $carouselLists = [
-    [
-    'img' => 'Home/images/carousel_1.jpg',
-    'linkTo' => '#',
-    'user' => 'VU',
-    'comment' => 'on ap ',
-    ],
-    [
-    'img' => 'Home/images/carousel_2.jpg',
-    'linkTo' => '#',
-    'user' => 'hung',
-    'comment' => 'k ngon ',
-    ],
-    [
-    'img' => 'Home/images/carousel_3.jpg',
-    'linkTo' => '#',
-    'user' => 'vinh',
-    'comment' => 'nhu shit',
-    ],
-    ];
-    @endphp
-    @include('ReviewBanner.carousel',$carouselLists)
+<!-- Carousel -->
+@php
+$carouselLists = [
+[
+'img' => 'Home/images/carousel_1.jpg',
+'linkTo' => '#',
+'user' => 'VU',
+'comment' => 'on ap ',
+],
+[
+'img' => 'Home/images/carousel_2.jpg',
+'linkTo' => '#',
+'user' => 'hung',
+'comment' => 'k ngon ',
+],
+[
+'img' => 'Home/images/carousel_3.jpg',
+'linkTo' => '#',
+'user' => 'vinh',
+'comment' => 'nhu shit',
+],
+];
+@endphp
+@include('ReviewBanner.carousel',$carouselLists)
 
-    <div id="type" style="background-image: url(Home/images/slide_3.jpg);" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 to-animate">
-                    <div class="type">
-                        <h3 class="with-icon icon-1">Review</h3>
-                        <p>Tập hợp cảm nhận về những quán ăn, món ăn. Đem lại sự lựa chọn hoàn hảo cho bạn.</p>
-                    </div>
+<div id="type" style="background-image: url(Home/images/slide_3.jpg);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 to-animate">
+                <div class="type">
+                    <h3 class="with-icon icon-1">Review</h3>
+                    <p>Tập hợp cảm nhận về những quán ăn, món ăn. Đem lại sự lựa chọn hoàn hảo cho bạn.</p>
                 </div>
-                <div class="col-md-3 to-animate">
-                    <div class="type">
-                        <h3 class="with-icon icon-2">Quán ăn</h3>
-                        <p>Quán ăn, nhà hàng ngon, nổi tiếng, thường xuyên có khuyến mãi, giúp bạn tiết kiệm chi
-                            phí một cách tối đa nhất.</p>
-                    </div>
+            </div>
+            <div class="col-md-3 to-animate">
+                <div class="type">
+                    <h3 class="with-icon icon-2">Quán ăn</h3>
+                    <p>Quán ăn, nhà hàng ngon, nổi tiếng, thường xuyên có khuyến mãi, giúp bạn tiết kiệm chi
+                        phí một cách tối đa nhất.</p>
                 </div>
-                <div class="col-md-3 to-animate">
-                    <div class="type">
-                        <h3 class="with-icon icon-3">Món ăn</h3>
-                        <p>Những món ăn hấp dẫn, ngon miệng, thu hút người mua trong tuần, trong tháng.</p>
-                    </div>
+            </div>
+            <div class="col-md-3 to-animate">
+                <div class="type">
+                    <h3 class="with-icon icon-3">Món ăn</h3>
+                    <p>Những món ăn hấp dẫn, ngon miệng, thu hút người mua trong tuần, trong tháng.</p>
                 </div>
-                <div class="col-md-3 to-animate">
-                    <div class="type">
-                        <h3 class="with-icon icon-4">Thực đơn</h3>
-                        <p>Đem laị cho bạn thực đơn theo chế độ dinh dưỡng, phù hợp với công việc và lối sống
-                            của bạn.</p>
-                    </div>
+            </div>
+            <div class="col-md-3 to-animate">
+                <div class="type">
+                    <h3 class="with-icon icon-4">Thực đơn</h3>
+                    <p>Đem laị cho bạn thực đơn theo chế độ dinh dưỡng, phù hợp với công việc và lối sống
+                        của bạn.</p>
                 </div>
             </div>
         </div>
     </div>
-    @include('Layouts.footer')
+</div>
+@include('Layouts.footer')
 
-    <!-- jQuery -->
-    <script src="Home/js/jquery.min.js"></script>
-    <!-- jQuery Easing -->
-    <script src="Home/js/jquery.easing.1.3.js"></script>
-    <!-- Bootstrap -->
-    <script src="Home/js/bootstrap.min.js"></script>
-    <!-- Bootstrap DateTimePicker -->
-    <script src="Home/js/moment.js"></script>
-    <script src="Home/js/bootstrap-datetimepicker.min.js"></script>
-    <!-- Waypoints -->
-    <script src="Home/js/jquery.waypoints.min.js"></script>
-    <!-- Stellar Parallax -->
-    <script src="Home/js/jquery.stellar.min.js"></script>
+<!-- jQuery -->
+<script src="Home/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="Home/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="Home/js/bootstrap.min.js"></script>
+<!-- Bootstrap DateTimePicker -->
+<script src="Home/js/moment.js"></script>
+<script src="Home/js/bootstrap-datetimepicker.min.js"></script>
+<!-- Waypoints -->
+<script src="Home/js/jquery.waypoints.min.js"></script>
+<!-- Stellar Parallax -->
+<script src="Home/js/jquery.stellar.min.js"></script>
 
-    <!-- Flexslider -->
-    <script src="Home/js/jquery.flexslider-min.js"></script>
-    <script>
-    $(function() {
-        $('#date').datetimepicker();
-    });
-    </script>
-    <!-- Wow - animation when scroll page -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <!-- Owl carousel -->
-    <script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-    <script src="Home/js/owl-carousel.js"></script>
-    <!-- Main JS -->
-    <script src="Home/js/main.js"></script>
-    <script src="Home/js/home.js"></script>
-    @endsection
+<!-- Flexslider -->
+<script src="Home/js/jquery.flexslider-min.js"></script>
+<script>
+$(function() {
+    $('#date').datetimepicker();
+});
+</script>
+<!-- Wow - animation when scroll page -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<!-- Owl carousel -->
+<script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+<script src="Home/js/owl-carousel.js"></script>
+<!-- Main JS -->
+<script src="Home/js/main.js"></script>
+<script src="Home/js/home.js"></script>
+@endsection
