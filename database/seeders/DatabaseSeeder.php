@@ -19,11 +19,8 @@ class DatabaseSeeder extends Seeder
             DishesSeeder::class,
             DishesRestaurantsSeeder::class,
             OutstandingDishesSeeder::class,
-<<<<<<< HEAD
-=======
             UserSeeder::class,
             ReviewSeeder::class,
->>>>>>> fe8b7cd52930dd744c9fd54e07a89ff4dca36c32
         ]);
     }
 }

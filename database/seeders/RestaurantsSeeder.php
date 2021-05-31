@@ -16,11 +16,7 @@ class RestaurantsSeeder extends Seeder
     {
         DB::table('restaurants')->insert([
             [
-<<<<<<< HEAD
-                'id' => 'nom-ong-phuc-nghia-tan',
-=======
                 'linkTo' => 'nom-ong-phuc-nghia-tan',
->>>>>>> fe8b7cd52930dd744c9fd54e07a89ff4dca36c32
                 'name' => 'Nộm Ông Phúc - Nghĩa Tân',
                 'location' => 'Ngõ 1 Nghĩa Tân, Cầu Giấy, Hà Nội',
                 'rate' => 4.5,
@@ -28,11 +24,7 @@ class RestaurantsSeeder extends Seeder
                 'image' => '/assets/images/nom-ong-phuc.jpg',
                 'sale_percent' => 15,
             ], [
-<<<<<<< HEAD
-                'id' => 'chan-ga-rut-xuong-cau-giay-shop-online',
-=======
                 'linkTo' => 'chan-ga-rut-xuong-cau-giay-shop-online',
->>>>>>> fe8b7cd52930dd744c9fd54e07a89ff4dca36c32
                 'name' => 'Chân Gà Rút Xương - Cầu Giấy - Shop Online',
                 'location' => '92B Yên Hoà, Cầu Giấy, Hà Nội',
                 'rate' => 4.5,
@@ -40,11 +32,7 @@ class RestaurantsSeeder extends Seeder
                 'image' => '/assets/images/foody-upload-api-foody-mobile-chan-ga-2-jpg-180928192552.jpg',
                 'sale_percent' => 0,
             ], [
-<<<<<<< HEAD
-                'id' => 'cha-ca-la-vong-pho-cha-ca',
-=======
                 'linkTo' => 'cha-ca-la-vong-pho-cha-ca',
->>>>>>> fe8b7cd52930dd744c9fd54e07a89ff4dca36c32
                 'name' => 'Chả Cá Lã Vọng - Phố Chả Cá',
                 'location' => '107 Nguyễn Trường Tộ, Quận Ba Đình, Hà Nội',
                 'rate' => 4.9,
@@ -52,19 +40,13 @@ class RestaurantsSeeder extends Seeder
                 'image' => '/assets/images/foody-mobile-cha-ca-la-vong.jpg',
                 'sale_percent' => 0,
             ], [
-<<<<<<< HEAD
-                'id' => 'cha-ca-anh-vu-giang-vo-ba-dinh',
-=======
                 'linkTo' => 'cha-ca-anh-vu-giang-vo-ba-dinh',
->>>>>>> fe8b7cd52930dd744c9fd54e07a89ff4dca36c32
                 'name' => 'Chả Cá Anh Vũ',
                 'location' => '120 K1 Giảng Võ, quận Ba Đình, Hà Nội',
                 'rate' => 4.5,
                 'phone' => '0358355766',
                 'image' => '/assets/images/foody-mobile-cha-ca-anh-vu-mb-jpg-893-635812120350349398.jpg',
                 'sale_percent' => 0,
-<<<<<<< HEAD
-=======
             ], [
                 'linkTo' => 'hai-san-long-thuy-nguyen-ngoc-vu',
                 'name' => 'Long Thủy - Bún Thái Hải Sản - Nguyễn Ngọc Vũ',
@@ -177,7 +159,7 @@ class RestaurantsSeeder extends Seeder
                 'phone' => '0984061861',
                 'image' => '/assets/images/image-da788f1b-200908105306.jpg',
                 'sale_percent' => 0,
-            ], 
+            ],
             //trash
             [
                 'linkTo' => 'banh-mi-cha-nong-dung-hanh-nguyen-tuan',
@@ -275,8 +257,7 @@ class RestaurantsSeeder extends Seeder
                 'phone' => '0984061861',
                 'image' => '/assets/images/image-da788f1b-200908105306.jpg',
                 'sale_percent' => 0,
->>>>>>> fe8b7cd52930dd744c9fd54e07a89ff4dca36c32
-            ], 
+            ],
         ]);
     }
 }

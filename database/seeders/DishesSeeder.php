@@ -264,8 +264,6 @@ class DishesSeeder extends Seeder
                 'image' => '/assets/images/deli-dish-no-image.png',
                 'price' => '20.000',
             ],
-<<<<<<< HEAD
-=======
             //
             [
                 'id' => 34,
@@ -317,9 +315,6 @@ class DishesSeeder extends Seeder
                 'image' => '/assets/images/f5855566-d0a2-4510-9649-8d6b3fb44b48.jpeg',
                 'price' => '55.000',
             ],
->>>>>>> fe8b7cd52930dd744c9fd54e07a89ff4dca36c32
-
-
         ]);
     }
 }
