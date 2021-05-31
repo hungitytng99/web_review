@@ -2,13 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Review\ReviewController;
 
-Route::get('/', function () {
-    return view('Home/home');
-})->name('home');
+Route::get('/', [HomeController::class,'index']);
 
 Route::redirect('/home', '/');
-
+Route::get('{Id}', [ReviewController::class,'getId']);
+Route::get('/test2', function () {
+    return view('Review/test2');
+})->name('test2');
+// Route::get('/test2', [ReviewController::class,'getData']);
 Route::namespace('auth')->group(function () {
     // Login
     Route::get('/login', [AuthController::class, 'login']);
@@ -22,7 +26,7 @@ Route::namespace('auth')->group(function () {
     // Reset password
     Route::get('/reset-password', function () {
         abort(404);
-    });    
+    });
     Route::middleware('guest')->group(function () {
         Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword']);
         Route::post('/reset-password', [AuthController::class, 'processResetPassword']);
