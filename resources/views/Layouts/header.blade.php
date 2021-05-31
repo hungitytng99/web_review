@@ -14,7 +14,7 @@
                         <div class="mobile__nav-text">MENU</div>
                         <ul class="mobile__nav-list">
                             <li class="mobile__nav-item --active">
-                                <a href="#">Trang chủ </a>
+                                <a href="/">Trang chủ </a>
                             </li>
                             <li class="mobile__nav-item">
                                 <a href="#">Giới thiệu </a>
@@ -33,7 +33,7 @@
             <div class="header__nav hide-on-768">
                 <ul class="header__nav-list --left ">
                     <li class="header__nav-item --active">
-                        <a href="#">
+                        <a href="/">
                             Trang chủ
                         </a>
                     </li>
@@ -62,12 +62,12 @@
                     </li>
                     <li class="header__nav-item hide-on-768">
                         @if (Auth::check())
+                        <a href="/profile">Tài khoản</a>
                         <a href="{{ route('logout') }}" style="text-decoration: underline" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng xuất</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>@csrf</form>
                         @else
                         <a href="/login" class="header__nav-item-login">Đăng nhập</a>
                         @endif
-
                     </li>
                 </ul>
             </div>

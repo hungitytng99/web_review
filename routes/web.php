@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\About\AboutController;
+use App\Http\Controllers\Profile\ProfileController;
+use App\Http\Controllers\Review\ReviewController;
 
 Route::get('/', function () {
     // dd(DB::table('test')->get());
@@ -12,9 +15,14 @@ Route::get('/', function () {
 
 Route::redirect('/home', '/');
 
+Route::get('/about', [AboutController::class, 'about']);
+Route::post('/about', [AboutController::class, 'processContactForm']);
+
+Route::get('/review', [ReviewController::class, 'review']);
+
 Route::namespace('auth')->group(function () {
     // Login
-    Route::get('/login', [AuthController::class, 'login']);
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'processLogin']);
     // Register
     Route::get('/register', [AuthController::class, 'register'])->name('register');
@@ -35,4 +43,8 @@ Route::namespace('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     // Logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    // Profile
+    Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::post('/profile', [ProfileController::class, 'editProfile'])->name('edit_profile');
+    Route::delete('/profile', [ProfileController::class, 'deleteAccount']);
 });
