@@ -184,7 +184,6 @@
                         <div class="review__menu-header">
                             <div class="logo-icon">
                                 <!-- <img src='/images/icon-logo.png' /> -->
-
                             </div>
                             <h2>Khám phá</h2>
                         </div>
@@ -244,7 +243,9 @@
                                     <div class="bt-content__item">
                                         <div class="restaurant">
                                             <a href="#">
-                                                <img class="restaurant__img" src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg" alt="res">
+                                                <div class="restaurant__img-box">
+                                                    <img class="restaurant__img" src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg" alt="res">
+                                                </div>
                                                 <div class="restaurant__info">
                                                     <div class="restaurant__name">Lẩu Phan - Buffet Bò- Nguyễn
                                                         Văn
