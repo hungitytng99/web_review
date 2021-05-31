@@ -15,7 +15,7 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
-            $table->string('linkTo')->unique();
+            $table->string('linkTo');
             $table->string('name');
             $table->string('location');
             $table->float('rate');

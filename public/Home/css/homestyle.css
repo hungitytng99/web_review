@@ -159,6 +159,18 @@ button:focus {
     transition: 0.5s;
 }
 
+.loading-restaurants {
+    display: flex;
+    margin-top: 5px;
+    position: relative;
+}
+
+.loading-restaurants img {
+    position: absolute;
+    left: 100%;
+    top: 3px;
+}
+
 .bt-content__more:hover {
     color: rgb(202, 202, 202);
     background-color: rgb(41, 41, 41)

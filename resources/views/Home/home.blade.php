@@ -112,9 +112,12 @@
             <div class="bt-content">
                 <div class="row" id="sale-restaurants">
                 </div>
-                <button class="bt-content__more">
-                    Xem thêm
-                </button>
+                <div class="loading-restaurants">
+                    <button class="bt-content__more" onclick="handleGetMoreRestaurants(this)">
+                        Xem thêm
+                    </button>
+                    <div id="loading-more-restaurants"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -282,7 +285,6 @@
             </div>
         </div>
     </div>
-    <button id="ajax-test">CLICK TO GET AJAX</button>
     @include('Layouts.footer')
 
     <!-- jQuery -->
@@ -301,6 +303,8 @@
 
     <!-- Flexslider -->
     <script src="Home/js/jquery.flexslider-min.js"></script>
+    <!-- Modal -->
+    <script src="Home/js/micromodal.min.js"></script>
     <!-- Wow - animation when scroll page -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <!-- Owl carousel -->

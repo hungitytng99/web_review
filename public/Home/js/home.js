@@ -70,7 +70,18 @@ mobileNavControl.change(() => {
 // Ajax 
 // + For outstanding food
 let restaurantsHtml = ``;
+let restaurantsItem = 12;
+function showDetailDish(event,element){
+    event.preventDefault();
+    MicroModal.show('modal-1');
+    console.log(element);
+}
 (function () {
+    //MODAL
+    MicroModal.init();
+
+
+    //AJAX
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -78,9 +89,10 @@ let restaurantsHtml = ``;
     });
     // loading
     $(document).ajaxStart(function () {
-        $("#loading").show();
+        let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30px" alt="loading"></img>`;
+        $("#loading-more-restaurants").html(loadingImg);
     }).ajaxStop(function () {
-        $("#loading").hide();
+        $("#loading-more-restaurants").html("");
     });
     // getmore dishes
     $.ajax({
@@ -102,7 +114,7 @@ let restaurantsHtml = ``;
                 <div class="small-gutter flex-1 col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="bt-content__item">
                         <div class="restaurant">
-                            <a href=${ele.href}>
+                            <a href=${ele.href} onclick="showDetailDish(event,this)">
                                 <div class="restaurant__img-box">
                                     <img class="restaurant__img" src=${ele.image} alt="res"/>
                                 </div>
@@ -137,15 +149,17 @@ let restaurantsHtml = ``;
         url: '/get-more-restaurants',
         dataType: 'json',
         data: {
-            itemLength : '12',
+            itemStart: 1,
+            itemEnd : restaurantsItem,
         },
         success: (data) => {
             data.map(restaurant => {
+               
                 let htmpTemp = ` 
                 <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="bt-content__item">
                         <div class="restaurant">
-                            <a href="#">
+                            <a href="#" >
                                 <div class="restaurant__img-box">
                                     <img class="restaurant__img" src=${restaurant.image} alt="res">
                                 </div>
@@ -176,6 +190,57 @@ let restaurantsHtml = ``;
         }
     })
 })();
+
+function handleGetMoreRestaurants(btn){
+    $.ajax({
+        type: 'POST',
+        url: '/get-more-restaurants',
+        dataType: 'json',
+        data: {
+            itemStart: restaurantsItem+1,
+            itemEnd : restaurantsItem+6,
+        },
+        success: (data) => {
+            restaurantsItem+=6;
+            data.map(restaurant => {
+                let htmpTemp = ` 
+                <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
+                    <div class="bt-content__item">
+                        <div class="restaurant">
+                            <a href="#">
+                                <div class="restaurant__img-box">
+                                    <img class="restaurant__img" src=${restaurant.image} alt="res">
+                                </div>
+                                <div class="restaurant__info">
+                                    <div class="restaurant__name">${restaurant.name}</div>
+                                    <div class="restaurant__address">${restaurant.location}</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="restaurant__discount">
+                            <div class="restaurant__discount-item">
+                                <i class="fas fa-tag"></i>
+                                <span> Ăn trưa - Đi 4 tính 3</span>
+                            </div>
+                            <a href="#" class="restaurant__discount-more">
+                                Xem thêm ưu đãi...
+                            </a>
+                         </div>
+                    </div>
+                </div>`
+                restaurantsHtml += htmpTemp;
+            });
+            $('#sale-restaurants').html(restaurantsHtml);
+            if(restaurantsItem === 30){
+                $("button.bt-content__more").hide();
+            }
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    });
+}
+
 
 
 

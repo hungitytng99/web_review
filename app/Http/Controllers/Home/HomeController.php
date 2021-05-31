@@ -66,6 +66,8 @@ class HomeController extends Controller
         // request.itemLength
         
         $restaurants = DB::table('restaurants')
+        ->where('id','<=',$request->itemEnd)
+        ->where('id','>=',$request->itemStart)
         ->get();
         return response()->json($restaurants);
     }
