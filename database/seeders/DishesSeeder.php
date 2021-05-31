@@ -264,6 +264,60 @@ class DishesSeeder extends Seeder
                 'image' => '/assets/images/deli-dish-no-image.png',
                 'price' => '20.000',
             ],
+<<<<<<< HEAD
+=======
+            //
+            [
+                'id' => 34,
+                'name' => 'Bún thái hải sản đặc biệt',
+                'description' => 'Đã bao gồm 5000 tiền hộp',
+                'type' => 1,
+                'image' => '/assets/images/01c9d196-066c-4258-a2fe-62d12ca1d796.jpeg',
+                'price' => '60.000',
+            ], [
+                'id' => 35,
+                'name' => 'Bún Thái Hải Sản Đặc Biệt',
+                'description' => 'Đã bao gồm 5000 tiền hộp',
+                'type' => 1,
+                'image' => '/assets/images/201710910584-nx.jpg',
+                'price' => '60.000',
+            ], [
+                'id' => 36,
+                'name' => 'Bún thái hải sản trộn đặc biệt',
+                'description' => 'Đã bao gồm 5000 tiền hộp',
+                'type' => 1,
+                'image' => '/assets/images/3fe8671f-9b2b-4a6e-b45c-95a91c6cb410.jpeg',
+                'price' => '60.000',
+            ], [
+                'id' => 37,
+                'name' => 'Cơm rang hải sản',
+                'description' => 'Đã bao gồm 5000 tiền hộp',
+                'type' => 1,
+                'image' => '/assets/images/75708857-2b98-4b0a-aa35-892f8e228a52.jpeg',
+                'price' => '50.000',
+            ], [
+                'id' => 38,
+                'name' => 'Mỳ tôm thái hải sản đặc biệt',
+                'description' => 'Đã bao gồm 5000 tiền hộp',
+                'type' => 1,
+                'image' => '/assets/images/6c8da012-2668-4e46-a3e7-dc37bab04f8a.jpeg',
+                'price' => '60.000',
+            ], [
+                'id' => 39,
+                'name' => 'Cơm rang hải sản đặc biệt',
+                'description' => 'Đã bao gồm 5000 tiền hộp',
+                'type' => 1,
+                'image' => '/assets/images/5b9949c5-71b4-47b5-9ba6-8d907f26cb79.jpeg',
+                'price' => '60.000',
+            ], [
+                'id' => 40,
+                'name' => 'Mỳ xào hải sản',
+                'description' => 'Đã bao gồm 5000 tiền hộp',
+                'type' => 1,
+                'image' => '/assets/images/f5855566-d0a2-4510-9649-8d6b3fb44b48.jpeg',
+                'price' => '55.000',
+            ],
+>>>>>>> fe8b7cd52930dd744c9fd54e07a89ff4dca36c32
 
 
         ]);

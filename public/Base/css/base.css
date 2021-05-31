@@ -5,10 +5,8 @@
     --tertiary: #E94F37;
     --quaternary: #BBBAC6;
     --quinary: #E2E2E2;
-
     --header-height: 60px;
 }
-
 
 html {
     font-size: 62.5%;
@@ -40,17 +38,26 @@ button {
     border: none;
     background-color: white;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Playfair Display", serif;
     color: #000;
     margin-bottom: 0px;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
     cursor: pointer;
     text-decoration: none !important;
     color: var(--tertiary);
 }
+
 .btn {
     margin-right: 4px;
     margin-bottom: 4px;
@@ -66,11 +73,10 @@ a:hover, a:focus, a:active {
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
-  }
+}
 
 input:focus {
     outline: none;
-
 }
 
 .col-2-4 {
@@ -86,6 +92,14 @@ input:focus {
 
 .small-gutter {
     padding: 5px;
+}
+
+.flex-spacebetween {
+    justify-content: space-between;
+}
+
+.flex-1 {
+    flex: 1;
 }
 
 .small-row.row {

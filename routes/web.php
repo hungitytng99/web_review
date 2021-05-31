@@ -2,12 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\About\AboutController;
+use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Review\ReviewController;
+use App\Http\Controllers\Home\HomeController;
 
-Route::get('/', [HomeController::class,'index']);
-
-
+Route::namespace('home')->group(function () {
+    //Home index
+    Route::get('/', [HomeController::class, 'index']);
+    //Ajax request
+    Route::post('/get-more-outstanding-dishes', [HomeController::class, 'getMoreOutstandingFood']);
+    Route::post('/get-more-restaurants', [HomeController::class, 'getMoreRestaurants']);
+});
+Route::get('/review', [ReviewController::class, 'review']);
+Route::get('/about', [AboutController::class, 'about']);
+Route::post('/about', [AboutController::class, 'processContactForm']);
 Route::redirect('/home', '/');
 Route::get('{Id}', [ReviewController::class,'getId']);
 Route::get('/test2', function () {
@@ -16,8 +25,10 @@ Route::get('/test2', function () {
 // Route::get('/test2', [ReviewController::class,'getData']);
 Route::namespace('auth')->group(function () {
     // Login
-    Route::get('/login', [AuthController::class, 'login']);
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'processLogin']);
+
+
     // Register
     Route::get('/register', [AuthController::class, 'register'])->name('register');
     Route::post('/register', [AuthController::class, 'processRegister'])->name('process_register');
@@ -37,4 +48,8 @@ Route::namespace('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     // Logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    // Profile
+    Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::post('/profile', [ProfileController::class, 'editProfile'])->name('edit_profile');
+    Route::delete('/profile', [ProfileController::class, 'deleteAccount']);
 });

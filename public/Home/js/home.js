@@ -57,15 +57,248 @@ headerSearch.blur(() => {
 })
 //prevent scroll when open mobile nav
 let mobileNavControl = $('#mobile-nav-check');
-mobileNavControl.prop('checked',false);
+mobileNavControl.prop('checked', false);
 mobileNavControl.change(() => {
-    if(mobileNavControl.prop('checked')){
-        $('body').css('overflow','hidden');
+    if (mobileNavControl.prop('checked')) {
+        $('body').css('overflow', 'hidden');
         console.log("prevent scroll");
-    }else{
-        $('body').css('overflow','scroll');
+    } else {
+        $('body').css('overflow', 'scroll');
     }
-})
+});
+
+// Ajax 
+// + For outstanding food
+let restaurantsHtml = ``;
+let restaurantsItem = 12;
+
+(function () {
+    //MODAL Setup
+    //AJAX
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    // loading
+    $(document).ajaxStart(function () {
+        let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30px" alt="loading"></img>`;
+        $("#loading-more").html(loadingImg);
+    }).ajaxStop(function () {
+        $("#loading-more").html("");
+    });
+    // getmore dishes
+    $.ajax({
+        type: 'POST',
+        url: '/get-more-outstanding-dishes',
+        dataType: 'json',
+        success: (data) => {
+            let outstandingFoodHtml = ``;
+            data.map(ele => {
+                let listLocation = ``;
+                ele.location.map((location) => {
+                    let locationHtml =
+                        `<li class="dish__location-item">
+                            <a href=${location[1]}> ${location[0]}</a>
+                        </li>`;
+                    listLocation += locationHtml;
+                })
+                let htmpTemp = ` 
+                <div class="small-gutter flex-1 col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
+                    <div class="bt-content__item">
+                        <div class="restaurant">
+                            <a href=${ele.href} onclick="showDetailDish(event,this)">
+                                <div class="restaurant__img-box">
+                                    <img class="restaurant__img" src=${ele.image} alt="res"/>
+                                </div>
+                                <div class="restaurant__info">
+                                    <div class="restaurant__name">${ele.name}</div>
+                                    <div class="dish__description">${ele.description}</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="restaurant__discount">
+                            <div class="restaurant__discount-item dishes__location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span> Địa điểm ăn ngon, giá rẻ </span>
+                            </div>
+                            <ul class="dish__location-list">
+                                ${listLocation}
+                            </ul>
+                        </div>
+                </div>`
+                outstandingFoodHtml += htmpTemp;
+            });
+            $('#outstanding-food').html(outstandingFoodHtml);
+
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    });
+    //get restaurants
+    $.ajax({
+        type: 'POST',
+        url: '/get-more-restaurants',
+        dataType: 'json',
+        data: {
+            itemStart: 1,
+            itemEnd: restaurantsItem,
+        },
+        success: (data) => {
+            data.map(restaurant => {
+
+                let htmpTemp = ` 
+                <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
+                    <div class="bt-content__item">
+                        <div class="restaurant">
+                            <a href="#" >
+                                <div class="restaurant__img-box">
+                                    <img class="restaurant__img" src=${restaurant.image} alt="res">
+                                </div>
+                                <div class="restaurant__info">
+                                    <div class="restaurant__name">${restaurant.name}</div>
+                                    <div class="restaurant__address">${restaurant.location}</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="restaurant__discount">
+                            <div class="restaurant__discount-item">
+                                <i class="fas fa-tag"></i>
+                                <span> Ăn trưa - Đi 4 tính 3</span>
+                            </div>
+                            <a href="#" class="restaurant__discount-more">
+                                Xem thêm ưu đãi...
+                            </a>
+                         </div>
+                    </div>
+                </div>`
+                restaurantsHtml += htmpTemp;
+            });
+            $('#sale-restaurants').html(restaurantsHtml);
+
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    })
+})();
+
+function handleGetMoreRestaurants(btn) {
+    $.ajax({
+        type: 'POST',
+        url: '/get-more-restaurants',
+        dataType: 'json',
+        data: {
+            itemStart: restaurantsItem + 1,
+            itemEnd: restaurantsItem + 6,
+        },
+        success: (data) => {
+            restaurantsItem += 6;
+            data.map(restaurant => {
+                let htmpTemp = ` 
+                <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
+                    <div class="bt-content__item">
+                        <div class="restaurant">
+                            <a href="#">
+                                <div class="restaurant__img-box">
+                                    <img class="restaurant__img" src=${restaurant.image} alt="res">
+                                </div>
+                                <div class="restaurant__info">
+                                    <div class="restaurant__name">${restaurant.name}</div>
+                                    <div class="restaurant__address">${restaurant.location}</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="restaurant__discount">
+                            <div class="restaurant__discount-item">
+                                <i class="fas fa-tag"></i>
+                                <span> Ăn trưa - Đi 4 tính 3</span>
+                            </div>
+                            <a href="#" class="restaurant__discount-more">
+                                Xem thêm ưu đãi...
+                            </a>
+                         </div>
+                    </div>
+                </div>`
+                restaurantsHtml += htmpTemp;
+            });
+            $('#sale-restaurants').html(restaurantsHtml);
+            if (restaurantsItem === 30) {
+                $("button.bt-content__more").hide();
+            }
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    });
+}
+
+// Modal
+function showDetailDish(event, element) {
+    event.preventDefault();
+    function onShow(){
+        
+    }
+    MicroModal.show('detail-dish-modal',{
+        disableScroll: true,
+    });
+    let modalHref = element.getAttribute("href");
+    let modalTitle = element.getElementsByClassName('restaurant__name')[0].innerText;
+    $('#detail-dish-modal-title').html(modalTitle);
+    let isExcuteLoading = $('#detail-dish-content').text() == '';
+
+    if (isExcuteLoading) {
+        $('#loading-img').show();
+        $.ajax({
+            type: 'POST',
+            url: '/get-more-outstanding-dishes',
+            dataType: 'json',
+            data: {
+                href: modalHref,
+            },
+            success: (data) => {
+                let listLocation = ``;
+                data[0].location.map((location) => {
+                    let locationHtml =
+                        `<li class="location__item">
+                                <a href=${location[1]} class="location__link"> ${location[0]}</a>
+                            </li>`;
+                    listLocation += locationHtml;
+                })
+                let contentHtml = `
+                <div class="dish">
+                    <div class="img-box">
+                        <img src=${data[0].image} alt="dish-image">
+                    </div>
+                    <p class="description">
+                        ${data[0].description}
+                    </p>
+                </div>
+                <div class="location">
+                    <div class="location__title">
+                        <i class="fas fa-map-marker-alt"></i>
+                         <span>Các địa điểm ăn ngon, giá rẻ</span>
+                    </div>
+                    <ul class="location__list">
+                        ${listLocation}
+                    </ul>
+                </div>`
+                $('#detail-dish-content').html(contentHtml);
+            },
+            complete: () => {
+                $('#loading-img').hide();
+            },
+            error: (error) => {
+                console.log(error);
+            }
+        });
+    }
+}
+
+
+
+
 
 
 
