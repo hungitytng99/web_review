@@ -1,7 +1,5 @@
 @extends('Layouts.page')
 @section('title', 'Foodee - Trang chủ')
-
-
 @section('css')
 <!-- Animate.css -->
 <link rel="stylesheet" href="Home/css/animate.css">
@@ -20,7 +18,7 @@
 <link rel="stylesheet" href="Home/css/style.css">
 <link rel="stylesheet" href="Home/css/header.css">
 <link rel="stylesheet" href="Home/css/homestyle.css">
-
+<link rel="stylesheet" href="Home/css/modal.css">
 @endsection
 
 @section('js')
@@ -170,7 +168,7 @@
                     <button class="bt-content__more" onclick="handleGetMoreRestaurants(this)">
                         Xem thêm
                     </button>
-                    <div id="loading-more-restaurants"></div>
+                    <div id="loading-more"></div>
                 </div>
             </div>
         </div>
@@ -335,6 +333,23 @@
                             của bạn.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal test -->
+    <div class="modal micromodal-slide" id="detail-dish-modal" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="detail-dish-modal-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="detail-dish-modal-title">
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="detail-dish-modal-content">
+                    <img id="loading-img" src="/assets/images/loading.svg" width="30px" height="30px" alt="loading"></img>
+                    <div id="detail-dish-content"></div>
+                </main>
             </div>
         </div>
     </div>

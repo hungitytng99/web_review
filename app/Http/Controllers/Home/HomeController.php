@@ -51,24 +51,36 @@ class HomeController extends Controller
 
     function getMoreOutstandingFood(Request $request)
     {
-        $outstandingDishes = DB::table('dishes_restaurants')
-        ->join('outstanding_dishes', 'dishes_restaurants.dishes_id', '=', 'outstanding_dishes.id')
-        ->join('restaurants', 'dishes_restaurants.restaurants_id', '=', 'restaurants.id')
-        ->where('isOutstandingDish', '=', true)
-        ->select('restaurants.id', 'linkTo','href', 'outstanding_dishes.name', DB::raw('concat(restaurants.name,": ",restaurants.location) as location'), 'description', 'outstanding_dishes.image')
-        ->get();
+
+        if (isset($request->href)) {
+            $outstandingDishes = DB::table('dishes_restaurants')
+                ->join('outstanding_dishes', 'dishes_restaurants.dishes_id', '=', 'outstanding_dishes.id')
+                ->join('restaurants', 'dishes_restaurants.restaurants_id', '=', 'restaurants.id')
+                ->where('isOutstandingDish', '=', true)
+                ->where('outstanding_dishes.href','=',$request->href)
+                ->select('restaurants.id', 'linkTo', 'href', 'outstanding_dishes.name', DB::raw('concat(restaurants.name,": ",restaurants.location) as location'), 'description', 'outstanding_dishes.image')
+                ->get();
+        } else {
+            $outstandingDishes = DB::table('dishes_restaurants')
+                ->join('outstanding_dishes', 'dishes_restaurants.dishes_id', '=', 'outstanding_dishes.id')
+                ->join('restaurants', 'dishes_restaurants.restaurants_id', '=', 'restaurants.id')
+                ->where('isOutstandingDish', '=', true)
+                ->select('restaurants.id', 'linkTo', 'href', 'outstanding_dishes.name', DB::raw('concat(restaurants.name,": ",restaurants.location) as location'), 'description', 'outstanding_dishes.image')
+                ->get();
+        }
         // dd($outstandingDishes);
         $outstandingDishesList = $this->handleOutstandingFood($outstandingDishes);
         return response()->json($outstandingDishesList);
     }
 
-    function getMoreRestaurants(Request $request){
+    function getMoreRestaurants(Request $request)
+    {
         // request.itemLength
-        
+
         $restaurants = DB::table('restaurants')
-        ->where('id','<=',$request->itemEnd)
-        ->where('id','>=',$request->itemStart)
-        ->get();
+            ->where('id', '<=', $request->itemEnd)
+            ->where('id', '>=', $request->itemStart)
+            ->get();
         return response()->json($restaurants);
     }
 }

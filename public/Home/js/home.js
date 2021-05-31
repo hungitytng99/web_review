@@ -71,16 +71,9 @@ mobileNavControl.change(() => {
 // + For outstanding food
 let restaurantsHtml = ``;
 let restaurantsItem = 12;
-function showDetailDish(event,element){
-    event.preventDefault();
-    MicroModal.show('modal-1');
-    console.log(element);
-}
+
 (function () {
-    //MODAL
-    MicroModal.init();
-
-
+    //MODAL Setup
     //AJAX
     $.ajaxSetup({
         headers: {
@@ -90,9 +83,9 @@ function showDetailDish(event,element){
     // loading
     $(document).ajaxStart(function () {
         let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30px" alt="loading"></img>`;
-        $("#loading-more-restaurants").html(loadingImg);
+        $("#loading-more").html(loadingImg);
     }).ajaxStop(function () {
-        $("#loading-more-restaurants").html("");
+        $("#loading-more").html("");
     });
     // getmore dishes
     $.ajax({
@@ -150,11 +143,11 @@ function showDetailDish(event,element){
         dataType: 'json',
         data: {
             itemStart: 1,
-            itemEnd : restaurantsItem,
+            itemEnd: restaurantsItem,
         },
         success: (data) => {
             data.map(restaurant => {
-               
+
                 let htmpTemp = ` 
                 <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="bt-content__item">
@@ -191,17 +184,17 @@ function showDetailDish(event,element){
     })
 })();
 
-function handleGetMoreRestaurants(btn){
+function handleGetMoreRestaurants(btn) {
     $.ajax({
         type: 'POST',
         url: '/get-more-restaurants',
         dataType: 'json',
         data: {
-            itemStart: restaurantsItem+1,
-            itemEnd : restaurantsItem+6,
+            itemStart: restaurantsItem + 1,
+            itemEnd: restaurantsItem + 6,
         },
         success: (data) => {
-            restaurantsItem+=6;
+            restaurantsItem += 6;
             data.map(restaurant => {
                 let htmpTemp = ` 
                 <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
@@ -231,7 +224,7 @@ function handleGetMoreRestaurants(btn){
                 restaurantsHtml += htmpTemp;
             });
             $('#sale-restaurants').html(restaurantsHtml);
-            if(restaurantsItem === 30){
+            if (restaurantsItem === 30) {
                 $("button.bt-content__more").hide();
             }
         },
@@ -239,6 +232,68 @@ function handleGetMoreRestaurants(btn){
             console.log(error);
         }
     });
+}
+
+// Modal
+function showDetailDish(event, element) {
+    event.preventDefault();
+    function onShow(){
+        
+    }
+    MicroModal.show('detail-dish-modal',{
+        disableScroll: true,
+    });
+    let modalHref = element.getAttribute("href");
+    let modalTitle = element.getElementsByClassName('restaurant__name')[0].innerText;
+    $('#detail-dish-modal-title').html(modalTitle);
+    let isExcuteLoading = $('#detail-dish-content').text() == '';
+
+    if (isExcuteLoading) {
+        $('#loading-img').show();
+        $.ajax({
+            type: 'POST',
+            url: '/get-more-outstanding-dishes',
+            dataType: 'json',
+            data: {
+                href: modalHref,
+            },
+            success: (data) => {
+                let listLocation = ``;
+                data[0].location.map((location) => {
+                    let locationHtml =
+                        `<li class="location__item">
+                                <a href=${location[1]} class="location__link"> ${location[0]}</a>
+                            </li>`;
+                    listLocation += locationHtml;
+                })
+                let contentHtml = `
+                <div class="dish">
+                    <div class="img-box">
+                        <img src=${data[0].image} alt="dish-image">
+                    </div>
+                    <p class="description">
+                        ${data[0].description}
+                    </p>
+                </div>
+                <div class="location">
+                    <div class="location__title">
+                        <i class="fas fa-map-marker-alt"></i>
+                         <span>Các địa điểm ăn ngon, giá rẻ</span>
+                    </div>
+                    <ul class="location__list">
+                        ${listLocation}
+                    </ul>
+                </div>`
+                $('#detail-dish-content').html(contentHtml);
+            },
+            complete: () => {
+                $('#loading-img').hide();
+            },
+            error: (error) => {
+                console.log(error);
+            }
+        });
+    }
 }
 
 
