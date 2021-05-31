@@ -1,5 +1,59 @@
 @extends('Layouts.page')
 @section('title', 'Foodee - Trang chủ')
+
+
+@section('css')
+<!-- Animate.css -->
+<link rel="stylesheet" href="Home/css/animate.css">
+<!-- Flexslider -->
+<link rel="stylesheet" href="Home/css/flexslider.css">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="Home/css/bootstrap.css">
+
+<!-- Fontawesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<!-- Bootstrap cdn -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- My css -->
+<link rel="stylesheet" href="Base/css/base.css">
+<link rel="stylesheet" href="Home/css/style.css">
+<link rel="stylesheet" href="Home/css/header.css">
+<link rel="stylesheet" href="Home/css/homestyle.css">
+
+@endsection
+
+@section('js')
+<!-- Modernizr JS -->
+<script src="Home/js/modernizr-2.6.2.min.js"></script>
+<!-- jQuery -->
+<script src="Home/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="Home/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="Home/js/bootstrap.min.js"></script>
+<!-- Bootstrap DateTimePicker -->
+<script src="Home/js/moment.js"></script>
+<script src="Home/js/bootstrap-datetimepicker.min.js"></script>
+<!-- Waypoints -->
+<script src="Home/js/jquery.waypoints.min.js"></script>
+<!-- Stellar Parallax -->
+<script src="Home/js/jquery.stellar.min.js"></script>
+
+<!-- Flexslider -->
+<script src="Home/js/jquery.flexslider-min.js"></script>
+<!-- Modal -->
+<script src="Home/js/micromodal.min.js"></script>
+<!-- Wow - animation when scroll page -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<!-- Owl carousel -->
+<script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+<script src="Home/js/owl-carousel.js"></script>
+<!-- Main JS -->
+<script src="Home/js/main.js"></script>
+<script src="Home/js/home.js"></script>
+@endsection
+
 @section('content')
 {{-- Image intro --}}
 <div id="container">
@@ -242,8 +296,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
@@ -287,30 +339,4 @@
     </div>
     @include('Layouts.footer')
 
-    <!-- jQuery -->
-    <script src="Home/js/jquery.min.js"></script>
-    <!-- jQuery Easing -->
-    <script src="Home/js/jquery.easing.1.3.js"></script>
-    <!-- Bootstrap -->
-    <script src="Home/js/bootstrap.min.js"></script>
-    <!-- Bootstrap DateTimePicker -->
-    <script src="Home/js/moment.js"></script>
-    <script src="Home/js/bootstrap-datetimepicker.min.js"></script>
-    <!-- Waypoints -->
-    <script src="Home/js/jquery.waypoints.min.js"></script>
-    <!-- Stellar Parallax -->
-    <script src="Home/js/jquery.stellar.min.js"></script>
-
-    <!-- Flexslider -->
-    <script src="Home/js/jquery.flexslider-min.js"></script>
-    <!-- Modal -->
-    <script src="Home/js/micromodal.min.js"></script>
-    <!-- Wow - animation when scroll page -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <!-- Owl carousel -->
-    <script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-    <script src="Home/js/owl-carousel.js"></script>
-    <!-- Main JS -->
-    <script src="Home/js/main.js"></script>
-    <script src="Home/js/home.js"></script>
     @endsection
