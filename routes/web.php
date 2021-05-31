@@ -7,6 +7,7 @@ use App\Http\Controllers\Review\ReviewController;
 
 Route::get('/', [HomeController::class,'index']);
 
+
 Route::redirect('/home', '/');
 Route::get('{Id}', [ReviewController::class,'getId']);
 Route::get('/test2', function () {

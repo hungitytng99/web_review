@@ -12,6 +12,7 @@
                 <div class="banner__carousel-title">{{ $carouselItem['user']}}</div>
                 <div class="banner__carousel-content">{{ $carouselItem['comment']}}</div>
                 <div>vi tri </div>
+
             </div>
         </div>
         @endforeach
