@@ -57,15 +57,128 @@ headerSearch.blur(() => {
 })
 //prevent scroll when open mobile nav
 let mobileNavControl = $('#mobile-nav-check');
-mobileNavControl.prop('checked',false);
+mobileNavControl.prop('checked', false);
 mobileNavControl.change(() => {
-    if(mobileNavControl.prop('checked')){
-        $('body').css('overflow','hidden');
+    if (mobileNavControl.prop('checked')) {
+        $('body').css('overflow', 'hidden');
         console.log("prevent scroll");
-    }else{
-        $('body').css('overflow','scroll');
+    } else {
+        $('body').css('overflow', 'scroll');
     }
-})
+});
+
+// Ajax 
+// + For outstanding food
+let restaurantsHtml = ``;
+(function () {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    // loading
+    $(document).ajaxStart(function () {
+        $("#loading").show();
+    }).ajaxStop(function () {
+        $("#loading").hide();
+    });
+    // getmore dishes
+    $.ajax({
+        type: 'POST',
+        url: '/get-more-outstanding-dishes',
+        dataType: 'json',
+        success: (data) => {
+            let outstandingFoodHtml = ``;
+            data.map(ele => {
+                let listLocation = ``;
+                ele.location.map((location) => {
+                    let locationHtml =
+                        `<li class="dish__location-item">
+                            <a href=${location[1]}> ${location[0]}</a>
+                        </li>`;
+                    listLocation += locationHtml;
+                })
+                let htmpTemp = ` 
+                <div class="small-gutter flex-1 col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
+                    <div class="bt-content__item">
+                        <div class="restaurant">
+                            <a href=${ele.href}>
+                                <div class="restaurant__img-box">
+                                    <img class="restaurant__img" src=${ele.image} alt="res"/>
+                                </div>
+                                <div class="restaurant__info">
+                                    <div class="restaurant__name">${ele.name}</div>
+                                    <div class="dish__description">${ele.description}</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="restaurant__discount">
+                            <div class="restaurant__discount-item dishes__location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span> Địa điểm ăn ngon, giá rẻ </span>
+                            </div>
+                            <ul class="dish__location-list">
+                                ${listLocation}
+                            </ul>
+                        </div>
+                </div>`
+                outstandingFoodHtml += htmpTemp;
+            });
+            $('#outstanding-food').html(outstandingFoodHtml);
+
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    });
+    //get restaurants
+    $.ajax({
+        type: 'POST',
+        url: '/get-more-restaurants',
+        dataType: 'json',
+        data: {
+            itemLength : '12',
+        },
+        success: (data) => {
+            data.map(restaurant => {
+                let htmpTemp = ` 
+                <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
+                    <div class="bt-content__item">
+                        <div class="restaurant">
+                            <a href="#">
+                                <div class="restaurant__img-box">
+                                    <img class="restaurant__img" src=${restaurant.image} alt="res">
+                                </div>
+                                <div class="restaurant__info">
+                                    <div class="restaurant__name">${restaurant.name}</div>
+                                    <div class="restaurant__address">${restaurant.location}</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="restaurant__discount">
+                            <div class="restaurant__discount-item">
+                                <i class="fas fa-tag"></i>
+                                <span> Ăn trưa - Đi 4 tính 3</span>
+                            </div>
+                            <a href="#" class="restaurant__discount-more">
+                                Xem thêm ưu đãi...
+                            </a>
+                         </div>
+                    </div>
+                </div>`
+                restaurantsHtml += htmpTemp;
+            });
+            $('#sale-restaurants').html(restaurantsHtml);
+
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    })
+})();
+
+
+
 
 
 

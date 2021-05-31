@@ -78,39 +78,8 @@
             </div>
             <div class="bt-content">
                 <div class="row">
-                    @foreach($outstandingDishes as $outstandingDish)
-                    <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
-                        <div class="bt-content__item">
-                            <div class="restaurant">
-                                <a href={{$outstandingDish->href}}>
-                                    <div class="restaurant__img-box">
-                                        <img class="restaurant__img" src={{$outstandingDish->image}} alt="res">
-                                    </div>
-                                    <div class="restaurant__info">
-                                        <div class="restaurant__name">{{$outstandingDish->name}}</div>
-                                        <div class="dish__description">{{$outstandingDish->description}}</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="restaurant__discount">
-                                <div class="restaurant__discount-item dishes__location">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span> Địa điểm ăn ngon, giá rẻ </span>
-                                </div>
-                                <ul class="dish__location-list">
-                                    @foreach($outstandingDish->location as $location)
-                                    <li class="dish__location-item">
-                                        <a href={{$location[1]}}> {{$location[0]}}</a>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-
+                    <div id="outstanding-food"></div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -141,38 +110,11 @@
 
             </div>
             <div class="bt-content">
-                <div class="row">
-                    @foreach($restaurants as $restaurant)
-                    <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
-                        <div class="bt-content__item">
-                            <div class="restaurant">
-                                <a href="#">
-                                    <div class="restaurant__img-box">
-                                        <img class="restaurant__img" src="{{ $restaurant->image }}" alt="res">
-                                    </div>
-                                    <div class="restaurant__info">
-                                        <div class="restaurant__name">{{$restaurant->name}}
-                                        </div>
-                                        <div class="restaurant__address">{{$restaurant->location}}
-                                        </div>
-                                    </div>
-                                </a>
-
-                            </div>
-                            <div class="restaurant__discount">
-                                <div class="restaurant__discount-item">
-                                    <i class="fas fa-tag"></i>
-                                    <span> Ăn trưa - Đi 4 tính 3</span>
-                                </div>
-                                <a href="#" class="restaurant__discount-more">
-                                    Xem thêm ưu đãi...
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                    @endforeach
+                <div class="row" id="sale-restaurants">
                 </div>
+                <button class="bt-content__more">
+                    Xem thêm
+                </button>
             </div>
         </div>
     </div>
@@ -340,6 +282,7 @@
             </div>
         </div>
     </div>
+    <button id="ajax-test">CLICK TO GET AJAX</button>
     @include('Layouts.footer')
 
     <!-- jQuery -->
@@ -358,11 +301,6 @@
 
     <!-- Flexslider -->
     <script src="Home/js/jquery.flexslider-min.js"></script>
-    <script>
-        $(function() {
-            $('#date').datetimepicker();
-        });
-    </script>
     <!-- Wow - animation when scroll page -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <!-- Owl carousel -->
