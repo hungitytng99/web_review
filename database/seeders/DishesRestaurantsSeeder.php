@@ -125,22 +125,22 @@ class DishesRestaurantsSeeder extends Seeder
             [
                 'restaurants_id' => '5',
                 'dishes_id' => '34',
-            ],[
+            ], [
                 'restaurants_id' => '5',
                 'dishes_id' => '35',
-            ],[
+            ], [
                 'restaurants_id' => '5',
                 'dishes_id' => '36',
-            ],[
+            ], [
                 'restaurants_id' => '5',
                 'dishes_id' => '37',
-            ],[
+            ], [
                 'restaurants_id' => '5',
                 'dishes_id' => '38',
-            ],[
+            ], [
                 'restaurants_id' => '5',
                 'dishes_id' => '39',
-            ],[
+            ], [
                 'restaurants_id' => '5',
                 'dishes_id' => '40',
             ],
@@ -156,6 +156,51 @@ class DishesRestaurantsSeeder extends Seeder
             [
                 'restaurants_id' => '3',
                 'dishes_id' => '1',
+                'isOutstandingDish' => true,
+            ], 
+            [
+                'restaurants_id' => '19',
+                'dishes_id' => '2',
+                'isOutstandingDish' => true,
+            ], 
+            [
+                'restaurants_id' => '20',
+                'dishes_id' => '2',
+                'isOutstandingDish' => true,
+            ],[
+                'restaurants_id' => '22',
+                'dishes_id' => '3',
+                'isOutstandingDish' => true,
+            ],[
+                'restaurants_id' => '23',
+                'dishes_id' => '3',
+                'isOutstandingDish' => true,
+            ],[
+                'restaurants_id' => '24',
+                'dishes_id' => '4',
+                'isOutstandingDish' => true,
+            ],[
+                'restaurants_id' => '25',
+                'dishes_id' => '4',
+                'isOutstandingDish' => true,
+            ],
+            [
+                'restaurants_id' => '26',
+                'dishes_id' => '5',
+                'isOutstandingDish' => true,
+            ],[
+                'restaurants_id' => '27',
+                'dishes_id' => '5',
+                'isOutstandingDish' => true,
+            ],
+            
+            [
+                'restaurants_id' => '28',
+                'dishes_id' => '6',
+                'isOutstandingDish' => true,
+            ],[
+                'restaurants_id' => '29',
+                'dishes_id' => '6',
                 'isOutstandingDish' => true,
             ],
         ]);

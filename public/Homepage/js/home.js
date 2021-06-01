@@ -120,12 +120,13 @@ let restaurantsItem = 12;
                         <div class="restaurant__discount">
                             <div class="restaurant__discount-item dishes__location">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span> Địa điểm ăn ngon, giá rẻ </span>
+                                <span> Địa điểm ăn ngon </span>
                             </div>
                             <ul class="dish__location-list">
                                 ${listLocation}
                             </ul>
                         </div>
+                    </div>
                 </div>`
                 outstandingFoodHtml += htmpTemp;
             });
