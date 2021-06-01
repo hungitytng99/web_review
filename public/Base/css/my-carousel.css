@@ -1,0 +1,34 @@
+.banner__carousel {
+    position: relative;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 30px 0px 10px 0px;
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev {
+    margin-top: 30px;
+    width: 60px;
+    height: 40px;
+}
+
+.owl-carousel .owl-nav button.owl-next span,
+.owl-carousel .owl-nav button.owl-prev span {
+    font-size: 3rem;
+}
+
+.owl-theme .owl-nav {
+    margin-top: 0px;
+}
+
+.banner__carousel-text {
+    font-size: 1.3rem;
+    color: white;
+    text-align: center;
+    /* display: none; */
+}
+
+.banner__carousel-title {
+    font-weight: bold;
+    margin-top: 15px;
+    text-transform: uppercase;
+}

@@ -1,18 +1,19 @@
 <?php
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Review\ReviewController;
-
-Route::get('/', function () {
-    // dd(DB::table('test')->get());
-    // https://media.foody.vn/images/beauty-upload-api-675x355-%282%29-210412170953.jpg
-    return view('Home/home');
-})->name('home');
-
+use App\Http\Controllers\Home\HomeController;
+//Ajax
+Route::namespace('home')->group(function () {
+    //Home index
+    Route::get('/', [HomeController::class, 'index']);
+    //Ajax request
+    Route::post('/get-more-outstanding-dishes', [HomeController::class, 'getMoreOutstandingFood']);
+    Route::post('/get-more-restaurants', [HomeController::class, 'getMoreRestaurants']);
+});
 Route::redirect('/home', '/');
 
 Route::get('/about', [AboutController::class, 'about']);
@@ -24,6 +25,8 @@ Route::namespace('auth')->group(function () {
     // Login
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'processLogin']);
+
+
     // Register
     Route::get('/register', [AuthController::class, 'register'])->name('register');
     Route::post('/register', [AuthController::class, 'processRegister'])->name('process_register');
@@ -33,7 +36,7 @@ Route::namespace('auth')->group(function () {
     // Reset password
     Route::get('/reset-password', function () {
         abort(404);
-    });    
+    });
     Route::middleware('guest')->group(function () {
         Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword']);
         Route::post('/reset-password', [AuthController::class, 'processResetPassword']);

@@ -1,3 +1,68 @@
+<<<<<<< HEAD
+[16-Apr-2021 01:43:34] NOTICE: fpm is running, pid 16
+[16-Apr-2021 01:43:34] NOTICE: ready to handle connections
+[16-Apr-2021 01:43:34] NOTICE: systemd monitor interval set to 10000ms
+[16-Apr-2021 05:41:31] NOTICE: fpm is running, pid 16
+[16-Apr-2021 05:41:31] NOTICE: ready to handle connections
+[16-Apr-2021 05:41:31] NOTICE: systemd monitor interval set to 10000ms
+[23-May-2021 09:26:41] NOTICE: fpm is running, pid 17
+[23-May-2021 09:26:41] NOTICE: ready to handle connections
+[23-May-2021 09:26:41] NOTICE: systemd monitor interval set to 10000ms
+[23-May-2021 10:34:40] NOTICE: Terminating ...
+[23-May-2021 10:34:40] NOTICE: exiting, bye-bye!
+[25-May-2021 23:59:52] NOTICE: fpm is running, pid 18
+[25-May-2021 23:59:52] NOTICE: ready to handle connections
+[25-May-2021 23:59:52] NOTICE: systemd monitor interval set to 10000ms
+[26-May-2021 01:07:01] NOTICE: Terminating ...
+[26-May-2021 01:07:01] NOTICE: exiting, bye-bye!
+[26-May-2021 03:02:38] NOTICE: fpm is running, pid 18
+[26-May-2021 03:02:38] NOTICE: ready to handle connections
+[26-May-2021 03:02:38] NOTICE: systemd monitor interval set to 10000ms
+[26-May-2021 03:31:02] NOTICE: Terminating ...
+[26-May-2021 03:31:02] NOTICE: exiting, bye-bye!
+[26-May-2021 04:22:42] NOTICE: fpm is running, pid 18
+[26-May-2021 04:22:42] NOTICE: ready to handle connections
+[26-May-2021 04:22:42] NOTICE: systemd monitor interval set to 10000ms
+[26-May-2021 04:42:11] NOTICE: Terminating ...
+[26-May-2021 04:42:11] NOTICE: exiting, bye-bye!
+[27-May-2021 11:49:07] NOTICE: fpm is running, pid 18
+[27-May-2021 11:49:07] NOTICE: ready to handle connections
+[27-May-2021 11:49:07] NOTICE: systemd monitor interval set to 10000ms
+[27-May-2021 13:52:24] NOTICE: Terminating ...
+[27-May-2021 13:52:24] NOTICE: exiting, bye-bye!
+[28-May-2021 09:29:19] NOTICE: fpm is running, pid 18
+[28-May-2021 09:29:19] NOTICE: ready to handle connections
+[28-May-2021 09:29:19] NOTICE: systemd monitor interval set to 10000ms
+[28-May-2021 11:00:15] NOTICE: Terminating ...
+[28-May-2021 11:00:15] NOTICE: exiting, bye-bye!
+[29-May-2021 10:10:58] NOTICE: fpm is running, pid 18
+[29-May-2021 10:10:58] NOTICE: ready to handle connections
+[29-May-2021 10:10:58] NOTICE: systemd monitor interval set to 10000ms
+[30-May-2021 04:38:01] NOTICE: fpm is running, pid 18
+[30-May-2021 04:38:01] NOTICE: ready to handle connections
+[30-May-2021 04:38:01] NOTICE: systemd monitor interval set to 10000ms
+[30-May-2021 07:31:54] NOTICE: Terminating ...
+[30-May-2021 07:31:54] NOTICE: exiting, bye-bye!
+[30-May-2021 08:42:16] NOTICE: fpm is running, pid 18
+[30-May-2021 08:42:16] NOTICE: ready to handle connections
+[30-May-2021 08:42:16] NOTICE: systemd monitor interval set to 10000ms
+[30-May-2021 14:25:33] NOTICE: Terminating ...
+[30-May-2021 14:25:33] NOTICE: exiting, bye-bye!
+[30-May-2021 23:29:46] NOTICE: fpm is running, pid 18
+[30-May-2021 23:29:46] NOTICE: ready to handle connections
+[30-May-2021 23:29:46] NOTICE: systemd monitor interval set to 10000ms
+[31-May-2021 00:54:36] WARNING: [pool www] server reached pm.max_children setting (4), consider raising it
+[31-May-2021 01:38:11] NOTICE: Terminating ...
+[31-May-2021 01:38:11] NOTICE: exiting, bye-bye!
+[31-May-2021 03:37:54] NOTICE: fpm is running, pid 18
+[31-May-2021 03:37:54] NOTICE: ready to handle connections
+[31-May-2021 03:37:54] NOTICE: systemd monitor interval set to 10000ms
+[31-May-2021 03:41:09] WARNING: [pool www] server reached pm.max_children setting (4), consider raising it
+[31-May-2021 09:14:45] NOTICE: fpm is running, pid 17
+[31-May-2021 09:14:45] NOTICE: ready to handle connections
+[31-May-2021 09:14:45] NOTICE: systemd monitor interval set to 10000ms
+[31-May-2021 09:20:45] WARNING: [pool www] server reached pm.max_children setting (4), consider raising it
+=======
 [16-Apr-2021 01:54:42] NOTICE: fpm is running, pid 18
 [16-Apr-2021 01:54:42] NOTICE: ready to handle connections
 [16-Apr-2021 01:54:42] NOTICE: systemd monitor interval set to 10000ms
@@ -78,3 +143,7 @@
 [31-May-2021 13:10:00] NOTICE: fpm is running, pid 17
 [31-May-2021 13:10:00] NOTICE: ready to handle connections
 [31-May-2021 13:10:00] NOTICE: systemd monitor interval set to 10000ms
+
+[01-Jun-2021 00:49:59] NOTICE: fpm is running, pid 18
+[01-Jun-2021 00:49:59] NOTICE: ready to handle connections
+[01-Jun-2021 00:49:59] NOTICE: systemd monitor interval set to 10000ms
