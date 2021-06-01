@@ -9,9 +9,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h2 class="modal-title" id="exampleModalLabel"><strong>Điều khoản dịch vụ</strong></h2>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    {{-- <button type="button" class="close my-0" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><big>&times;</big></span>
+                    </button> --}}
                 </div>
                 <div class="modal-body">
                     @include('Auth.terms')
@@ -66,7 +66,7 @@
                             </div>
                             @endif
                             <div class="form-group mb-4">
-                                <input type="password" class="form-control" id="password-field" name="password" placeholder="Mật khẩu" required>
+                                <input type="password" class="form-control" id="password-field" name="password" placeholder="Mật khẩu (8-20 kí tự)" required>
                                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
                             @if ($errors->has('password'))

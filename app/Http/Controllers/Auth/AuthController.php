@@ -45,17 +45,23 @@ class AuthController extends Controller
 
         $remember_me = $request->has('remember_me');
 
-        if (Auth::attempt($credential)) {
-            $user = User::where(['email' => $credential['email']])->first();
-            Auth::login($user, $remember_me);
-
-            // if (Auth::user()->role == 'admin') {
-            //     return redirect('/admin');
-            // }
-            return redirect('/');
+        $user = User::where(['email' => $credential['email']])->first();
+        if ($user) {
+            if (Auth::attempt($credential)) {
+            
+                Auth::login($user, $remember_me);
+    
+                // if (Auth::user()->role == 'admin') {
+                //     return redirect('/admin');
+                // }
+                return redirect('/');
+            } else {
+                return redirect()->back()->withInput()->with('status-error', 'Sai email hoặc mật khẩu');
+            }
         } else {
-            return redirect()->back()->withInput()->with('status-error', 'Sai email hoặc mật khẩu');
+            return redirect()->back()->withInput()->with('status-error', 'Tài khoản không tồn tại');
         }
+        
     }
 
     public function register() {
@@ -93,6 +99,7 @@ class AuthController extends Controller
             'name' => trim($request->input('name')),
             'email' => strtolower($request->input('email')),
             'password' => bcrypt($request->input('password')),
+            'avatar' => '/assets/images/default.png'
         ]);
 
         return redirect('/login')->withInput()->with('status-success', 'Đăng ký tài khoản thành công!');
