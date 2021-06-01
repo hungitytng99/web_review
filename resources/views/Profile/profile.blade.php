@@ -5,30 +5,20 @@
 @section('css')
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="Home/css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="Home/css/icomoon.css">
-	<!-- Simple Line Icons -->
-	<link rel="stylesheet" href="Home/css/simple-line-icons.css">
-	<!-- Datetimepicker -->
-	<link rel="stylesheet" href="Home/css/bootstrap-datetimepicker.min.css">
 	<!-- Flexslider -->
 	<link rel="stylesheet" href="Home/css/flexslider.css">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="Home/css/bootstrap.css">
-	<!-- Owl carousel -->
-	<link rel="stylesheet" href="vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
-	<link rel="stylesheet" href="vendor/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+
 	<!-- Fontawesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-	<!-- Normalize html -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 	<!-- Bootstrap cdn -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+	
 	<!-- My css -->
-	<link rel="stylesheet" href="Home/css/style.css">
+	<link rel="stylesheet" href="Base/css/base.css">
 	<link rel="stylesheet" href="Home/css/header.css">
-	<link rel="stylesheet" href="Home/css/homestyle.css">
+	<link rel="stylesheet" href="Home/css/style.css">
 
 	<link rel="stylesheet" href="Profile/css/style.css">
 @endsection
@@ -36,13 +26,28 @@
 @section('js')
 	<!-- Modernizr JS -->
 	<script src="Home/js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<!-- jQuery -->
+	<script src="Home/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="Home/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="Home/js/bootstrap.min.js"></script>
+	<!-- Bootstrap DateTimePicker -->
+	<script src="Home/js/moment.js"></script>
+	<script src="Home/js/bootstrap-datetimepicker.min.js"></script>
+	<!-- Waypoints -->
+	<script src="Home/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="Home/js/jquery.stellar.min.js"></script>
+	<!-- Flexslider -->
+	<script src="Home/js/jquery.flexslider-min.js"></script>
+	<!-- Modal -->
+	<script src="Home/js/micromodal.min.js"></script>
+	<!-- Wow - animation when scroll page -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+	<!-- Owl carousel -->
+	<script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+	<script src="Home/js/owl-carousel.js"></script>
 @endsection
 
 @section('content')
@@ -315,35 +320,9 @@
 
 </div>
 
-<!-- jQuery -->
-<script src="Home/js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="Home/js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="Home/js/bootstrap.min.js"></script>
-<!-- Bootstrap DateTimePicker -->
-<script src="Home/js/moment.js"></script>
-<script src="Home/js/bootstrap-datetimepicker.min.js"></script>
-<!-- Waypoints -->
-<script src="Home/js/jquery.waypoints.min.js"></script>
-<!-- Stellar Parallax -->
-<script src="Home/js/jquery.stellar.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-<!-- Flexslider -->
-<script src="Home/js/jquery.flexslider-min.js"></script>
-<script>
-    $(function() {
-        $('#date').datetimepicker();
-    });
-</script>
-<!-- Wow - animation when scroll page -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<!-- Owl carousel -->
-<script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-<script src="Home/js/owl-carousel.js"></script>
-<!-- Main JS -->
-<script src="Home/js/main.js"></script>
-<script src="Home/js/home.js"></script>
 <script src="Profile/js/utils.js"></script>
 
 @endsection
