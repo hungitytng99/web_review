@@ -2,11 +2,11 @@
 @section('title', 'Foodee - Trang chủ')
 @section('css')
 <!-- Animate.css -->
-<link rel="stylesheet" href="Home/css/animate.css">
+<link rel="stylesheet" href="Homepage/css/animate.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="Home/css/flexslider.css">
+<link rel="stylesheet" href="Homepage/css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="Home/css/bootstrap.css">
+<link rel="stylesheet" href="Homepage/css/bootstrap.css">
 
 <!-- Fontawesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -15,41 +15,41 @@
 
 <!-- My css -->
 <link rel="stylesheet" href="Base/css/base.css">
-<link rel="stylesheet" href="Home/css/style.css">
-<link rel="stylesheet" href="Home/css/header.css">
-<link rel="stylesheet" href="Home/css/homestyle.css">
-<link rel="stylesheet" href="Home/css/modal.css">
+<link rel="stylesheet" href="Homepage/css/style.css">
+<link rel="stylesheet" href="Homepage/css/header.css">
+<link rel="stylesheet" href="Homepage/css/homestyle.css">
+<link rel="stylesheet" href="Homepage/css/modal.css">
 @endsection
 
 @section('js')
 <!-- Modernizr JS -->
-<script src="Home/js/modernizr-2.6.2.min.js"></script>
+<script src="Homepage/js/modernizr-2.6.2.min.js"></script>
 <!-- jQuery -->
-<script src="Home/js/jquery.min.js"></script>
+<script src="Homepage/js/jquery.min.js"></script>
 <!-- jQuery Easing -->
-<script src="Home/js/jquery.easing.1.3.js"></script>
+<script src="Homepage/js/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
-<script src="Home/js/bootstrap.min.js"></script>
+<script src="Homepage/js/bootstrap.min.js"></script>
 <!-- Bootstrap DateTimePicker -->
-<script src="Home/js/moment.js"></script>
-<script src="Home/js/bootstrap-datetimepicker.min.js"></script>
+<script src="Homepage/js/moment.js"></script>
+<script src="Homepage/js/bootstrap-datetimepicker.min.js"></script>
 <!-- Waypoints -->
-<script src="Home/js/jquery.waypoints.min.js"></script>
+<script src="Homepage/js/jquery.waypoints.min.js"></script>
 <!-- Stellar Parallax -->
-<script src="Home/js/jquery.stellar.min.js"></script>
+<script src="Homepage/js/jquery.stellar.min.js"></script>
 
 <!-- Flexslider -->
-<script src="Home/js/jquery.flexslider-min.js"></script>
+<script src="Homepage/js/jquery.flexslider-min.js"></script>
 <!-- Modal -->
-<script src="Home/js/micromodal.min.js"></script>
+<script src="Homepage/js/micromodal.min.js"></script>
 <!-- Wow - animation when scroll page -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <!-- Owl carousel -->
 <script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-<script src="Home/js/owl-carousel.js"></script>
+<script src="Homepage/js/owl-carousel.js"></script>
 <!-- Main JS -->
-<script src="Home/js/main.js"></script>
-<script src="Home/js/home.js"></script>
+<script src="Homepage/js/main.js"></script>
+<script src="Homepage/js/home.js"></script>
 @endsection
 
 @section('content')
@@ -68,9 +68,9 @@
                 </div>
             </div>
             <ul class="slides">
-                <li style="background-image: url(Home/images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
-                <li style="background-image: url(Home/images/slide_2.jpg);" data-stellar-background-ratio="0.5"></li>
-                <li style="background-image: url(Home/images/slide_3.jpg);" data-stellar-background-ratio="0.5"></li>
+                <li style="background-image: url(Homepage/images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
+                <li style="background-image: url(Homepage/images/slide_2.jpg);" data-stellar-background-ratio="0.5"></li>
+                <li style="background-image: url(Homepage/images/slide_3.jpg);" data-stellar-background-ratio="0.5"></li>
             </ul>
         </div>
     </div>
@@ -82,25 +82,25 @@
     @php
     $carouselLists = [
     [
-    'img' => 'Home/images/carousel_1.jpg',
+    'img' => 'Homepage/images/carousel_1.jpg',
     'linkTo' => '#',
     'title' => 'HEALTYTABLE X MỒI NGON ĐỈNH',
     'description' => 'Ưu đãi đến 25%',
     ],
     [
-    'img' => 'Home/images/carousel_2.jpg',
+    'img' => 'Homepage/images/carousel_2.jpg',
     'linkTo' => '#',
     'title' => 'Foody App trên Mobile',
     'description' => 'Khám phá, đặt bàn, giao tận nơi',
     ],
     [
-    'img' => 'Home/images/carousel_3.jpg',
+    'img' => 'Homepage/images/carousel_3.jpg',
     'linkTo' => '#',
     'title' => 'Trang Tròn - Chà hiện đại, trà sữa & đồ ăn vặt.',
     'description' => 'Giảm giá sâu',
     ],
     [
-    'img' => 'Home/images/carousel_4.jpg',
+    'img' => 'Homepage/images/carousel_4.jpg',
     'linkTo' => '#',
     'title' => 'Hàng ngàn thương hiệu xịn khuyến mãi',
     'description' => 'Lên đến 50%',
@@ -117,10 +117,10 @@
                 <div class="bt-header">
                     <div class="bt-header__book">
                         <div class="bt-header__book-img">
-                            <img src="Home/images/0103-served-plate_128.png" />
+                            <img src="Homepage/images/0103-served-plate_128.png" />
                         </div>
                         <p class="bt-header__book-title">
-                            Món ăn nổi bật
+                            Top 6 món ăn nổi bật
                         </p>
                     </div>
                     <div class="dishes__month">
@@ -142,7 +142,7 @@
                 <div class="bt-header">
                     <div class="bt-header__book">
                         <div class="bt-header__book-img --order">
-                            <img src="Home/images/svg/order.svg" alt="order" />
+                            <img src="Homepage/images/svg/order.svg" alt="order" />
                         </div>
                         <p class="bt-header__book-title">
                             Đặt bàn ưu đãi
@@ -303,7 +303,7 @@
         </div>
     </div>
     <!-- ... -->
-    <div id="type" style="background-image: url(Home/images/slide_3.jpg);" data-stellar-background-ratio="0.5">
+    <div id="type" style="background-image: url(Homepage/images/slide_3.jpg);" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
