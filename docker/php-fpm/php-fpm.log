@@ -144,3 +144,6 @@
 [31-May-2021 12:42:52] NOTICE: systemd monitor interval set to 10000ms
 >>>>>>> origin/vinh
 >>>>>>> fe8b7cd52930dd744c9fd54e07a89ff4dca36c32
+[01-Jun-2021 01:59:39] NOTICE: fpm is running, pid 18
+[01-Jun-2021 01:59:39] NOTICE: ready to handle connections
+[01-Jun-2021 01:59:39] NOTICE: systemd monitor interval set to 10000ms
