@@ -24,8 +24,8 @@ class ReviewSeeder extends Seeder
             'comment' => Str::random(20),
             'rate' => 4.1,
             'images' => json_encode([
-                'Review/assets/pho_0.jpg',
-                'Review/assets/pho_1.png',
+                'assets/images/pho_0.jpg',
+                'assets/images/pho_1.png',
             ]),
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')

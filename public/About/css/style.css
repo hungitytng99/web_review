@@ -39,7 +39,7 @@ body {
 }
 
 #section-image {
-    background-image: url("../assets/vietnamese_food.jpg");
+    background-image: url("../../assets/images/vietnamese_food.jpg");
     background-size: cover;
     background-position: center center;
     padding: 12.5rem 0;
@@ -101,11 +101,11 @@ body {
 }
 
 .carousel-control-next-icon {
-    background-image: url("../assets/chevron-circle-right-solid.svg");
+    background-image: url("../../assets/images/chevron-circle-right-solid.svg");
 }
 
 .carousel-control-prev-icon {
-    background-image: url("../assets/chevron-circle-left-solid.svg");
+    background-image: url("../../assets/images/chevron-circle-left-solid.svg");
 }
 
 #section-contact {
