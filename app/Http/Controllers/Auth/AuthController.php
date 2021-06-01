@@ -99,7 +99,7 @@ class AuthController extends Controller
             'name' => trim($request->input('name')),
             'email' => strtolower($request->input('email')),
             'password' => bcrypt($request->input('password')),
-            'avatar' => '/assets/images/default.png'
+            'avatar' => '/assets/avatars/default.png'
         ]);
 
         return redirect('/login')->withInput()->with('status-success', 'Đăng ký tài khoản thành công!');
