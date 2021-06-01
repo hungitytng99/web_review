@@ -250,7 +250,7 @@
 
 #account__dropdown {
     position: absolute;
-    top: 120%;
+    top: 133%;
     right: 0px;
     display: none;
 }
@@ -279,8 +279,8 @@
 #header__dropdown-triangle-up {
     display: none;
     position: absolute;
-    right: 37px;
-    top: 100%;
+    right: 30%;
+    top: 110%;
     width: 14px;
     height: 14px;
     background-color: white;
@@ -289,16 +289,6 @@
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     z-index: 1;
-}
-
-.header__dropdown-connect {
-    content: '';
-    position: absolute;
-    width: 120px;
-    height: 10px;
-    right: 0px;
-    top: 94%;
-    background-color: red;
 }
 
 .account__dropdown-item a {

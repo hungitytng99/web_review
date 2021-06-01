@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Response;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -13,6 +13,10 @@ class HomeController extends Controller
 
     function index()
     {
+        if (Auth::check()) {
+            $user = Auth::user();
+            return view('Home/home')->with('user', $user);
+        }
         return view('Home/home');
     }
     function handleOutstandingFood($outstandingDishes)
@@ -57,7 +61,7 @@ class HomeController extends Controller
                 ->join('outstanding_dishes', 'dishes_restaurants.dishes_id', '=', 'outstanding_dishes.id')
                 ->join('restaurants', 'dishes_restaurants.restaurants_id', '=', 'restaurants.id')
                 ->where('isOutstandingDish', '=', true)
-                ->where('outstanding_dishes.href','=',$request->href)
+                ->where('outstanding_dishes.href', '=', $request->href)
                 ->select('restaurants.id', 'linkTo', 'href', 'outstanding_dishes.name', DB::raw('concat(restaurants.name,": ",restaurants.location) as location'), 'description', 'outstanding_dishes.image')
                 ->get();
         } else {

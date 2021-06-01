@@ -64,11 +64,10 @@
                         @if (Auth::check())
                         <div class="account noselect">
                             <div tabindex="1" class="account__user" onclick="showAccountDropdown(event)"  onBlur="showAccountDropdown(event)">
-                                <img src="/assets/images/non-avatar.png" alt="account-avatar" class="account__user-img">
-                                <div class="account__user-name">Mạnh Hùng</div>
+                                <img src="<?php echo $user->avatar ?>" alt="account-avatar" class="account__user-img">
+                                <div class="account__user-name"><?php echo $user->name ?></div>
                             </div>
                             <div id="header__dropdown-triangle-up"></div>
-                            <!-- <div class="header__dropdown-connect"></div> -->
                             <div id="account__dropdown" onmousedown="preventHideDropdown(event)">
                                 <ul class="account__dropdown-list">
                                     <li class="account__dropdown-item">
