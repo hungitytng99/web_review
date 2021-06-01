@@ -35,7 +35,7 @@
     content: '';
     width: 20px;
     height: 20px;
-    background: url('/Home/images/icon-logo.png') no-repeat;
+    background: url('/Homepage/images/icon-logo.png') no-repeat;
     background-size: contain;
 }
 
@@ -287,6 +287,15 @@ button:focus {
 
 .dish__location-item span {
     font-weight: 600;
+}
+
+.dish__location-item a {
+    line-height: 1.6rem;
+    max-height: 3.2rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 
