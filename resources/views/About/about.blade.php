@@ -49,6 +49,8 @@
 	<!-- Owl carousel -->
 	<script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 	<script src="Home/js/owl-carousel.js"></script>
+
+	<script src="Home/js/main.js"></script>
 @endsection
 
 @section('content')
