@@ -111,7 +111,7 @@
 				<div class="section-avatar">
 				  <h3>Avatar</h3>
 				  <div class="d-flex py-3 align-items-center">
-					<img src="{{ Storage::url(Auth::user()->avatar) }}" alt="avatar">
+					<img src="{{ url(Auth::user()->avatar) }}" alt="avatar">
 					<form action="{{ url('/profile') }}" method="POST" enctype="multipart/form-data">
 					  @csrf
 					  <label for="upload_avatar" class="btn shadow-sm">Tải lên</label>

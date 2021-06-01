@@ -131,7 +131,7 @@
 							<div class="row justify-content-md-center">
 								<div class="col-md-8">
 									<div class="dev-image">
-										<img src="About/assets/vinh.png" alt="vinh.png">
+										<img src="assets/images/vinh.png" alt="vinh.png">
 									</div>
 									<div class="dev-text pb-5">
 										<p>
@@ -151,7 +151,7 @@
 							<div class="row justify-content-md-center">
 								<div class="col-md-8">
 									<div class="dev-image">
-										<img src="About/assets/vinh.png" alt="vinh.png">
+										<img src="assets/images/vinh.png" alt="vinh.png">
 									</div>
 									<div class="dev-text pb-5">
 										<p>
@@ -171,7 +171,7 @@
 							<div class="row justify-content-md-center">
 								<div class="col-md-8">
 									<div class="dev-image">
-										<img src="About/assets/vinh.png" alt="vinh.png">
+										<img src="assets/images/vinh.png" alt="vinh.png">
 									</div>
 									<div class="dev-text pb-5">
 										<p>
@@ -202,7 +202,7 @@
 		<section id="section-contact">
 			<div class="container">
 				<div class="row justify-content-center">
-					<div class="col-md-8">
+					<div class="col-lg-8">
 						<h1 class="section-title text-center pb-4 mb-5">Liên hệ với chúng tôi</h1>
 						<form action="{{ url('/about') }}" method="POST">
 							@csrf

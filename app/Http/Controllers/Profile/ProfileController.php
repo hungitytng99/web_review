@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 use Validator;
 use App\Models\User;
@@ -35,10 +35,10 @@ class ProfileController extends Controller
 
         if ($request->hasFile('upload_avatar')) {
             $image = $request->file('upload_avatar');
-            $path = $image->store('public/images/avatars', 'local');
+            $path = $image->move('assets/avatars');
 
-            if ($user->avatar != 'public/images/avatars/default.png') {
-                Storage::disk('local')->delete($user->avatar);
+            if ($user->avatar != 'assets/avatars/default.png') {
+                File::delete($user->avatar);
             }
 
             $query_user->update([
