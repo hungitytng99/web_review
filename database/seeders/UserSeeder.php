@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
             'name' => 'Vinh',
             'email' => 'levinh0247@gmail.com',
             'password' => bcrypt('random321'),
+            'avatar' => 'public/images/avatars/default.png',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
