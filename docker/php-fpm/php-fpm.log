@@ -141,3 +141,6 @@
 [31-May-2021 12:42:52] NOTICE: ready to handle connections
 [31-May-2021 12:42:52] NOTICE: systemd monitor interval set to 10000ms
 >>>>>>> origin/vinh
+[01-Jun-2021 00:06:49] NOTICE: fpm is running, pid 18
+[01-Jun-2021 00:06:49] NOTICE: ready to handle connections
+[01-Jun-2021 00:06:49] NOTICE: systemd monitor interval set to 10000ms

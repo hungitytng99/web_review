@@ -495,3 +495,7 @@ button:focus {
 .home-comment__interactive-btn:hover {
     color: black;
 }
+
+#type p {
+    line-height: 2.0rem;
+}

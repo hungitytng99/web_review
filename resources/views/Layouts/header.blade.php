@@ -62,6 +62,12 @@
                     </li>
                     <li class="header__nav-item hide-on-768">
                         @if (Auth::check())
+                        <div class="account__dropdown">
+                            <div class="account__dropdown-user">
+                                <img src="" alt="" class="account__dropdown-user-img">
+                                <div class="account__dropdown-user-name"></div>
+                            </div>
+                        </div>
                         <a href="/profile">Tài khoản</a>
                         <a href="{{ route('logout') }}" style="text-decoration: underline" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng xuất</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>@csrf</form>

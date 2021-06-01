@@ -152,7 +152,7 @@ let restaurantsItem = 12;
                 <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="bt-content__item">
                         <div class="restaurant">
-                            <a href="#" >
+                            <a href=${restaurant.linkTo} >
                                 <div class="restaurant__img-box">
                                     <img class="restaurant__img" src=${restaurant.image} alt="res">
                                 </div>
@@ -194,13 +194,14 @@ function handleGetMoreRestaurants(btn) {
             itemEnd: restaurantsItem + 6,
         },
         success: (data) => {
+            console.log(data);
             restaurantsItem += 6;
             data.map(restaurant => {
                 let htmpTemp = ` 
                 <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="bt-content__item">
                         <div class="restaurant">
-                            <a href="#">
+                            <a href=${restaurant.linkTo}>
                                 <div class="restaurant__img-box">
                                     <img class="restaurant__img" src=${restaurant.image} alt="res">
                                 </div>
@@ -237,10 +238,15 @@ function handleGetMoreRestaurants(btn) {
 // Modal
 function showDetailDish(event, element) {
     event.preventDefault();
-    function onShow(){
-        
+    function onShow() {
+        console.log("show");
     }
-    MicroModal.show('detail-dish-modal',{
+    function onClose() {
+        console.log("close");
+    }
+    MicroModal.show('detail-dish-modal', {
+        onShow: onShow,
+        onClose: onClose,
         disableScroll: true,
     });
     let modalHref = element.getAttribute("href");
