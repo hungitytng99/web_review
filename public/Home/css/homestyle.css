@@ -2,7 +2,6 @@
     .hide-on-768 {
         display: none;
     }
-
     .show-on-768 {
         display: block;
     }
@@ -44,10 +43,15 @@ button:focus {
     outline: none;
 }
 
+
 /* Carousel */
 
+
 /* Booking( sale ) */
+
+
 /* 1. Header */
+
 .bt-header {
     position: relative;
     display: flex;
@@ -94,14 +98,12 @@ button:focus {
 .bt-header__book-img.--order img {
     width: 24px;
     filter: invert(1);
-
 }
 
 .bt-header__book-title {
     color: white;
     font-size: 1.6rem;
     font-weight: 700;
-
 }
 
 .bt-header__search {
@@ -128,11 +130,16 @@ button:focus {
     margin-right: 15px;
 }
 
+
 /* 2. Content */
+
 .bt-content {
     padding: 0px 15px 15px 15px;
     border: 1px solid rgb(212, 212, 212);
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .bt-content__item {
@@ -143,22 +150,54 @@ button:focus {
     /* margin-right: 10px; */
 }
 
+.bt-content__more {
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
+    background-color: var(--primary);
+    color: white;
+    transition: 0.5s;
+}
+
+.loading-restaurants {
+    display: flex;
+    margin-top: 5px;
+    position: relative;
+}
+
+.loading-restaurants img {
+    position: absolute;
+    left: 100%;
+    top: 3px;
+}
+
+.bt-content__more:hover {
+    color: rgb(202, 202, 202);
+    background-color: rgb(41, 41, 41)
+}
+
+.bt-content__item:last-child {}
 
 .restaurant {
     border-bottom: 1px solid rgb(236, 236, 236);
-
 }
 
-.product__img-box {
+.restaurant a {
     display: flex;
     justify-content: center;
-    width: 100%;
     overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restaurant a .restaurant__img-box {
+    height: 142px;
+    object-fit: fill;
 }
 
 .restaurant__img {
-    height: 142px;
-    object-fit: fill;
+    object-fit: contain;
+    height: 100%;
 }
 
 .restaurant__info {
@@ -174,7 +213,6 @@ button:focus {
     -webkit-line-clamp: 1;
     font-weight: bold;
     color: black;
-
 }
 
 .restaurant__address {
@@ -215,7 +253,9 @@ button:focus {
     color: #777;
 }
 
+
 /*  Featured dishes*/
+
 .dish__description {
     margin-top: 5px;
     color: #777;
@@ -236,7 +276,6 @@ button:focus {
     font-weight: 600;
     font-size: 1.5rem;
     color: white;
-
 }
 
 .dish__location-list {
@@ -245,11 +284,14 @@ button:focus {
     list-style: square;
     padding-left: 20px;
 }
-.dish__location-item span{
+
+.dish__location-item span {
     font-weight: 600;
 }
 
+
 /* Review */
+
 .review-nav__animated {
     animation: nav_down 0.3s linear;
 }
@@ -258,7 +300,6 @@ button:focus {
     from {
         transform: translateY(-30px);
     }
-
     to {
         transform: translateY(0px);
     }
@@ -299,7 +340,6 @@ button:focus {
     cursor: pointer;
     color: var(--tertiary);
     background-color: rgb(245, 245, 245);
-
 }
 
 .review__menu-category-item.--active {
@@ -315,7 +355,9 @@ button:focus {
     color: #777;
 }
 
+
 /* Review content */
+
 .review {
     margin-bottom: 30px;
 }
@@ -382,8 +424,8 @@ button:focus {
     border: none;
 }
 
-/* review comment */
 
+/* review comment */
 
 .home-comment__user {
     display: flex;
@@ -398,7 +440,6 @@ button:focus {
 .home-comment__user span:hover {
     font-weight: bold;
     color: #333;
-
 }
 
 .home-comment__user p {
@@ -414,7 +455,6 @@ button:focus {
     width: 25px;
     border-radius: 50%;
     margin-right: 8px;
-
 }
 
 .home-comment__interactive {
@@ -449,7 +489,6 @@ button:focus {
 
 .home-comment__interactive-comment {
     padding-top: 3px;
-
 }
 
 .home-comment__interactive-box {}
@@ -460,4 +499,8 @@ button:focus {
 
 .home-comment__interactive-btn:hover {
     color: black;
+}
+
+#type p {
+    line-height: 2.0rem;
 }

@@ -13,7 +13,7 @@
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
 </head>
-<body class="img js-fullheight" style="background-image: url('{{ asset('Auth/assets/bg.jpg') }}');">
+<body class="img js-fullheight" style="background-image: url('{{ asset('assets/images/bg.jpg') }}');">
     @yield('content')
     
     <script src="{{ asset('Auth/js/jquery.min.js') }}"></script>

@@ -1,0 +1,136 @@
+html, body{
+    overflow-x: hidden;
+}
+
+body {
+    line-height: normal;
+}
+
+.btn.primary {
+    display: inline-block;
+    margin: 0;
+    padding: 1rem 2rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: deepskyblue;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: blue;
+}
+
+#section-overview {
+    background-color: #ecfafc;
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.section-subtitle {
+    font-size: 2.5rem;
+    overflow-wrap: break-word;
+}
+
+#section-image {
+    background-image: url("../../assets/images/vietnamese_food.jpg");
+    background-size: cover;
+    background-position: center center;
+    padding: 12.5rem 0;
+}
+
+#section-features {
+    background-color: white;
+    padding: 6.4rem 0;
+}
+
+.card-img {
+    font-size: 9rem;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem 0;
+}
+
+.card-text {
+    font-size: 1.6rem;
+}
+
+#section-devs {
+    background-color: white;
+    padding: 4rem 0;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.dev-image {
+    margin-bottom: 3.2rem;
+}
+
+.dev-image img {
+    border-radius: 50%;
+    width: 18rem;
+    height: 18rem;
+}
+
+.dev-name {
+    font-weight: bold;
+}
+
+.dev-desk {
+    text-transform: uppercase;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 5rem;
+    width: 5rem;
+    outline: black;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+.carousel-control-next-icon {
+    background-image: url("../../assets/images/chevron-circle-right-solid.svg");
+}
+
+.carousel-control-prev-icon {
+    background-image: url("../../assets/images/chevron-circle-left-solid.svg");
+}
+
+#section-contact {
+    background: linear-gradient(#ffe0e7, #ecfafc);
+    padding: 8rem 0;
+}
+
+@media(max-width: 768px) {
+    #section-overview {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+    }
+
+    #section-features {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+    }
+
+    #section-devs {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+    }
+
+    #section-contact {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+    }
+}
