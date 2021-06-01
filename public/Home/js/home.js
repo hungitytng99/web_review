@@ -302,6 +302,21 @@ function showDetailDish(event, element) {
     }
 }
 
+function showAccountDropdown(e){
+    if(e.type == "click"){
+        $('#header__dropdown-triangle-up').toggleClass("show-element");
+        $('#account__dropdown').toggleClass("show-element");
+    } else{
+        $('#header__dropdown-triangle-up').removeClass("show-element");
+        $('#account__dropdown').removeClass("show-element");
+    }
+    }
+    
+
+function preventHideDropdown(e){
+    e.preventDefault();
+}
+
 
 
 

@@ -62,15 +62,31 @@
                     </li>
                     <li class="header__nav-item hide-on-768">
                         @if (Auth::check())
-                        <div class="account__dropdown">
-                            <div class="account__dropdown-user">
-                                <img src="" alt="" class="account__dropdown-user-img">
-                                <div class="account__dropdown-user-name"></div>
+                        <div class="account noselect">
+                            <div tabindex="1" class="account__user" onclick="showAccountDropdown(event)"  onBlur="showAccountDropdown(event)">
+                                <img src="/assets/images/non-avatar.png" alt="account-avatar" class="account__user-img">
+                                <div class="account__user-name">Mạnh Hùng</div>
                             </div>
+                            <div id="header__dropdown-triangle-up"></div>
+                            <!-- <div class="header__dropdown-connect"></div> -->
+                            <div id="account__dropdown" onmousedown="preventHideDropdown(event)">
+                                <ul class="account__dropdown-list">
+                                    <li class="account__dropdown-item">
+                                        <a href="/profile">Thông tin cá nhân</a>
+                                    </li>
+                                    <li class="account__dropdown-item">
+                                        <a href="/profile">Gợi ý thực đơn</a>
+                                    </li>
+                                    <li class="account__dropdown-item">
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><div>Đăng xuất</div> <i class="fas fa-sign-out-alt"></i></a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>@csrf</form>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
-                        <a href="/profile">Tài khoản</a>
-                        <a href="{{ route('logout') }}" style="text-decoration: underline" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng xuất</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>@csrf</form>
+
+
                         @else
                         <a href="/login" class="header__nav-item-login">Đăng nhập</a>
                         @endif
