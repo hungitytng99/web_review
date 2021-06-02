@@ -126,9 +126,7 @@ button:focus {
     padding: 0px 35px 0px 10px;
 }
 
-.bt-header__search-btn:first-child {
-    margin-right: 15px;
-}
+.bt-header__search-btn:first-child {}
 
 
 /* 2. Content */
@@ -317,7 +315,6 @@ button:focus {
 .review__menu {
     position: sticky;
     top: var(--header-height);
-    background-color: white;
 }
 
 .review__menu-header {
@@ -328,6 +325,11 @@ button:focus {
     padding-left: 12px;
 }
 
+#loading-explore {
+    display: flex;
+    justify-content: center;
+}
+
 .review__menu-header h2 {
     font-weight: 600;
     font-family: arial;
@@ -335,7 +337,9 @@ button:focus {
     margin-left: 8px;
 }
 
-.review__menu-category {}
+.review__menu-category {
+    background-color: white;
+}
 
 .review__menu-category-list {}
 
@@ -364,11 +368,29 @@ button:focus {
     color: #777;
 }
 
+.explore__login-required {
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.explore__login-required a {
+    display: block;
+    color: var(--tertiary);
+    margin-top: 5px;
+}
+
 
 /* Review content */
 
 .review {
     margin-bottom: 30px;
+}
+
+@media screen and (max-width:768px) {
+    .review {
+        display: none;
+    }
 }
 
 .review-content {
@@ -512,4 +534,22 @@ button:focus {
 
 #type p {
     line-height: 2.0rem;
+}
+
+@media screen and (max-width:480px) {
+    .header__nav-search {
+        display: none !important;
+    }
+    .bt-header__search-btn {
+        font-size: 1.2rem;
+    }
+    .bt-header__search-btn p {
+        padding: 0px 10px 0px 5px;
+    }
+    .bt-header__book-title {
+        font-size: 1.4rem;
+    }
+    .bt-header__book-img.--order img {
+        width: 20px;
+    }
 }

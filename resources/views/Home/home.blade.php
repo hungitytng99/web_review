@@ -16,7 +16,6 @@
 <!-- My css -->
 <link rel="stylesheet" href="Base/css/base.css">
 <link rel="stylesheet" href="Homepage/css/style.css">
-<link rel="stylesheet" href="Homepage/css/header.css">
 <link rel="stylesheet" href="Homepage/css/homestyle.css">
 <link rel="stylesheet" href="Homepage/css/modal.css">
 @endsection
@@ -47,9 +46,14 @@
 <!-- Owl carousel -->
 <script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 <script src="Homepage/js/owl-carousel.js"></script>
+
+<!-- Infinity scroll -->
+<script src="Homepage/js/infinityscroll.min.js"></script>
+
 <!-- Main JS -->
 <script src="Homepage/js/main.js"></script>
 <script src="Homepage/js/home.js"></script>
+
 @endsection
 
 @section('content')
@@ -129,9 +133,7 @@
                 </div>
             </div>
             <div class="bt-content">
-                <div class="row">
-                    <div id="outstanding-food"></div>
-                </div>
+                <div class="row" id="outstanding-food"></div>
             </div>
         </div>
     </div>
@@ -153,10 +155,10 @@
                             <p>Tìm danh mục</p>
                             <i class="fas fa-angle-down"></i>
                         </button>
-                        <button class="bt-header__search-btn --hot">
+                        <!-- <button class="bt-header__search-btn --hot">
                             <p>Nổi bật</p>
                             <i class="fas fa-angle-down"></i>
-                        </button>
+                        </button> -->
                     </div>
                 </div>
 
@@ -187,23 +189,25 @@
                         </div>
                         <div class="review__menu-category">
                             <ul class="review__menu-category-list">
-                                <li class="review__menu-category-item --active">
+                                <li class="review__menu-category-item --active" onclick="handleClickExplore(this)">
                                     <span>Ở đâu</span>
                                     <i class="fas fa-angle-right"></i>
                                 </li>
-                                <li class="review__menu-category-item">
+                                <li class="review__menu-category-item" onclick="handleClickExplore(this)">
                                     <span>Khuyến mãi</span>
                                     <i class="fas fa-angle-right"></i>
                                 </li>
-                                <li class="review__menu-category-item">
+                                <li class="review__menu-category-item" onclick="handleClickExplore(this)">
                                     <span>Ăn gì</span>
                                     <i class="fas fa-angle-right"></i>
                                 </li>
-                                <li class="review__menu-category-item">
-                                    <span>Thực đơn</span>
+                                <li class="review__menu-category-item" onclick="handleClickExplore(this)">
+                                    <span>Đặt nhiều</span>
                                     <i class="fas fa-angle-right"></i>
                                 </li>
                             </ul>
+                        </div>
+                        <div id="loading-explore">
                         </div>
                     </div>
                 </div>
@@ -211,9 +215,8 @@
                     <div class="review-content">
                         <div id="review-nav-r" class="review-content__header">
                             <div class="review-content__header-box --left">
-                                <p class="--active">Mới nhất</p>
-                                <p>Gần tôi</p>
-                                <p>Đã lưu</p>
+                                <p data-index="1" onclick="handleExplorePanel(this)" class="--active">Mới nhất</p>
+                                <p data-index="2" onclick="handleExplorePanel(this)">Đã lưu</p>
                             </div>
                             <div class="review-content__header-box">
                                 <!-- <div class="review__header-filter-text">Bộ lọc : </div> -->
@@ -226,75 +229,19 @@
                                         <option value="do-uong">Đồ uống</option>
                                     </select>
                                 </div>
-                                <div class="review-content__header-filter">
+                                <!-- <div class="review-content__header-filter">
                                     <select name="dia-diem">
                                         <option value="khu-vuc">-Khu vực-</option>
                                         <option value="ha-noi">Hà Nội</option>
                                         <option value="sai-gon">Sài gòn</option>
                                     </select>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="review-content__container">
                             <div class="small-row row">
-                                <div class="small-gutter col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                    <div class="bt-content__item">
-                                        <div class="restaurant">
-                                            <a href="#">
-                                                <div class="restaurant__img-box">
-                                                    <img class="restaurant__img" src="https://images.foody.vn/res/g69/682572/prof/s1242x600/foody-mobile-20597405_50420552992-166-636386646715288764.jpg" alt="res">
-                                                </div>
-                                                <div class="restaurant__info">
-                                                    <div class="restaurant__name">Lẩu Phan - Buffet Bò- Nguyễn
-                                                        Văn
-                                                        Cừ</div>
-                                                    <div class="restaurant__address">485 Nguyễn Văn Cừ, Long
-                                                        Biên,
-                                                        Hà Nội</div>
-                                                </div>
-                                            </a>
-
-                                        </div>
-                                        <div class="restaurant__discount">
-                                            <div class="home-comment">
-                                                <div class="home-comment__user">
-                                                    <div>
-                                                        <a href="#">
-                                                            <img src="https://images.foody.vn/usr/g836/8359063/avt/c100x100/qhmai-avatar-114-637186600244578770.jpg" alt="" class="home-comment__user-avatar">
-                                                        </a>
-                                                    </div>
-                                                    <div>
-                                                        <span>Mai quỳnh </span>
-                                                        <p>Quán sạch sẽ, đồ ăn và thức uống ngon miệng, phù hợp
-                                                            với
-                                                            túi
-                                                            tiền. Nhân viên phục vụ chu đáo</p>
-                                                    </div>
-
-
-                                                </div>
-                                                <div class="home-comment__interactive">
-                                                    <div class="home-comment__interactive-box">
-                                                        <div class="home-comment__comment">
-                                                            <i class="home-comment__interactive-comment fas fa-comment"></i>
-                                                            <span>3</span>
-                                                        </div>
-                                                        <div class="home-comment__comment">
-                                                            <i class="home-comment__interactive-comment fas fa-camera"></i>
-                                                            <span>30</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="home-comment__interactive-box">
-                                                        <button class="home-comment__interactive-btn">
-                                                            <span>Lưu</span>
-                                                            <i class="fas fa-bookmark"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!-- Infinity scroll -->
+                                <div id="infinity-restaurants"></div>
                             </div>
                         </div>
                     </div>
@@ -303,7 +250,7 @@
         </div>
     </div>
     <!-- ... -->
-    <div id="type" style="background-image: url(Homepage/images/slide_3.jpg);" data-stellar-background-ratio="0.5">
+    <div id="type" style="background-image: url(Homepage/images/slide_3.jpg); background-position: center;" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">

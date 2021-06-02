@@ -1,5 +1,5 @@
 <!-- Header -->
-<link rel="stylesheet" href="Home/css/header.css">
+<link rel="stylesheet" href="Homepage/css/header.css">
 <div class="header__sticky">
     <div class="container-fluid">
         <div class="header">

@@ -117,9 +117,7 @@ input:focus {
     margin-right: -5px;
 }
 
-.container {
-    padding: 0px;
-}
+.container {}
 
 .noselect {
     -webkit-touch-callout: none;

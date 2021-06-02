@@ -13,6 +13,9 @@ Route::namespace('home')->group(function () {
     //Ajax request
     Route::post('/get-more-outstanding-dishes', [HomeController::class, 'getMoreOutstandingFood']);
     Route::post('/get-more-restaurants', [HomeController::class, 'getMoreRestaurants']);
+    Route::get('/get-infinity-restaurants', [HomeController::class, 'getInfinityRestaurants']);
+    Route::get('/get-auth-status', [HomeController::class, 'getAuthStatus']);
+
 });
 Route::redirect('/home', '/');
 
