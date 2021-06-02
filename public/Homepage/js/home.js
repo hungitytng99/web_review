@@ -24,7 +24,7 @@ mobileNavControl.change(() => {
 // + For outstanding food
 let restaurantsHtml = ``;
 let restaurantsItem = 12;
-
+let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30px" alt="loading"></img>`;
 (function () {
     //MODAL Setup
     //AJAX
@@ -34,12 +34,14 @@ let restaurantsItem = 12;
         }
     });
     // loading
-    $(document).ajaxStart(function () {
-        let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30px" alt="loading"></img>`;
-        $("#loading-more").html(loadingImg);
-    }).ajaxStop(function () {
-        $("#loading-more").html("");
-    });
+    // $(document).ajaxStart(function () {
+    //     
+    //     $("#loading-more").html(loadingImg);
+    // }).ajaxStop(function () {
+    //     $("#loading-more").html("");
+    // });
+
+
     // getmore dishes
     $.ajax({
         type: 'POST',
@@ -57,7 +59,7 @@ let restaurantsItem = 12;
                     listLocation += locationHtml;
                 })
                 let htmpTemp = ` 
-                <div class="small-gutter flex-1 col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
+                <div class="small-gutter col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="bt-content__item">
                         <div class="restaurant">
                             <a href=${ele.href} onclick="showDetailDish(event,this)">
@@ -73,12 +75,13 @@ let restaurantsItem = 12;
                         <div class="restaurant__discount">
                             <div class="restaurant__discount-item dishes__location">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span> Địa điểm ăn ngon, giá rẻ </span>
+                                <span> Địa điểm ăn ngon </span>
                             </div>
                             <ul class="dish__location-list">
                                 ${listLocation}
                             </ul>
                         </div>
+                    </div>
                 </div>`
                 outstandingFoodHtml += htmpTemp;
             });
@@ -134,8 +137,56 @@ let restaurantsItem = 12;
         error: (error) => {
             console.log(error);
         }
-    })
+    });
+    //infinity scroll
+    getInfinityRestaurant();
+
 })();
+function removeActiveExplorePanel() {
+    $('.review-content__header-box p').each((index, element) => {
+        $(element).removeClass("--active");
+    })
+}
+function handleExplorePanel(element) {
+    removeActiveExplorePanel();
+    $(element).addClass("--active");
+    switch ($(element).attr('data-index')) {
+        case "1":
+            getInfinityRestaurant();
+            break;
+        case "2":
+            $.ajax({
+                type: 'GET',
+                url: '/get-auth-status',
+                dataType: 'json',
+                beforeSend: () => {
+                    $("#loading-explore").html(loadingImg);
+                }, complete: function () {
+                    $("#loading-explore").html("");
+                },
+                success: (data) => {
+                    if (data == true) {
+                        getInfinityRestaurant();
+                    } else {
+                        let loginRequiredHtml = `
+                            <div class="explore__login-required">    
+                                Bạn cần đăng nhập để xem nội dung này.<br/>
+                                <a href="/login"> Đăng nhập ngay </a>
+                            </div>
+                        `
+                        $('#infinity-restaurants').css("width", "100%");
+                        $('#infinity-restaurants').html(loginRequiredHtml);
+                    }
+                },
+                error: (error) => {
+                    console.log(error);
+                }
+            })
+            break;
+    }
+
+}
+
 
 function handleGetMoreRestaurants(btn) {
     $.ajax({
@@ -146,8 +197,12 @@ function handleGetMoreRestaurants(btn) {
             itemStart: restaurantsItem + 1,
             itemEnd: restaurantsItem + 6,
         },
+        beforeSend: () => {
+            $("#loading-more").html(loadingImg);
+        }, complete: function () {
+            $("#loading-more").html("");
+        },
         success: (data) => {
-            console.log(data);
             restaurantsItem += 6;
             data.map(restaurant => {
                 let htmpTemp = ` 
@@ -191,15 +246,7 @@ function handleGetMoreRestaurants(btn) {
 // Modal
 function showDetailDish(event, element) {
     event.preventDefault();
-    function onShow() {
-        console.log("show");
-    }
-    function onClose() {
-        console.log("close");
-    }
     MicroModal.show('detail-dish-modal', {
-        onShow: onShow,
-        onClose: onClose,
         disableScroll: true,
     });
     let modalHref = element.getAttribute("href");
@@ -255,19 +302,113 @@ function showDetailDish(event, element) {
     }
 }
 
-function showAccountDropdown(e){
-    if(e.type == "click"){
+function showAccountDropdown(e) {
+    if (e.type == "click") {
         $('#header__dropdown-triangle-up').toggleClass("show-element");
         $('#account__dropdown').toggleClass("show-element");
-    } else{
+    } else {
         $('#header__dropdown-triangle-up').removeClass("show-element");
         $('#account__dropdown').removeClass("show-element");
     }
-    }
-    
+}
 
-function preventHideDropdown(e){
+
+function preventHideDropdown(e) {
     e.preventDefault();
+}
+
+function handleClickExplore(element) {
+    removeActiveExplore();
+    $(element).addClass("--active");
+    getInfinityRestaurant();
+}
+
+function removeActiveExplore() {
+    $('.review__menu-category-item').each((index, element) => {
+        $(element).removeClass("--active");
+    })
+}
+
+function getInfinityRestaurant() {
+    // infinity restaurant
+    let InfinityRestaurantsHtml = ``;
+    $.ajax({
+        type: 'GET',
+        url: '/get-infinity-restaurants',
+        dataType: 'json',
+        data: {
+            itemLength: 8,
+        }, beforeSend: () => {
+            $("#loading-explore").html(loadingImg);
+        }, complete: function () {
+            $("#loading-explore").html("");
+        },
+        success: (data) => {
+            data.map(restaurant => {
+                let htmpTemp = ` 
+                <div class="small-gutter col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                <div class="bt-content__item">
+                    <div class="restaurant">
+                        <a href==${restaurant.linkTo}>
+                            <div class="restaurant__img-box">
+                                <img class="restaurant__img" src=${restaurant.image} alt="res">
+                            </div>
+                            <div class="restaurant__info">
+                                <div class="restaurant__name">${restaurant.name}</div>
+                                <div class="restaurant__address">${restaurant.location}</div>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="restaurant__discount">
+                        <div class="home-comment">
+                            <div class="home-comment__user">
+                                <div>
+                                    <a href="#">
+                                        <img src="https://images.foody.vn/usr/g836/8359063/avt/c100x100/qhmai-avatar-114-637186600244578770.jpg" alt="" class="home-comment__user-avatar">
+                                    </a>
+                                </div>
+                                <div>
+                                    <span>Mai quỳnh </span>
+                                    <p>Quán sạch sẽ, đồ ăn và thức uống ngon miệng, phù hợp
+                                        với
+                                        túi
+                                        tiền. Nhân viên phục vụ chu đáo</p>
+                                </div>
+
+
+                            </div>
+                            <div class="home-comment__interactive">
+                                <div class="home-comment__interactive-box">
+                                    <div class="home-comment__comment">
+                                        <i class="home-comment__interactive-comment fas fa-comment"></i>
+                                        <span>3</span>
+                                    </div>
+                                    <div class="home-comment__comment">
+                                        <i class="home-comment__interactive-comment fas fa-camera"></i>
+                                        <span>30</span>
+                                    </div>
+                                </div>
+                                <div class="home-comment__interactive-box">
+                                    <button class="home-comment__interactive-btn">
+                                        <span>Lưu</span>
+                                        <i class="fas fa-bookmark"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                `
+                InfinityRestaurantsHtml += htmpTemp;
+            });
+            $('#infinity-restaurants').html(InfinityRestaurantsHtml);
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    })
 }
 
 

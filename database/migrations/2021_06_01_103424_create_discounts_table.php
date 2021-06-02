@@ -13,15 +13,11 @@ class CreateDiscountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('discounts'  , function (Blueprint $table) {
+        Schema::create('discounts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description')->nullable();
-            $table->string('image')->nullable();
-            // $table->date('from')->default(date('d-m-y h:i:s'));
-            // $table->date('to')->default(date('d-m-y h:i:s'));
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent();
+            $table->string('role')->nullable();
+            $table->timestamps();
         });
     }
 
