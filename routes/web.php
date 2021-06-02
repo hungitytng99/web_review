@@ -19,7 +19,7 @@ Route::redirect('/home', '/');
 Route::get('/about', [AboutController::class, 'about']);
 Route::post('/about', [AboutController::class, 'processContactForm']);
 
-Route::get('/review', [ReviewController::class, 'review']);
+Route::get('/users/{id}', [ReviewController::class, 'getUserReviews'])->where('id', '[0-9]+');
 
 Route::namespace('auth')->group(function () {
     // Login

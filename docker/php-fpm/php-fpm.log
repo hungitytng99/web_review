@@ -153,3 +153,13 @@
 [01-Jun-2021 03:06:01] NOTICE: fpm is running, pid 17
 [01-Jun-2021 03:06:01] NOTICE: ready to handle connections
 [01-Jun-2021 03:06:01] NOTICE: systemd monitor interval set to 10000ms
+[01-Jun-2021 08:00:18] NOTICE: fpm is running, pid 18
+[01-Jun-2021 08:00:18] NOTICE: ready to handle connections
+[01-Jun-2021 08:00:18] NOTICE: systemd monitor interval set to 10000ms
+[01-Jun-2021 11:14:59] WARNING: [pool www] child 28 said into stderr: "NOTICE: PHP message: PHP Fatal error:  Cannot use [] for reading in /var/www/html/app/Http/Controllers/Review/ReviewController.php on line 21"
+[01-Jun-2021 14:03:52] NOTICE: fpm is running, pid 17
+[01-Jun-2021 14:03:52] NOTICE: ready to handle connections
+[01-Jun-2021 14:03:52] NOTICE: systemd monitor interval set to 10000ms
+[02-Jun-2021 00:26:28] NOTICE: fpm is running, pid 18
+[02-Jun-2021 00:26:28] NOTICE: ready to handle connections
+[02-Jun-2021 00:26:28] NOTICE: systemd monitor interval set to 10000ms

@@ -1,6 +1,6 @@
 @extends('Layouts.page')
 
-@section('title', 'Foodee - Trang chủ')
+@section('title', 'Về Foodee')
 
 @section('css')
 	<!-- Animate.css -->
@@ -31,7 +31,7 @@
 	<!-- jQuery Easing -->
 	<script src="Home/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="Home/js/bootstrap.min.js"></script>
+	{{-- <script src="Home/js/bootstrap.min.js"></script> --}}
 	<!-- Bootstrap DateTimePicker -->
 	<script src="Home/js/moment.js"></script>
 	<script src="Home/js/bootstrap-datetimepicker.min.js"></script>
@@ -137,7 +137,7 @@
 									</div>
 									<div class="dev-text pb-5">
 										<p>
-											Chào buổi sáng. Mình rất vui khi được chung tay xây dựng trang web này. Nếu có thắc mắc hãy liên hệ với chúng mình nhé.
+											Chào mọi người. Mình rất vui khi được chung tay xây dựng trang web này. Nếu có thắc mắc hãy liên hệ với chúng mình nhé.
 										</p>
 									</div>
 									<div class="dev-name pb-4">
@@ -157,7 +157,7 @@
 									</div>
 									<div class="dev-text pb-5">
 										<p>
-											Chào buổi sáng. Mình rất vui khi được chung tay xây dựng trang web này. Nếu có thắc mắc hãy liên hệ với chúng mình nhé.
+											Chào mọi người. Mình rất vui khi được chung tay xây dựng trang web này. Nếu có thắc mắc hãy liên hệ với chúng mình nhé.
 										</p>
 									</div>
 									<div class="dev-name pb-4">
@@ -177,7 +177,7 @@
 									</div>
 									<div class="dev-text pb-5">
 										<p>
-											Chào buổi sáng. Tôi rất vui khi được chung tay xây dựng trang web này. Nếu có thắc mắc gì hãy liên hệ với chúng tôi nhé.
+											Chào mọi người. Tôi rất vui khi được chung tay xây dựng trang web này. Nếu có thắc mắc gì hãy liên hệ với chúng tôi nhé.
 										</p>
 									</div>
 									<div class="dev-name pb-4">

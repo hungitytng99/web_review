@@ -237,10 +237,10 @@ function handleGetMoreRestaurants(btn) {
 // Modal
 function showDetailDish(event, element) {
     event.preventDefault();
-    function onShow(){
-        
+    function onShow() {
+
     }
-    MicroModal.show('detail-dish-modal',{
+    MicroModal.show('detail-dish-modal', {
         disableScroll: true,
     });
     let modalHref = element.getAttribute("href");
