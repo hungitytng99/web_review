@@ -176,8 +176,9 @@ class RestaurantsSeeder extends Seeder
                 'rate' => 4.0,
                 'phone' => '0984061861',
                 'image' => '/assets/images/image-da788f1b-200908105306.jpg',
-                'sale_percent' => 0,
-            ],[
+                'sale_percent' => 15,
+            ],
+            [
                 // 19
                 'linkTo' => 'minh-phuong-nem-nuong-nha-trang',
                 'name' => 'Minh Phương - Nem Nướng Nha Trang',

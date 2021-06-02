@@ -15,7 +15,10 @@
 [02-Jun-2021 12:26:41] NOTICE: fpm is running, pid 17
 [02-Jun-2021 12:26:41] NOTICE: ready to handle connections
 [02-Jun-2021 12:26:41] NOTICE: systemd monitor interval set to 10000ms
+<<<<<<< HEAD
 
 [02-Jun-2021 15:16:54] NOTICE: fpm is running, pid 17
 [02-Jun-2021 15:16:54] NOTICE: ready to handle connections
 [02-Jun-2021 15:16:54] NOTICE: systemd monitor interval set to 10000ms
+=======
+>>>>>>> d4c814bf2d1b156981f32cd0e586fdee91b46434

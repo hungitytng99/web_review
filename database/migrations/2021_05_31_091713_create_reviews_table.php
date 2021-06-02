@@ -19,14 +19,14 @@ class CreateReviewsTable extends Migration
                     ->constrained('users')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
-            // $table->foreignId('restaurant_id')
-            //         ->constrained('restaurants')
-            //         ->onUpdate('cascade')
-            //         ->onDelete('cascade');
-            // $table->foreignId('dish_id')
-            //         ->constrained('dishes')
-            //         ->onUpdate('cascade')
-            //         ->onDelete('cascade');
+            $table->foreignId('restaurant_id')
+                    ->constrained('restaurants')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
+            $table->foreignId('dish_id')
+                    ->constrained('dishes')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
             $table->string('comment', 100);
             $table->decimal('rate', 2, 1);
             $table->text('images');

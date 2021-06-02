@@ -16,17 +16,12 @@ Route::namespace('home')->group(function () {
     Route::post('/get-more-restaurants', [HomeController::class, 'getMoreRestaurants']);
     Route::get('/get-infinity-restaurants', [HomeController::class, 'getInfinityRestaurants']);
     Route::get('/get-auth-status', [HomeController::class, 'getAuthStatus']);
-
 });
 
 Route::get('/about', [AboutController::class, 'about']);
 Route::post('/about', [AboutController::class, 'processContactForm']);
 
 
-
-// Route::get('/review', [ReviewController::class, 'getId']);
-//Review
-Route::get('{Id}', [ReviewController::class, 'getId']);
 
 Route::namespace('auth')->group(function () {
     // Login
@@ -58,3 +53,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile', [ProfileController::class, 'editProfile'])->name('edit_profile');
     Route::delete('/profile', [ProfileController::class, 'deleteAccount']);
 });
+// Route::get('/review', [ReviewController::class, 'getId']);
+//Review
+Route::get('{Id}', [ReviewController::class, 'getId']);
