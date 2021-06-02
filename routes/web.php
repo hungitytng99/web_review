@@ -6,7 +6,8 @@ use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Review\ReviewController;
 use App\Http\Controllers\Home\HomeController;
-//Ajax
+
+Route::redirect('/home', '/');
 Route::namespace('home')->group(function () {
     //Home index
     Route::get('/', [HomeController::class, 'index']);
@@ -14,12 +15,15 @@ Route::namespace('home')->group(function () {
     Route::post('/get-more-outstanding-dishes', [HomeController::class, 'getMoreOutstandingFood']);
     Route::post('/get-more-restaurants', [HomeController::class, 'getMoreRestaurants']);
 });
-Route::redirect('/home', '/');
 
 Route::get('/about', [AboutController::class, 'about']);
 Route::post('/about', [AboutController::class, 'processContactForm']);
 
-Route::get('/review', [ReviewController::class, 'review']);
+
+
+// Route::get('/review', [ReviewController::class, 'getId']);
+//Review
+Route::get('{Id}', [ReviewController::class, 'getId']);
 
 Route::namespace('auth')->group(function () {
     // Login

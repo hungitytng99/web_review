@@ -160,7 +160,6 @@ class RestaurantsSeeder extends Seeder
                 'image' => '/assets/images/image-da788f1b-200908105306.jpg',
                 'sale_percent' => 0,
             ], 
-            //trash
             [
                 'linkTo' => 'banh-mi-cha-nong-dung-hanh-nguyen-tuan',
                 'name' => 'Bánh Mì Chả Nóng Dũng Hạnh - Nguỵ Như Kon Tum',
