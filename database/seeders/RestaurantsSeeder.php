@@ -178,6 +178,7 @@ class RestaurantsSeeder extends Seeder
                 'image' => '/assets/images/image-da788f1b-200908105306.jpg',
                 'sale_percent' => 15,
             ],
+
             [
                 // 19
                 'linkTo' => 'minh-phuong-nem-nuong-nha-trang',

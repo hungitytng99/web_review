@@ -4,40 +4,36 @@ namespace App\Http\Controllers\Review;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+
 use Illuminate\Support\Facades\DB;
+use App\Models\Review;
 
 class ReviewController extends Controller
 {
-    public function getUserReviews($id) {
-        $user_reviews = DB::table('reviews')->where('user_id', $id)->get();
-        $user = DB::table('users')->where('id', $id)->get()->first();
-
-        // dump($user);
-
-        if ($user_reviews->isEmpty()) {
-            abort(404);
-        }
-
-        $reviews = [];
-
-        foreach($user_reviews as $review) {
-            $data = [
-                'dish' => DB::table('dishes')->where('id', $review->dish_id)->get()->first()->name,
-                'restaurant' => DB::table('restaurants')->where('id', $review->restaurant_id)->get()->first()->name,
-                'comment' => $review->comment,
-                'rate' => $review->rate,
-                'images' => json_decode($review->images),
-                'date' => $review->created_at,
-            ];
-            array_push($reviews, $data);
-        }
-
-        //dump($reviews);
-
-        return view('Review.user-review')->with([
-            'user' => $user,
-            'reviews' => $reviews
-        ]);
-
+    public function getId($Id)
+    {
+        // $id = 'nom-ong-phuc-nghia-tan';
+        // $result = DB::table('dishes_restaurants')
+        // ->join('dishes', 'dishes_restaurants.dishes_id', '=', 'dishes.id')
+        // ->join('restaurants', 'dishes_restaurants.restaurants_id', '=', 'restaurants.id')
+        // ->where('isOutstandingDish', '=', false)
+        // ->where('restaurants.id', '=', $id)
+        // ->get();
+        $restaurants = DB::table('restaurants')
+        ->where('linkTo', "=", $Id)
+        ->get();
+        $disheds= DB:: table('restaurants')
+        ->join('dishes_restaurants', 'restaurants.id', '=', 'dishes_restaurants.restaurants_id')
+        ->join('dishes', 'dishes.id', '=', 'dishes_restaurants.dishes_id')
+        ->where('linkTo', "=", $Id)
+        ->where('isOutstandingDish', '=', false)
+        ->get();
+        // dd($disheds);
+        // dd($restaurants);
+        return view('Review/review')
+        ->with('Id', $Id)
+        ->with('disheds', $disheds)
+        ->with('restaurantDetail', $restaurants);
     }
 }
