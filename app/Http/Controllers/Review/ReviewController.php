@@ -38,7 +38,7 @@ class ReviewController extends Controller
                 $max=$dished->price;
             }
         }
-        dd($restaurants);
+        // dd($restaurants);
         return view('Review/review')
         ->with('Id', $Id)
         ->with('min', $min)
