@@ -1,18 +1,11 @@
 @extends('Layouts.page')
 @section('title', 'Foodee - Trang chủ')
 @section('css')
-<!-- Animate.css -->
-<link rel="stylesheet" href="Homepage/css/animate.css">
+
 <!-- Flexslider -->
 <link rel="stylesheet" href="Homepage/css/flexslider.css">
 <!-- Bootstrap  -->
 <link rel="stylesheet" href="Homepage/css/bootstrap.css">
-
-<!-- Fontawesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-<!-- Bootstrap cdn -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
 <!-- My css -->
 <link rel="stylesheet" href="Base/css/base.css">
 <link rel="stylesheet" href="Homepage/css/style.css">
@@ -21,24 +14,15 @@
 @endsection
 
 @section('js')
-<!-- Modernizr JS -->
-<script src="Homepage/js/modernizr-2.6.2.min.js"></script>
-<!-- jQuery -->
-<script src="Homepage/js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="Homepage/js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="Homepage/js/bootstrap.min.js"></script>
+
 <!-- Bootstrap DateTimePicker -->
 <script src="Homepage/js/moment.js"></script>
 <script src="Homepage/js/bootstrap-datetimepicker.min.js"></script>
-<!-- Waypoints -->
-<script src="Homepage/js/jquery.waypoints.min.js"></script>
+
 <!-- Stellar Parallax -->
 <script src="Homepage/js/jquery.stellar.min.js"></script>
 
-<!-- Flexslider -->
-<script src="Homepage/js/jquery.flexslider-min.js"></script>
+
 <!-- Modal -->
 <script src="Homepage/js/micromodal.min.js"></script>
 <!-- Wow - animation when scroll page -->

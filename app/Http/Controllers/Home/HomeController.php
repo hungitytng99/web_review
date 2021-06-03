@@ -15,10 +15,6 @@ class HomeController extends Controller
 
     function index()
     {
-        if (Auth::check()) {
-            $user = Auth::user();
-            return view('Home/home')->with('user', $user);
-        }
         return view('Home/home');
     }
     function handleOutstandingFood($outstandingDishes)
@@ -120,5 +116,10 @@ class HomeController extends Controller
 
     function getAuthStatus(Request $request){
         return response()->json(Auth::check());
+    }
+
+    function search($params){
+        
+        dd($params);
     }
 }
