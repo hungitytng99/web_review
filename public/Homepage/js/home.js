@@ -285,12 +285,6 @@ function showDetailDish(event, element) {
 }
 
 
-
-
-function preventHideDropdown(e) {
-    e.preventDefault();
-}
-
 function handleClickExplore(element) {
     removeActiveExplore();
     $(element).addClass("--active");

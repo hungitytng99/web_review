@@ -19,7 +19,8 @@ Route::namespace('home')->group(function () {
     Route::get('/get-auth-status', [HomeController::class, 'getAuthStatus']);
 });
 Route::namespace('Search')->group(function () {
-    Route::get('/search/{params}', [SearchResultController::class, 'index']);
+    Route::get('/search/params={params}', [SearchResultController::class, 'index']);
+    Route::get('/api/search', [SearchResultController::class, 'returnSearchInput']);
 });
 
 

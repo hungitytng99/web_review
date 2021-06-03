@@ -92,7 +92,7 @@ class HomeController extends Controller
             $restaurantsList = array_diff($restaurantsList, $arrayExcept);
         }
         shuffle($restaurantsList);
-        $result = array_slice($restaurantsList, $end - $n);
+        $result = array_slice($restaurantsList, count($restaurantsList) - $n);
         return $result;
     }
     function getInfinityRestaurants(Request $request)

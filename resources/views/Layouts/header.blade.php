@@ -63,9 +63,19 @@
             <div class="header__nav --mobile">
                 <ul class="header__nav-list --right ">
                     <li class="header__nav-item">
-                        <div class="header__nav-search">
-                            <input type="text" class="header__nav-search-input" placeholder="Tìm món ăn, nhà hàng...">
+                        <div class="header__nav-search" tabindex="0">
+                            <input type="text" class="header__nav-search-input" placeholder="Tìm món ăn, nhà hàng..." onkeyup="searchParams(event,this)" onblur="hideSearchPanel(this,event)" onfocus="searchParams(event,this)" ">
                             <i class="header__nav-search-icon fas fa-search"></i>
+                            <div id="header-search-result" onmousedown="preventHideDropdown(event)">
+
+                                
+                                <a href="#" class="header__search-result-all">
+                                    Xem tất cả kết quả cho "<span id="search-key"></span>"
+                                </a>
+                               
+                                <div id="loading-search-more"></div>
+                                <div id="search-result"></div>
+                            </div>
                         </div>
                     </li>
                     <li class="header__nav-item hide-on-768">
@@ -108,35 +118,4 @@
 
     </div>
 </div>
-
-<script>
-    function showAccountDropdown(e) {
-        if (e.type == "click") {
-            $('#header__dropdown-triangle-up').toggleClass("show-element");
-            $('#account__dropdown').toggleClass("show-element");
-        } else {
-            $('#header__dropdown-triangle-up').removeClass("show-element");
-            $('#account__dropdown').removeClass("show-element");
-        }
-    }
-    // js for focus header search nav 
-    let headerSearch = $('input.header__nav-search-input');
-    let headerSeacrhBorder = $('div.header__nav-search');
-    headerSearch.focus(() => {
-
-        headerSeacrhBorder.css('border', '1px solid var(--tertiary)');
-    })
-    headerSearch.blur(() => {
-        headerSeacrhBorder.css('border', '1px solid #999');
-    })
-    //prevent scroll when open mobile nav
-    let mobileNavHandle = $('#mobile-nav-check');
-    mobileNavHandle.prop('checked', false);
-    mobileNavHandle.change(() => {
-        if (mobileNavHandle.prop('checked')) {
-            $('body').css('overflow', 'hidden');
-        } else {
-            $('body').css('overflow', 'scroll');
-        }
-    })
-</script>
+<script src="/Homepage/js/header.js"></script>
