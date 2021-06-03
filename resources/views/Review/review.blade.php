@@ -44,7 +44,7 @@
                 <div class="col-7 ">
                     <ul class="review__detail-list">
                         <div class="kind-restaurant">
-                            <span> Café/Dessert</span>
+                            <span> {{$restaurantDetail[0]->type}}</span>
                         </div>
                         <li class="review__detail-restaurant-name">
                             <h1>{{$restaurantDetail[0]->name}}
@@ -54,7 +54,7 @@
                             <p>{{$restaurantDetail[0]->location}}</p>
                         </li>
                         <div class="cost-restaurant">
-                            <i></i>17,000 - 25,000
+                            <i></i>{{$min}} - {{$max}}
                         </div>
                     </ul>
                 </div>
@@ -111,27 +111,12 @@
                                             <div class="old-price">{{$dished->price}} <span
                                                     style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                             </div>
-                                            <div class="new-price">10000<span
+                                            <div class="new-price">{{$dished->price*900}}<span
                                                     style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                             </div>
                                         </div>
                                     </li>
                                     @endforeach
-                                    <li class="restaurant-item__group-item">
-                                        <div class="item__img-box">
-                                            <img src="https://images.foody.vn/res/g27/269188/s120x120/7d8331f7-96fb-4376-be0b-75ef75e2-022b0ed4-201014091131.jpeg"
-                                                alt="nau-lac" class="restaurant-item__group-img"></img>
-                                        </div>
-                                        <div class="restaurant-item__group-name">Nâu lắc</div>
-                                        <div class="restaurant-item__group-price">
-                                            <div class="old-price">15000 <span
-                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                            </div>
-                                            <div class="new-price">10000<span
-                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                            </div>
-                                        </div>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -144,19 +129,19 @@
         @php
         $carouselLists = [
         [
-        'img' => 'Home/images/carousel_1.jpg',
+        'img' => 'HomePage/images/carousel_1.jpg',
         'linkTo' => '#',
         'user' => 'VU',
         'comment' => 'on ap ',
         ],
         [
-        'img' => 'Home/images/carousel_2.jpg',
+        'img' => 'HomePage/images/carousel_2.jpg',
         'linkTo' => '#',
         'user' => 'hung',
         'comment' => 'k ngon ',
         ],
         [
-        'img' => 'Home/images/carousel_3.jpg',
+        'img' => 'HomePage/images/carousel_3.jpg',
         'linkTo' => '#',
         'user' => 'vinh',
         'comment' => 'nhu shit',
@@ -165,7 +150,7 @@
         @endphp
         @include('ReviewBanner.carousel',$carouselLists)
 
-        <div id="type" style="background-image: url(Home/images/slide_3.jpg);" data-stellar-background-ratio="0.5">
+        <div id="type" style="background-image: url(HomePage/images/slide_3.jpg);" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
@@ -207,11 +192,11 @@
 @endsection
 @section('css')
 <!-- Animate.css -->
-<link rel="stylesheet" href="Home/css/animate.css">
+<link rel="stylesheet" href="HomePage/css/animate.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="Home/css/flexslider.css">
+<link rel="stylesheet" href="HomePage/css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="Home/css/bootstrap.css">
+<link rel="stylesheet" href="HomePage/css/bootstrap.css">
 
 <!-- Fontawesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -226,28 +211,28 @@
 <link rel="stylesheet" href="ReviewPage/css/style.css">
 <link rel="stylesheet" href="ReviewPage/css/final.css">
 <link rel="stylesheet" href="Base/css/base.css">
-<link rel="stylesheet" href="Home/css/style.css">
-<link rel="stylesheet" href="Home/css/modal.css">
+<link rel="stylesheet" href="HomePage/css/style.css">
+<link rel="stylesheet" href="HomePage/css/modal.css">
 @endsection
 
 @section('js')
 
 <!-- jQuery -->
-<script src="Home/js/jquery.min.js"></script>
+<script src="HomePage/js/jquery.min.js"></script>
 <!-- jQuery Easing -->
-<script src="Home/js/jquery.easing.1.3.js"></script>
+<script src="HomePage/js/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
-<script src="Home/js/bootstrap.min.js"></script>
+<script src="HomePage/js/bootstrap.min.js"></script>
 <!-- Bootstrap DateTimePicker -->
-<script src="Home/js/moment.js"></script>
-<script src="Home/js/bootstrap-datetimepicker.min.js"></script>
+<script src="HomePage/js/moment.js"></script>
+<script src="HomePage/js/bootstrap-datetimepicker.min.js"></script>
 <!-- Waypoints -->
-<script src="Home/js/jquery.waypoints.min.js"></script>
+<script src="HomePage/js/jquery.waypoints.min.js"></script>
 <!-- Stellar Parallax -->
-<script src="Home/js/jquery.stellar.min.js"></script>
+<script src="HomePage/js/jquery.stellar.min.js"></script>
 
 <!-- Flexslider -->
-<script src="Home/js/jquery.flexslider-min.js"></script>
+<script src="HomePage/js/jquery.flexslider-min.js"></script>
 <script>
 $(function() {
     $('#date').datetimepicker();
@@ -257,8 +242,8 @@ $(function() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <!-- Owl carousel -->
 <script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-<script src="Home/js/owl-carousel.js"></script>
+<script src="HomePage/js/owl-carousel.js"></script>
 <!-- Main JS -->
-<script src="Home/js/main.js"></script>
-<!-- <script src="Home/js/home.js"></script> -->
+<script src="HomePage/js/main.js"></script>
+<!-- <script src="HomePage/js/home.js"></script> -->
 @endsection

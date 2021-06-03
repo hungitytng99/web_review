@@ -25,6 +25,14 @@ class DishesTypeSeeder extends Seeder
                 'type' => 'Tối',
             ],  [
                 'type' => 'Khuya',
+            ], [
+                'type' => 'Nước giải khát ',
+            ], [
+                'type' => 'Cafe',
+            ], [
+                'type' => 'Món đặc biệt ',
+            ], [
+                'type' => 'Món khai vị',
             ], 
         ]);
     }

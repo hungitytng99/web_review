@@ -13,13 +13,6 @@ class ReviewController extends Controller
 {
     public function getId($Id)
     {
-        // $id = 'nom-ong-phuc-nghia-tan';
-        // $result = DB::table('dishes_restaurants')
-        // ->join('dishes', 'dishes_restaurants.dishes_id', '=', 'dishes.id')
-        // ->join('restaurants', 'dishes_restaurants.restaurants_id', '=', 'restaurants.id')
-        // ->where('isOutstandingDish', '=', false)
-        // ->where('restaurants.id', '=', $id)
-        // ->get();
         $restaurants = DB::table('restaurants')
         ->where('linkTo', "=", $Id)
         ->get();
@@ -29,10 +22,27 @@ class ReviewController extends Controller
         ->where('linkTo', "=", $Id)
         ->where('isOutstandingDish', '=', false)
         ->get();
-        // dd($disheds);
-        // dd($restaurants);
+        $min=100000;
+        $max=0;
+        foreach ($disheds as $dished) {
+            if (
+                $dished->price<= $min
+            ) {
+                $min=$dished->price;
+            }
+        }
+        foreach ($disheds as $dished) {
+            if (
+                $dished->price >= $max
+            ) {
+                $max=$dished->price;
+            }
+        }
+        dd($restaurants);
         return view('Review/review')
         ->with('Id', $Id)
+        ->with('min', $min)
+        ->with('max', $max)
         ->with('disheds', $disheds)
         ->with('restaurantDetail', $restaurants);
     }
