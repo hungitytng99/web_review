@@ -4,11 +4,11 @@
 
 @section('css')
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="/Home/css/animate.css">
+	<link rel="stylesheet" href="/Homepage/css/animate.css">
 	<!-- Flexslider -->
-	<link rel="stylesheet" href="/Home/css/flexslider.css">
+	<link rel="stylesheet" href="/Homepage/css/flexslider.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="/Home/css/bootstrap.css">
+	<link rel="stylesheet" href="/Homepage/css/bootstrap.css">
 
 	<!-- Fontawesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -17,40 +17,40 @@
 
 	<!-- My css -->
 	<link rel="stylesheet" href="/Base/css/base.css">
-	<link rel="stylesheet" href="/Home/css/style.css">
-	<link rel="stylesheet" href="/Home/css/header.css">
+	<link rel="stylesheet" href="/Homepage/css/style.css">
+	<link rel="stylesheet" href="/Homepage/css/header.css">
 
-	<link rel="stylesheet" href="/Review/css/style.css">
+	<link rel="stylesheet" href="/ReviewPage/User/css/style.css">
 @endsection
 
 @section('js')
 	<!-- Modernizr JS -->
-	<script src="/Home/js/modernizr-2.6.2.min.js"></script>
+	<script src="/Homepage/js/modernizr-2.6.2.min.js"></script>
 	<!-- jQuery -->
-	<script src="/Home/js/jquery.min.js"></script>
+	<script src="/Homepage/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="/Home/js/jquery.easing.1.3.js"></script>
+	<script src="/Homepage/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="/Home/js/bootstrap.min.js"></script>
+	<script src="/Homepage/js/bootstrap.min.js"></script>
 	<!-- Bootstrap DateTimePicker -->
-	<script src="/Home/js/moment.js"></script>
-	<script src="/Home/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="/Homepage/js/moment.js"></script>
+	<script src="/Homepage/js/bootstrap-datetimepicker.min.js"></script>
 	<!-- Waypoints -->
-	<script src="/Home/js/jquery.waypoints.min.js"></script>
+	<script src="/Homepage/js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
-	<script src="/Home/js/jquery.stellar.min.js"></script>
+	<script src="/Homepage/js/jquery.stellar.min.js"></script>
 
 	<!-- Flexslider -->
-	<script src="/Home/js/jquery.flexslider-min.js"></script>
+	<script src="/Homepage/js/jquery.flexslider-min.js"></script>
 	<!-- Modal -->
-	<script src="/Home/js/micromodal.min.js"></script>
+	<script src="/Homepage/js/micromodal.min.js"></script>
 	<!-- Wow - animation when scroll page -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 	<!-- Owl carousel -->
 	<script src="/vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-	<script src="/Home/js/owl-carousel.js"></script>
+	<script src="/Homepage/js/owl-carousel.js"></script>
 
-	<script src="/Home/js/main.js"></script>
+	<script src="/Homepage/js/main.js"></script>
 @endsection
 
 @section('content')
@@ -85,7 +85,10 @@
                         <img src="{{ url($user->avatar) }}" alt="avatar">
                         <div class="title flex-md-grow-1">
                             <a href="{{ url("/users/$user->id") }}">{{ $user->name }}</a>
-                            <p class="dr mt-2 mb-1"><a href="#">{{ $review['dish'] }}</a> | <a href="#">{{ $review['restaurant'] }}</a></p>
+                            <p class="dr mt-2 mb-1">
+								<a href="#">{{ $review['dish']->name }}</a> | 
+								<a href="{{ url('/' . $review['restaurant']->linkTo) }}">{{ $review['restaurant']->name }}</a>
+							</p>
                             <small>{{ date('d/m/Y', strtotime($review['date'])) }}</small>
                         </div>
                         <span class="rate">{{ $review['rate'] }}</span>
@@ -120,6 +123,6 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
-	<script src="/Review/js/main.js"></script>
+	<script src="/ReviewPage/User/js/main.js"></script>
 
 @endsection

@@ -12,28 +12,28 @@ Route::redirect('/home', '/');
 Route::namespace('home')->group(function () {
     //Home index
     Route::get('/', [HomeController::class, 'index']);
+
+    // About us
+    Route::get('/about-us', [AboutController::class, 'about']);
+    Route::post('/about-us', [AboutController::class, 'processContactForm']);
+
     //Ajax request
     Route::post('/get-more-outstanding-dishes', [HomeController::class, 'getMoreOutstandingFood']);
     Route::post('/get-more-restaurants', [HomeController::class, 'getMoreRestaurants']);
     Route::get('/get-infinity-restaurants', [HomeController::class, 'getInfinityRestaurants']);
     Route::get('/get-auth-status', [HomeController::class, 'getAuthStatus']);
 });
+
 Route::namespace('Search')->group(function () {
     Route::get('/search/{params}', [SearchResultController::class, 'index']);
 });
 
-
-Route::get('/about', [AboutController::class, 'about']);
-Route::post('/about', [AboutController::class, 'processContactForm']);
-
-
+Route::get('/activities/{id}', [ReviewController::class, 'getUserReviews'])->where('id', '[0-9]+');
 
 Route::namespace('auth')->group(function () {
     // Login
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'processLogin']);
-
-
     // Register
     Route::get('/register', [AuthController::class, 'register'])->name('register');
     Route::post('/register', [AuthController::class, 'processRegister'])->name('process_register');
@@ -58,6 +58,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile', [ProfileController::class, 'editProfile'])->name('edit_profile');
     Route::delete('/profile', [ProfileController::class, 'deleteAccount']);
 });
+
 // Route::get('/review', [ReviewController::class, 'getId']);
 //Review
 Route::get('{Id}', [ReviewController::class, 'getId']);
