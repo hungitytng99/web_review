@@ -33,6 +33,7 @@
     @endif
     {{-- Header --}}
     @include('Layouts.header')
+
     <div class="booking-table">
         <div class="container">
             <div class="row review__detail">
@@ -124,34 +125,31 @@
                 </div>
                 <div class="row">
                     <div class="col-12 ">
+                        @foreach ($reviews as $review)
                         <div class="review-item shadow-sm bg-white">
                             <div class="header d-flex">
-                                <img src="{{$restaurantDetail[0]->image}}" alt="avatar">
+                                <img src="{{ url($user->avatar) }}" alt="avatar">
                                 <div class="title flex-md-grow-1">
-                                    <a href=""> vu </a>
-                                    <p class="dr mt-2 mb-1"><a href="#">banh mi </a> | <a href="#">banh mi cha nong </a>
-                                    </p>
-                                    <small>16/7</small>
+                                    <a href="">{{ $user->name }}</a>
+                                    <p class="dr mt-2 mb-1"><a href="#">{{ $review->dishes_name }}</a> | <a
+                                            href="#">{{ $review->restaurant_name }}</a></p>
+                                    <small>{{ date('d/m/Y', strtotime(16/7)) }}</small>
                                 </div>
-                                <span class="rate">5</span>
+                                <span class="rate">{{ $review->reviews_rate }}</span>
                             </div>
                             <hr>
                             <div class="comment">
-                                <p>Nguyễn Phương Hằng, cái tên hot nhất mạng xã hội những ngày qua, nữ đại gia một tay
-                                    tạo nên cơn “sóng thần” cho showbiz Việt. Bà chủ Đại Nam và drama dài tập với giới
-                                    nghệ sĩ khiến dư luận bàn tán không ngừng nghỉ. Song song với đó là việc tiết lộ đời
-                                    tư của người nổi tiếng, tên tuổi bà Phương Hằng với độ phủ sóng rộng khắp, lượng fan
-                                    tăng chóng mặt thì antifan của bà cũng không ít. Vợ ông Dũng "lò vôi" gặp không ít
-                                    rắc rối khi bị nhiều tài khoản antifan đăng bài nhắc đến quá khứ.</p>
+                                <p>{{ $review->comment }}</p>
                             </div>
                             <div class="pb-3">
                                 <small>- Đây là nhận xét từ Thành Viên trên Foodee -</small>
                             </div>
                             <div class="images">
+                                @foreach ($review_image as $image)
                                 <div class="column">
-                                    <img class="w-100" src="{{$restaurantDetail[0]->image}}" alt="image">
+                                    <img class="w-100" src="{{ url($image) }}" alt="image">
                                 </div>
-
+                                @endforeach
                             </div>
                             <div class="toolbar d-flex">
                                 <a href="#" class="fas fa-heart"> Thích</a>
@@ -159,6 +157,7 @@
                                 <a href="#" class="fas fa-exclamation-triangle ml-4"> Báo lỗi</a>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

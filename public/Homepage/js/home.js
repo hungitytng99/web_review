@@ -1,13 +1,4 @@
-// js for focus header search nav 
-let headerSearch = $('input.header__nav-search-input');
-let headerSeacrhBorder = $('div.header__nav-search');
-headerSearch.focus(() => {
 
-    headerSeacrhBorder.css('border', '1px solid var(--tertiary)');
-})
-headerSearch.blur(() => {
-    headerSeacrhBorder.css('border', '1px solid #999');
-})
 //prevent scroll when open mobile nav
 let mobileNavControl = $('#mobile-nav-check');
 mobileNavControl.prop('checked', false);
@@ -33,15 +24,6 @@ let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30p
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    // loading
-    // $(document).ajaxStart(function () {
-    //     
-    //     $("#loading-more").html(loadingImg);
-    // }).ajaxStop(function () {
-    //     $("#loading-more").html("");
-    // });
-
-
     // getmore dishes
     $.ajax({
         type: 'POST',
@@ -302,15 +284,7 @@ function showDetailDish(event, element) {
     }
 }
 
-function showAccountDropdown(e) {
-    if (e.type == "click") {
-        $('#header__dropdown-triangle-up').toggleClass("show-element");
-        $('#account__dropdown').toggleClass("show-element");
-    } else {
-        $('#header__dropdown-triangle-up').removeClass("show-element");
-        $('#account__dropdown').removeClass("show-element");
-    }
-}
+
 
 
 function preventHideDropdown(e) {

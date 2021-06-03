@@ -6,6 +6,7 @@ use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Review\ReviewController;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Search\SearchResultController;
 
 Route::redirect('/home', '/');
 Route::namespace('home')->group(function () {
@@ -17,11 +18,15 @@ Route::namespace('home')->group(function () {
     Route::get('/get-infinity-restaurants', [HomeController::class, 'getInfinityRestaurants']);
     Route::get('/get-auth-status', [HomeController::class, 'getAuthStatus']);
 });
+Route::namespace('Search')->group(function () {
+    Route::get('/search/{params}', [SearchResultController::class, 'index']);
+});
+
 
 Route::get('/about', [AboutController::class, 'about']);
 Route::post('/about', [AboutController::class, 'processContactForm']);
 
-
+Route::get('/users/{id}', [ReviewController::class, 'getUserReviews'])->where('id', '[0-9]+');
 
 Route::namespace('auth')->group(function () {
     // Login
