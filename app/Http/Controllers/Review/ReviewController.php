@@ -38,45 +38,61 @@ class ReviewController extends Controller
                 $max=$dished->price;
             }
         }
-        dd($restaurants);
+        $reviews = DB::table('reviews')
+        ->join('users', 'reviews.user_id', '=', 'users.id')
+        ->join('dishes', 'reviews.dish_id', '=', 'dishes.id')
+        ->join('restaurants', 'reviews.restaurant_id', '=', 'restaurants.id')
+        ->select('restaurants.name as restaurant_name', 'restaurants.image as restaurants_image', 'user_id', 'comment', 'reviews.images as reviews_image', 'reviews.rate as reviews_rate', 'dishes.name as dishes_name', 'email', 'avatar', 'dishes.image as dishes_image')
+
+        ->where('restaurant_id', '=', $restaurants[0]->id)
+
+        ->get();
+        
+        $user = DB::table('users')->where('id', '=', $reviews[0]->user_id)->get()->first();
+        $review_image = [];
+        $review_image = $reviews[0]->reviews_image;
+        $review_image=json_decode($review_image);
+        // dd($review_image);
         return view('Review/review')
+        ->with('review_image', $review_image)
         ->with('Id', $Id)
         ->with('min', $min)
         ->with('max', $max)
+        ->with('reviews', $reviews)
         ->with('disheds', $disheds)
+        ->with('user', $user)
         ->with('restaurantDetail', $restaurants);
     }
+    // public function getUserReviews($id)
+    // {
+    //     $user_reviews = DB::table('reviews')->where('user_id', $id)->get();
+    //     $user = DB::table('users')->where('id', $id)->get()->first();
 
-    public function getUserReviews($id) {
-        $user_reviews = DB::table('reviews')->where('user_id', $id)->get();
-        $user = DB::table('users')->where('id', $id)->get()->first();
+    //     // dump($user);
 
-        // dump($user);
+    //     if ($user_reviews->isEmpty()) {
+    //         abort(404);
+    //     }
 
-        if ($user_reviews->isEmpty()) {
-            abort(404);
-        }
+    //     $reviews = [];
 
-        $reviews = [];
+    //     foreach ($user_reviews as $review) {
+    //         $data = [
+    //             'dish' => DB::table('dishes')->where('id', $review->dish_id)->get()->first()->name,
+    //             'restaurant' => DB::table('restaurants')->where('id', $review->restaurant_id)->get()->first()->name,
+    //             'comment' => $review->comment,
+    //             'rate' => $review->rate,
+    //             'images' => json_decode($review->images),
+    //             'date' => $review->created_at,
+    //         ];
+    //         array_push($reviews, $data);
+    //     }
 
-        foreach($user_reviews as $review) {
-            $data = [
-                'dish' => DB::table('dishes')->where('id', $review->dish_id)->get()->first(),
-                'restaurant' => DB::table('restaurants')->where('id', $review->restaurant_id)->get()->first(),
-                'comment' => $review->comment,
-                'rate' => $review->rate,
-                'images' => json_decode($review->images),
-                'date' => $review->created_at,
-            ];
-            array_push($reviews, $data);
-        }
+    //     dump($reviews);
 
-        //dump($reviews);
-
-        return view('Review.user-review')->with([
-            'user' => $user,
-            'reviews' => $reviews
-        ]);
-
-    }
+    //     return view('Review.review')->with([
+    //         'user' => $user,
+    //         'reviews' => $reviews
+    //     ]);
+    // }
 }
