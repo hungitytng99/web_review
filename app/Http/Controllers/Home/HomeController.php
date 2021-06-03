@@ -77,8 +77,6 @@ class HomeController extends Controller
 
     function getMoreRestaurants(Request $request)
     {
-        // request.itemLength
-
         $restaurants = DB::table('restaurants')
             ->where('id', '<=', $request->itemEnd)
             ->where('id', '>=', $request->itemStart)

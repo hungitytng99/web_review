@@ -46,7 +46,7 @@
                         </a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="#">
+                        <a href="/about">
                             Giới thiệu
                         </a>
                     </li>
