@@ -50,7 +50,7 @@
 	<script src="/vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 	<script src="/Homepage/js/owl-carousel.js"></script>
 
-	<script src="/Homepage/js/main.js"></script>
+	<script src="/Homepage/js/home.js"></script>
 @endsection
 
 @section('content')

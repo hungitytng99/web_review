@@ -37,12 +37,12 @@ class ProfileController extends Controller
             $image = $request->file('upload_avatar');
             $path = $image->move('assets/avatars');
 
-            if ($user->avatar != 'assets/avatars/default.png') {
+            if ($user->avatar != '/assets/avatars/default.png') {
                 File::delete($user->avatar);
             }
 
             $query_user->update([
-                'avatar' => $path
+                'avatar' => '/' . $path
             ]);
 
             return redirect('/profile')->with([
