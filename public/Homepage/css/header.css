@@ -7,6 +7,10 @@ a {
     transition: 0.5s;
 }
 
+h2 {
+    margin: 0px;
+}
+
 .header__sticky {
     position: sticky;
     top: 0;
