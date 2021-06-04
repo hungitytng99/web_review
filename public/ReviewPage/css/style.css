@@ -1,0 +1,56 @@
+:root{
+    --main-color :D97D10;
+    --sub-color: A6663A;
+}
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;  
+}
+ul{
+    list-style: none;
+
+}
+a{
+    text-decoration: none;
+}
+.justify-content{
+    justify-content: space-between;
+}
+.container{
+    margin: auto;
+    max-width: 1200px;
+
+}
+.row{
+display: flex;
+flex-wrap: wrap;
+}
+.top .logo img{
+    width: 80px;
+}
+.top{ 
+    background-color: var(--main-color);
+}
+.top .menu-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.top .menu-bar span{
+    display: block ;
+    height: 2px;
+    width: 40px;
+    background-color: burlywood;
+}
+.top .menu-bar span::before{
+    height: 100%;
+    width: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    transform: translateY(-10px);
+    background-color: blue;
+}

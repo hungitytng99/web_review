@@ -1,14 +1,14 @@
 @extends('Layouts.page')
 
-@section('title', 'Foodee - Trang chủ')
+@section('title', 'Về Foodee')
 
 @section('css')
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="Home/css/animate.css">
+	<link rel="stylesheet" href="Homepage/css/animate.css">
 	<!-- Flexslider -->
-	<link rel="stylesheet" href="Home/css/flexslider.css">
+	<link rel="stylesheet" href="Homepage/css/flexslider.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="Home/css/bootstrap.css">
+	<link rel="stylesheet" href="Homepage/css/bootstrap.css">
 
 	<!-- Fontawesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -17,40 +17,40 @@
 
 	<!-- My css -->
 	<link rel="stylesheet" href="Base/css/base.css">
-	<link rel="stylesheet" href="Home/css/style.css">
-	<link rel="stylesheet" href="Home/css/header.css">
+	<link rel="stylesheet" href="Homepage/css/style.css">
+	<link rel="stylesheet" href="Homepage/css/header.css">
 
 	<link rel="stylesheet" href="About/css/style.css">
 @endsection
 
 @section('js')
 	<!-- Modernizr JS -->
-	<script src="Home/js/modernizr-2.6.2.min.js"></script>
+	<script src="Homepage/js/modernizr-2.6.2.min.js"></script>
 	<!-- jQuery -->
-	<script src="Home/js/jquery.min.js"></script>
+	<script src="Homepage/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="Home/js/jquery.easing.1.3.js"></script>
+	<script src="Homepage/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="Home/js/bootstrap.min.js"></script>
+	{{-- <script src="Homepage/js/bootstrap.min.js"></script> --}}
 	<!-- Bootstrap DateTimePicker -->
-	<script src="Home/js/moment.js"></script>
-	<script src="Home/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="Homepage/js/moment.js"></script>
+	<script src="Homepage/js/bootstrap-datetimepicker.min.js"></script>
 	<!-- Waypoints -->
-	<script src="Home/js/jquery.waypoints.min.js"></script>
+	<script src="Homepage/js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
-	<script src="Home/js/jquery.stellar.min.js"></script>
+	<script src="Homepage/js/jquery.stellar.min.js"></script>
 
 	<!-- Flexslider -->
-	<script src="Home/js/jquery.flexslider-min.js"></script>
+	<script src="Homepage/js/jquery.flexslider-min.js"></script>
 	<!-- Modal -->
-	<script src="Home/js/micromodal.min.js"></script>
+	<script src="Homepage/js/micromodal.min.js"></script>
 	<!-- Wow - animation when scroll page -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 	<!-- Owl carousel -->
 	<script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-	<script src="Home/js/owl-carousel.js"></script>
+	<script src="Homepage/js/owl-carousel.js"></script>
 
-	<script src="Home/js/main.js"></script>
+	<script src="Homepage/js/home.js"></script>
 @endsection
 
 @section('content')
@@ -137,7 +137,7 @@
 									</div>
 									<div class="dev-text pb-5">
 										<p>
-											Chào buổi sáng. Mình rất vui khi được chung tay xây dựng trang web này. Nếu có thắc mắc hãy liên hệ với chúng mình nhé.
+											Chào mọi người. Mình rất vui khi được chung tay xây dựng trang web này. Nếu có thắc mắc hãy liên hệ với chúng mình nhé.
 										</p>
 									</div>
 									<div class="dev-name pb-4">
@@ -157,7 +157,7 @@
 									</div>
 									<div class="dev-text pb-5">
 										<p>
-											Chào buổi sáng. Mình rất vui khi được chung tay xây dựng trang web này. Nếu có thắc mắc hãy liên hệ với chúng mình nhé.
+											Chào mọi người. Mình rất vui khi được chung tay xây dựng trang web này. Nếu có thắc mắc hãy liên hệ với chúng mình nhé.
 										</p>
 									</div>
 									<div class="dev-name pb-4">
@@ -177,7 +177,7 @@
 									</div>
 									<div class="dev-text pb-5">
 										<p>
-											Chào buổi sáng. Tôi rất vui khi được chung tay xây dựng trang web này. Nếu có thắc mắc gì hãy liên hệ với chúng tôi nhé.
+											Chào mọi người. Tôi rất vui khi được chung tay xây dựng trang web này. Nếu có thắc mắc gì hãy liên hệ với chúng tôi nhé.
 										</p>
 									</div>
 									<div class="dev-name pb-4">

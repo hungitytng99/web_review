@@ -1,5 +1,10 @@
 <!-- Footer -->
+
+<link rel="stylesheet" href="/Homepage/css/footer.css">
+<!-- Animate.css -->
+<link rel="stylesheet" href="/Homepage/css/animate.css">
 <div id="footer">
+
     <div class="container">
         <div class="row row-padded">
             <div class="col-md-12 text-center">
@@ -19,3 +24,4 @@
         </div>
     </div>
 </div>
+<script src="/Homepage/js/main.js"></script>

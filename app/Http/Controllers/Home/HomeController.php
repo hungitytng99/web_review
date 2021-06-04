@@ -7,16 +7,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
+use function PHPUnit\Framework\isEmpty;
+
 class HomeController extends Controller
 {
 
 
     function index()
     {
-        if (Auth::check()) {
-            $user = Auth::user();
-            return view('Home/home')->with('user', $user);
-        }
         return view('Home/home');
     }
     function handleOutstandingFood($outstandingDishes)
@@ -79,12 +77,47 @@ class HomeController extends Controller
 
     function getMoreRestaurants(Request $request)
     {
-        // request.itemLength
-
         $restaurants = DB::table('restaurants')
             ->where('id', '<=', $request->itemEnd)
             ->where('id', '>=', $request->itemStart)
             ->get();
         return response()->json($restaurants);
+    }
+    function getNRandomNumber($n, $end, $arrayExcept = [], $start = 1)
+    {
+        $restaurantsList = range($start, $end);
+        if (count($arrayExcept) > 0) {
+            $restaurantsList = array_diff($restaurantsList, $arrayExcept);
+        }
+        shuffle($restaurantsList);
+        $result = array_slice($restaurantsList, count($restaurantsList) - $n);
+        return $result;
+    }
+    function getInfinityRestaurants(Request $request)
+    {
+        $restaurants = DB::table('restaurants')
+            ->get();
+        $totalRestaurant = count($restaurants);
+        $restaurantsIdList = $this->getNRandomNumber($request->itemLength, $totalRestaurant);
+        // return list of random record
+        $restaurantsList = [];
+        foreach( $restaurantsIdList as $restaurantsId){
+
+            $restaurantsItem = $restaurants = DB::table('restaurants')
+            ->where('id', '=', $restaurantsId)
+            ->get();
+            array_push($restaurantsList, $restaurantsItem[0]);
+        }
+        
+        return response()->json($restaurantsList);
+    }
+
+    function getAuthStatus(Request $request){
+        return response()->json(Auth::check());
+    }
+
+    function search($params){
+        
+        dd($params);
     }
 }

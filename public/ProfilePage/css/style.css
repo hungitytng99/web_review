@@ -1,0 +1,187 @@
+body {
+    background-color: whitesmoke;
+    line-height: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+label {
+    margin: 0;
+}
+
+small {
+    color: gray;
+}
+
+.btn {
+    display: inline-block;
+    margin: 0;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: white;
+    font-weight: bold;
+    color: deepskyblue;
+}
+
+.btn:hover {
+    color: blue;
+}
+
+.btn.confirm {
+    display: inline-block;
+    margin: 0;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: orangered;
+    font-weight: bold;
+    color: white;
+}
+
+.btn.confirm:hover {
+    background-color: brown;
+}
+
+.btn.primary {
+    display: inline-block;
+    margin: 0;
+    padding: 1rem 2rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: deepskyblue;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: blue;
+}
+
+.btn.danger {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: gray;
+}
+
+.btn.danger:hover {
+    color: red;
+}
+
+.section-header h1{
+    font-size: 3rem;
+}
+
+.logo {
+    width: 32px;
+}
+
+.panel {
+    margin: 0;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.section-avatar img {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+}
+
+.section-avatar .btn {
+    margin-left: 2rem;
+}
+
+.side-nav {
+    padding: 2rem 0;
+}
+
+.side-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.side-nav ul li a{
+    display: block;
+    border-radius: 14px;
+    margin-bottom: 0.625rem;
+    padding: 0.8rem 1.8rem;
+    font-weight: bold;
+    color: gray;
+    text-decoration: none;
+}
+
+.side-nav ul li a.active{
+    background-color: lightblue;
+    color: black;
+}
+
+.top-nav {
+    display: none;
+}
+
+@media(max-width: 768px) {
+    small {
+        display: none;
+    }
+
+    .panel {
+        border-radius: 0;
+        padding: 2rem;
+    }
+
+    .side-nav {
+        display: none;
+    }
+
+    .top-nav {
+        display: block;
+    }
+    .top-nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: gray;
+    }
+
+    .top-nav li {
+        float: left;
+    }
+
+    .top-nav li a {
+        display: block;
+        padding: 1.2rem;
+        color: white;
+        text-align: center;
+    }
+
+    .top-nav li a.active{
+        font-weight: bold;
+        color: red;
+        background-color: black;
+    }
+}
+
+.section-input-label {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.section-save-change-btn {
+    margin-top: 2rem;
+}
+
+.alert.auto-hide {
+    margin-top: 1rem;
+}

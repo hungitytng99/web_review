@@ -17,6 +17,7 @@ class CreateRestaurantsTable extends Migration
             $table->id();
             $table->string('linkTo');
             $table->string('name');
+            $table->string('type');
             $table->string('location');
             $table->float('rate');
             $table->string('phone')->nullable();
