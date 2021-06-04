@@ -30,6 +30,8 @@
 	<script src="/Homepage/js/jquery.flexslider-min.js"></script>
 	<!-- Waypoints -->
 	<script src="/Homepage/js/jquery.waypoints.min.js"></script>
+	<!-- Js cookie -->
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 	@yield('css')
 </head>
 

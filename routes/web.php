@@ -7,6 +7,7 @@ use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Review\ReviewController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Search\SearchResultController;
+use App\Http\Controllers\Suggestion\SuggestionController;
 
 Route::redirect('/home', '/');
 Route::namespace('home')->group(function () {
@@ -22,6 +23,8 @@ Route::namespace('home')->group(function () {
     Route::post('/get-more-restaurants', [HomeController::class, 'getMoreRestaurants']);
     Route::get('/get-infinity-restaurants', [HomeController::class, 'getInfinityRestaurants']);
     Route::get('/get-auth-status', [HomeController::class, 'getAuthStatus']);
+    Route::get('/get-user-info', [HomeController::class, 'getContactUser']);
+
 });
 
 Route::namespace('Search')->group(function () {
@@ -63,6 +66,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
     Route::post('/profile', [ProfileController::class, 'editProfile'])->name('edit_profile');
     Route::delete('/profile', [ProfileController::class, 'deleteAccount']);
+    //get suggestion menu for user
+    Route::get('/suggestion', [SuggestionController::class, 'index']);
 });
 
 // Route::get('/review', [ReviewController::class, 'getId']);

@@ -233,42 +233,7 @@
             </div>
         </div>
     </div>
-    <!-- ... -->
-    <div id="type" style="background-image: url(Homepage/images/slide_3.jpg); background-position: center;" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 to-animate">
-                    <div class="type">
-                        <h3 class="with-icon icon-1">Review</h3>
-                        <p>Tập hợp cảm nhận về những quán ăn, món ăn. Đem lại sự lựa chọn hoàn hảo cho bạn.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 to-animate">
-                    <div class="type">
-                        <h3 class="with-icon icon-2">Quán ăn</h3>
-                        <p>Quán ăn, nhà hàng ngon, nổi tiếng, thường xuyên có khuyến mãi, giúp bạn tiết kiệm chi
-                            phí một cách tối đa nhất.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 to-animate">
-                    <div class="type">
-                        <h3 class="with-icon icon-3">Món ăn</h3>
-                        <p>Những món ăn hấp dẫn, ngon miệng, thu hút người mua trong tuần, trong tháng.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 to-animate">
-                    <div class="type">
-                        <h3 class="with-icon icon-4">Thực đơn</h3>
-                        <p>Đem laị cho bạn thực đơn theo chế độ dinh dưỡng, phù hợp với công việc và lối sống
-                            của bạn.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal test -->
+    <!-- Modal information of outstanding dishes -->
     <div class="modal micromodal-slide" id="detail-dish-modal" aria-hidden="true">
         <div class="modal__overlay" tabindex="-1" data-micromodal-close>
             <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="detail-dish-modal-title">
@@ -281,6 +246,27 @@
                     <img id="loading-img" src="/assets/images/loading.svg" width="30px" height="30px" alt="loading"></img>
                     <div id="detail-dish-content"></div>
                 </main>
+            </div>
+        </div>
+    </div>
+    <!-- Modal notify fill information -->
+    <div class="modal micromodal-slide" id="notify-fill" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container --notify" role="dialog" aria-modal="true" aria-labelledby="notify-fill-title">
+                <main class="modal__content" id="notify-fill-content">
+                    <div class="notify__fill-information">
+                        Tài khoản của bạn chưa được cập nhật thông tin cá nhân. Vui lòng cập nhật thông tin cá nhân để có trải nghiệm tốt nhất.
+                    </div>
+                </main>
+                <footer class="modal__footer --notify">
+                    
+                    <button class="modal__notify-update-now">
+                        <a href="/profile">Cập nhật ngay</a>
+                    </button>
+                    <button class="modal__notify-update-later" data-micromodal-close aria-label="Close this dialog window">
+                        Cập nhật sau
+                    </button>
+                </footer>
             </div>
         </div>
     </div>

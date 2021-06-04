@@ -24,7 +24,7 @@
                                 <a href="/profile">Thông tin cá nhân</a>
                             </li>
                             <li class="mobile__nav-item">
-                                <a href="/">Gợi ý thực đơn</a>
+                                <a href="/suggestion">Gợi ý thực đơn</a>
                             </li>
                             <li class="mobile__nav-item">
                                 @if (Auth::check())
@@ -32,7 +32,7 @@
                                     <input id="mobile-search-input" type="text" class="header__mobile-search-input" onkeyup="handlePressEnter(event)" placeholder="Tìm món ăn, nhà hàng..."></input>
                                     <i class="header__mobile-search-icon fas fa-search-location" onclick="submitSearchForm(this)"></i>
                                 </div>
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();Cookies.remove('isShowNotify');">Đăng
                                     xuất</a>
                                 <form id="logout-form-mobile" action="{{ route('logout') }}" method="POST" hidden>@csrf
                                 </form>
@@ -100,10 +100,10 @@
                                         <a href="/profile">Thông tin cá nhân</a>
                                     </li>
                                     <li class="account__dropdown-item">
-                                        <a href="/">Gợi ý thực đơn</a>
+                                        <a href="/suggestion">Gợi ý thực đơn</a>
                                     </li>
                                     <li class="account__dropdown-item">
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();Cookies.remove('isShowNotify');">
                                             <div>Đăng xuất</div> <i class="fas fa-sign-out-alt"></i>
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>@csrf</form>

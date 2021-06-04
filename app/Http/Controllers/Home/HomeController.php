@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Psy\CodeCleaner\IssetPass;
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -101,23 +102,32 @@ class HomeController extends Controller
         $restaurantsIdList = $this->getNRandomNumber($request->itemLength, $totalRestaurant);
         // return list of random record
         $restaurantsList = [];
-        foreach( $restaurantsIdList as $restaurantsId){
+        foreach ($restaurantsIdList as $restaurantsId) {
 
             $restaurantsItem = $restaurants = DB::table('restaurants')
-            ->where('id', '=', $restaurantsId)
-            ->get();
+                ->where('id', '=', $restaurantsId)
+                ->get();
             array_push($restaurantsList, $restaurantsItem[0]);
         }
-        
+
         return response()->json($restaurantsList);
     }
 
-    function getAuthStatus(Request $request){
+    function getAuthStatus(Request $request)
+    {
         return response()->json(Auth::check());
     }
 
-    function search($params){
-        
-        dd($params);
+    function getContactUser(Request $request)
+    {
+        return response()->json($this->checkEmptyInfo());
+    }
+
+    function checkEmptyInfo()
+    {
+        if (isset(Auth::user()->job) && isset(Auth::user()->date_of_birth) && isset(Auth::user()->weight) && isset(Auth::user()->height)) {
+            return true;
+        }
+        return false;
     }
 }

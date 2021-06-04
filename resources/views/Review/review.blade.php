@@ -14,8 +14,7 @@
                 <div class="container">
                     <div class="row --center">
                         <h1 class="to-animate">Foodee</h1>
-                        <h2 class="to-animate">Sức khỏe và sự hài lòng <span> với</span> <a href="#"
-                                target="_blank">Foodee.co</a></h2>
+                        <h2 class="to-animate">Sức khỏe và sự hài lòng <span> với</span> <a href="#" target="_blank">Foodee.co</a></h2>
                     </div>
                 </div>
             </div>
@@ -213,16 +212,13 @@
                                     @foreach($disheds as $dished)
                                     <li class="restaurant-item__group-item">
                                         <div class="item__img-box">
-                                            <img src="{{$dished->image}}" alt="{{$dished->linkTo}}"
-                                                class="restaurant-item__group-img"></img>
+                                            <img src="{{$dished->image}}" alt="{{$dished->linkTo}}" class="restaurant-item__group-img"></img>
                                         </div>
                                         <div class="restaurant-item__group-name">{{$dished->name}}</div>
                                         <div class="restaurant-item__group-price">
-                                            <div class="old-price">{{$dished->price}} <span
-                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
+                                            <div class="old-price">{{$dished->price}} <span style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                             </div>
-                                            <div class="new-price">{{$dished->price*900}}<span
-                                                    style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
+                                            <div class="new-price">{{$dished->price*900}}<span style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                             </div>
                                         </div>
                                     </li>
@@ -240,8 +236,7 @@
                                 <img src="{{ url($user->avatar) }}" alt="avatar">
                                 <div class="title flex-md-grow-1">
                                     <a href="">{{ $user->name }}</a>
-                                    <p class="dr mt-2 mb-1"><a href="#">{{ $review->dishes_name }}</a> | <a
-                                            href="#">{{ $review->restaurant_name }}</a></p>
+                                    <p class="dr mt-2 mb-1"><a href="#">{{ $review->dishes_name }}</a> | <a href="#">{{ $review->restaurant_name }}</a></p>
                                     <small>{{ date('d/m/Y', strtotime(16/7)) }}</small>
                                 </div>
                                 <span class="rate">{{ $review->reviews_rate }}</span>
@@ -296,44 +291,6 @@
             ];
             @endphp
             @include('ReviewBanner.carousel',$carouselLists) -->
-
-            <div id="type" style="background-image: url(HomePage/images/slide_3.jpg);"
-                data-stellar-background-ratio="0.5">
-                <div class="overlay"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 to-animate">
-                            <div class="type">
-                                <h3 class="with-icon icon-1">Review</h3>
-                                <p>Tập hợp cảm nhận về những quán ăn, món ăn. Đem lại sự lựa chọn hoàn hảo cho bạn.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 to-animate">
-                            <div class="type">
-                                <h3 class="with-icon icon-2">Quán ăn</h3>
-                                <p>Quán ăn, nhà hàng ngon, nổi tiếng, thường xuyên có khuyến mãi, giúp bạn tiết kiệm
-                                    chi
-                                    phí một cách tối đa nhất.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 to-animate">
-                            <div class="type">
-                                <h3 class="with-icon icon-3">Món ăn</h3>
-                                <p>Những món ăn hấp dẫn, ngon miệng, thu hút người mua trong tuần, trong tháng.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 to-animate">
-                            <div class="type">
-                                <h3 class="with-icon icon-4">Thực đơn</h3>
-                                <p>Đem laị cho bạn thực đơn theo chế độ dinh dưỡng, phù hợp với công việc và lối
-                                    sống
-                                    của bạn.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     @include('Layouts.footer')
@@ -384,9 +341,9 @@
     <!-- Flexslider -->
     <script src="HomePage/js/jquery.flexslider-min.js"></script>
     <script>
-    $(function() {
-        $('#date').datetimepicker();
-    });
+        $(function() {
+            $('#date').datetimepicker();
+        });
     </script>
     <!-- Wow - animation when scroll page -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>

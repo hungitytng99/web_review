@@ -527,6 +527,50 @@ button:focus {
     line-height: 2.0rem;
 }
 
+
+/* Custom for notify modal */
+
+.modal__container.--notify {
+    padding: 20px;
+}
+
+.modal__footer.--notify {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.notify__fill-information {
+    color: #333;
+    font-size: 1.4rem;
+}
+
+.modal__footer.--notify button {
+    background-color: var(--primary);
+    color: white;
+    font-size: 1.4rem;
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.modal__footer.--notify button a {
+    color: white;
+}
+
+.modal__footer.--notify button:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.modal__footer.--notify button.modal__notify-update-later {
+    background-color: rgb(112, 112, 112);
+}
+
+.modal__btn.modal__btn-primary.--notify {}
+
+
+/* End custom */
+
 @media screen and (max-width:480px) {
     .bt-header__search-btn {
         font-size: 1.2rem;

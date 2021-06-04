@@ -122,6 +122,8 @@ let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30p
     });
     //infinity scroll
     getInfinityRestaurant();
+    //notify fill information
+    notifyFillInformation();
 
 })();
 function removeActiveExplorePanel() {
@@ -376,8 +378,46 @@ function getInfinityRestaurant() {
         error: (error) => {
             console.log(error);
         }
-    })
+    });
 }
+
+//handle if user don't fill full infomation
+function notifyFillInformation() {
+    $.ajax({
+        type: 'GET',
+        url: '/get-auth-status',
+        dataType: 'json',
+        success: (data) => {
+            if (data == true) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/get-user-info',
+                    dataType: 'json',
+                    success: (data) => {
+                        console.log(data);
+                        if (data == false) {
+                            //Modal appear
+                            if (!Cookies.get('isShowNotify')) {
+                                MicroModal.show('notify-fill', {
+                                    disableScroll: false,
+                                });
+                                Cookies.set('isShowNotify', 1, { expires: 1 });
+                            }
+                        }
+                    },
+                    error: (error) => {
+                        console.log(error);
+                    }
+                });
+            }
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    });
+
+}
+
 
 
 
