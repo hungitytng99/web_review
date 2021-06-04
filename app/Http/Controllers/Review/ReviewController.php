@@ -63,4 +63,83 @@ class ReviewController extends Controller
         ->with('user', $user)
         ->with('restaurantDetail', $restaurants);
     }
+
+    public function getUserReviews($id) {
+        $user_reviews = DB::table('reviews')->where('user_id', $id)->get();
+        $user = DB::table('users')->where('id', $id)->get()->first();
+
+        // dump($user);
+
+        if ($user_reviews->isEmpty()) {
+            abort(404);
+        }
+
+        $reviews = [];
+        $restaurants = [];
+
+        foreach($user_reviews as $review) {
+            $data = [
+                'dish' => DB::table('dishes')->where('id', $review->dish_id)->get()->first(),
+                'restaurant' => DB::table('restaurants')->where('id', $review->restaurant_id)->get()->first(),
+                'comment' => $review->comment,
+                'rate' => $review->rate,
+                'images' => json_decode($review->images),
+                'date' => $review->created_at,
+            ];
+            array_push($reviews, $data);
+
+            if (!in_array($data['restaurant']->name, $restaurants)) {
+                $restaurants[$data['restaurant']->id] = $data['restaurant']->name;
+            }
+        }
+
+        //dump($restaurants);
+
+        return view('Review.user-review')->with([
+            'user' => $user,
+            'reviews' => $reviews,
+            'restaurants' => $restaurants
+        ]);
+
+    }
+
+    public function getUserReviewsByRestaurantId(Request $request) {
+        $user_id = $request->user_id;
+        $res_id = $request->res_id;
+
+        $user_reviews;
+        if ($res_id == 'all') {
+            $user_reviews = DB::table('reviews')->where(['user_id' => $user_id])->get();
+        } else {
+            $user_reviews = DB::table('reviews')->where(['user_id' => $user_id, 'restaurant_id' => $res_id])->get();
+        }
+        
+        $user = DB::table('users')->where('id', $user_id)->get()->first();
+
+        if ($user_reviews->isEmpty()) {
+            abort(404);
+        }
+
+        $reviews = [];
+
+        foreach($user_reviews as $review) {
+            $data = [
+                'dish' => DB::table('dishes')->where('id', $review->dish_id)->get()->first(),
+                'restaurant' => DB::table('restaurants')->where('id', $review->restaurant_id)->get()->first(),
+                'comment' => $review->comment,
+                'rate' => $review->rate,
+                'images' => json_decode($review->images),
+                'date' => $review->created_at,
+            ];
+            array_push($reviews, $data);
+        }
+
+        $response = [
+            'status' => 'success',
+            'data' => $reviews
+        ];
+
+        return response()->json($response);
+
+    }
 }

@@ -18,7 +18,7 @@
                                 <a href="/">Trang chủ </a>
                             </li>
                             <li class="mobile__nav-item">
-                                <a href="/about">Giới thiệu </a>
+                                <a href="/about-us">Giới thiệu </a>
                             </li>
                             <li class="mobile__nav-item">
                                 <a href="/profile">Thông tin cá nhân</a>
@@ -53,7 +53,7 @@
                         </a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="/about">
+                        <a href="/about-us">
                             Giới thiệu
                         </a>
                     </li>
