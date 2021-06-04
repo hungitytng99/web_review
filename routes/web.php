@@ -29,6 +29,7 @@ Route::namespace('Search')->group(function () {
 });
 
 Route::get('/activities/{id}', [ReviewController::class, 'getUserReviews'])->where('id', '[0-9]+');
+Route::post('/get-restaurant', [ReviewController::class, 'getUserReviewsByRestaurantId']);
 
 Route::namespace('auth')->group(function () {
     // Login
