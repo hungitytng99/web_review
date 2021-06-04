@@ -75,7 +75,7 @@ function handleSearchAjax(keyType) {
                 `;
             }
             let extractHtml = ``;
-            for(let i = 0; i < extractCount;i++){
+            for (let i = 0; i < extractCount; i++) {
                 extractHtml += `
                 <li class="header__search-result-item">
                     <a href="/${data[i].linkTo}">
@@ -137,4 +137,16 @@ function handleSearchAjax(keyType) {
 }
 function hideSearchPanel() {
     $('#header-search-result').css('display', 'none');
+}
+// for screen < 480px , handle search on Modal
+function submitSearchForm() {
+    let searchParams = $("#mobile-search-input").val();
+    if (searchParams.length > 0) {
+        window.location.href = "/search/params=" + searchParams;
+    }
+}
+function handlePressEnter(event){
+    if(event.key == "Enter"){
+        submitSearchForm();
+    }
 }

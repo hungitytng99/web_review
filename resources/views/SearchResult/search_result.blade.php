@@ -1,11 +1,11 @@
 @extends('Layouts.page')
-@section('title', 'Foodee - Trang chủ')
+@section('title', 'Foodee - Tìm kiếm')
 @section('css')
 <link rel="stylesheet" href="/SearchPage/css/search_result.css">
 @endsection
 
 @section('js')
-
+<script src="/SearchPage/js/search_result.js"></script>
 @endsection
 <?php
 $lengthResult = count($listRestaurants);
@@ -18,6 +18,7 @@ $suggestionArray = array_slice($listRestaurants, $extractCount, $lengthResult - 
 @section('content')
 @include('Layouts.header')
 <!-- content -->
+<div class="circle"></div>
 <div class="container">
     <div class="row">
         <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-4">
@@ -39,7 +40,7 @@ $suggestionArray = array_slice($listRestaurants, $extractCount, $lengthResult - 
                     @foreach( $extractArray as $restaurant)
                     <div class="col-xs-3 col-lg-4 col-sm-6 col-xs-6 col-12">
                         <div class="search__result">
-                            <a href="<?php echo "/".$restaurant->linkTo?>">
+                            <a href="<?php echo "/" . $restaurant->linkTo ?>">
                                 <div class="search__result-img-box">
                                     <img src="<?php echo $restaurant->image ?>" alt="result" class="search__result-img">
                                 </div>
@@ -90,7 +91,7 @@ $suggestionArray = array_slice($listRestaurants, $extractCount, $lengthResult - 
                     @foreach( $suggestionArray as $restaurant)
                     <div class="col-xs-3 col-lg-4 col-sm-6 col-xs-6 col-12">
                         <div class="search__result">
-                            <a href="<?php echo "/".$restaurant->linkTo?>">
+                            <a href="<?php echo "/" . $restaurant->linkTo ?>">
                                 <div class="search__result-img-box">
                                     <img src="<?php echo $restaurant->image ?>" alt="result" class="search__result-img">
                                 </div>
@@ -138,12 +139,6 @@ $suggestionArray = array_slice($listRestaurants, $extractCount, $lengthResult - 
     </div>
 </div>
 <div class="space"></div>
-
-<!-- <div class="container">
-    <div class="row">
-        
-    </div>
-</div> -->
 <!-- end content -->
 @include('Layouts.footer')
 @endsection

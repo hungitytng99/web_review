@@ -65,7 +65,8 @@ a {
 }
 
 .header__logo:hover {
-    cursor: default;
+    cursor: pointer;
+    color: black;
 }
 
 .header__nav-item-login {
@@ -249,6 +250,7 @@ a {
 
 #mobile-nav-check:checked~.nav__modal {
     display: block;
+    z-index: 2;
 }
 
 .nav__modal {
@@ -480,8 +482,37 @@ a {
     }
 }
 
+.header__mobile-search {
+    display: none;
+}
+
 @media screen and (max-width:480px) {
     .header__nav-search {
         display: none !important;
+    }
+    .header__mobile-search {
+        color: black;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 6px 0px 15px 0px;
+    }
+    .header__mobile-search-input {
+        background-color: white;
+        border-radius: 4px;
+        outline: none;
+        border: none;
+        height: 30px;
+        padding: 0px 5px 0px 10px;
+        width: 185px;
+        flex: 1;
+    }
+    .header__mobile-search-icon {
+        color: white;
+        padding-left: 10px;
+        font-size: 1.8rem;
+    }
+    .header__mobile-search-icon:hover {
+        cursor: pointer;
     }
 }

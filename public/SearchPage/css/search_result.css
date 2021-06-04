@@ -23,7 +23,7 @@
 
 .result__count {
     padding: 20px 0px 10px 0px;
-    color: rgb(156, 156, 156);
+    color: rgb(68, 68, 68);
     font-size: 1.3rem;
 }
 
@@ -98,8 +98,8 @@
 }
 
 .search__result-detail-rate {
-    width: 45px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     background-color: #03ae03;
     color: white;
     font-size: 1.3rem;
@@ -114,6 +114,7 @@
     display: flex;
     flex-direction: column;
     padding-left: 10px;
+    flex: 1;
 }
 
 .search__result-detail-name {
@@ -172,4 +173,14 @@
 
 .space {
     padding: 20px 0px;
+}
+
+
+/* google- map */
+
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
 }
