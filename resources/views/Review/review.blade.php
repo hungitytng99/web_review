@@ -32,6 +32,17 @@
 
     @endif
     {{-- Header --}}
+    @php
+    $sang= 1 ;
+    $trua=1;
+    $chieu=1;
+    $toi=1;
+    $khuya=1;
+    $nc=1;
+    $cafe=1;
+    $db=1;
+    $khaivi=1;
+    @endphp
     @include('Layouts.header')
 
     <div class="booking-table">
@@ -71,8 +82,106 @@
                             <div class="list-category" id="scroll-spy">
                                 <div class="scrollbar-container ps">
                                     <div class="item"><span id="-1" title="Món Đang Giảm" class="item-link active">Danh
-                                            sách các món cùng quán</span></div>
-                                    <div class="item"><span id="1228514" title="Cà phê" class="item-link ">Cà phê</span>
+                                            sách các dạng món ăn </span></div>
+                                    @foreach($disheds as $dished)
+                                    @if($dished->type == 1 && $sang == 1 )
+                                    <div class="item"><span id="1228514" title="Cà phê" class="item-link ">Bữa
+                                            sáng</span>
+                                    </div>
+                                    @php
+                                    $sang =0;
+                                    @endphp
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($disheds as $dished)
+                                    @if($dished->type == 2 && $trua == 1 )
+                                    <div class="item"><span id="1228514" title="Cà phê" class="item-link ">Bữa
+                                            Trưa</span>
+                                    </div>
+                                    @php
+                                    $trua =0;
+                                    @endphp
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($disheds as $dished)
+                                    @if($dished->type == 3 && $chieu == 1 )
+                                    <div class="item"><span id="1228514" title="Cà phê" class="item-link ">Bữa
+                                            chiều</span>
+                                    </div>
+                                    @php
+                                    $chieu =0;
+                                    @endphp
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($disheds as $dished)
+                                    @if($dished->type == 4 && $toi == 1 )
+                                    <div class="item"><span id="1228514" title="Cà phê" class="item-link ">Bữa
+                                            tối</span>
+                                    </div>
+                                    @php
+                                    $toi =0;
+                                    @endphp
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($disheds as $dished)
+                                    @if($dished->type == 5 && $khuya == 1 )
+                                    <div class="item"><span id="1228514" title="Cà phê" class="item-link ">Bữa
+                                            khuya</span>
+                                    </div>
+                                    @php
+                                    $khuya =0;
+                                    @endphp
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($disheds as $dished)
+                                    @if($dished->type == 6 && $sang == 1 )
+                                    <div class="item"><span id="1228514" title="Cà phê" class="item-link ">Nước giải
+                                            khát </span>
+                                    </div>
+                                    @php
+                                    $sang =0;
+                                    @endphp
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($disheds as $dished)
+                                    @if($dished->type == 7 && $cafe == 1 )
+                                    <div class="item"><span id="1228514" title="Cà phê" class="item-link ">cafe
+                                        </span>
+                                    </div>
+                                    @php
+                                    $cafe =0;
+                                    @endphp
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($disheds as $dished)
+                                    @if($dished->type == 8 && $db == 1 )
+                                    <div class="item"><span id="1228514" title="Cà phê" class="item-link ">Món đặc biệt
+                                        </span>
+                                    </div>
+                                    @php
+                                    $db =0;
+                                    @endphp
+                                    @endif
+                                    @endforeach
+                                    @foreach($disheds as $dished)
+                                    @if($dished->type == 8 && $khaivi == 1 )
+                                    <div class="item"><span id="1228514" title="Cà phê" class="item-link ">Món khai vị
+                                        </span>
+                                    </div>
+                                    @php
+                                    $khaivi =0;
+                                    @endphp
+                                    @endif
+                                    @endforeach
+
+                                    <!-- <div class="item"><span id="1228514" title="Cà phê" class="item-link ">Cà phê</span>
                                     </div>
                                     <div class="item"><span id="1228515" title="Sinh tố hoa quả" class="item-link ">Sinh
                                             tố hoa quả</span></div>
@@ -81,7 +190,7 @@
                                     <div class="item"><span id="1228519" title="Trà nhiệt đới các loại"
                                             class="item-link ">Trà nhiệt đới các loại</span></div>
                                     <div class="item"><span id="1318303" title="Sữa đặc biệt các loại"
-                                            class="item-link ">Sữa đặc biệt các loại</span></div>
+                                            class="item-link ">Sữa đặc biệt các loại</span></div> -->
                                     <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
                                         <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
                                     </div>
@@ -164,7 +273,7 @@
 
 
             <!-- Carousel -->
-            @php
+            <!-- @php
             $carouselLists = [
             [
             'img' => 'HomePage/images/carousel_1.jpg',
@@ -186,7 +295,7 @@
             ],
             ];
             @endphp
-            @include('ReviewBanner.carousel',$carouselLists)
+            @include('ReviewBanner.carousel',$carouselLists) -->
 
             <div id="type" style="background-image: url(HomePage/images/slide_3.jpg);"
                 data-stellar-background-ratio="0.5">
