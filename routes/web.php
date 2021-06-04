@@ -34,7 +34,6 @@ Route::get('/activities/{id}', [ReviewController::class, 'getUserReviews'])->whe
 Route::get('/about', [AboutController::class, 'about']);
 Route::post('/about', [AboutController::class, 'processContactForm']);
 
-Route::get('/users/{id}', [ReviewController::class, 'getUserReviews'])->where('id', '[0-9]+');
 
 Route::namespace('auth')->group(function () {
     // Login

@@ -52,7 +52,7 @@ class ReviewController extends Controller
         $review_image = [];
         $review_image = $reviews[0]->reviews_image;
         $review_image=json_decode($review_image);
-        // dd($review_image);
+        // dd($disheds);
         return view('Review/review')
         ->with('review_image', $review_image)
         ->with('Id', $Id)
@@ -62,38 +62,5 @@ class ReviewController extends Controller
         ->with('disheds', $disheds)
         ->with('user', $user)
         ->with('restaurantDetail', $restaurants);
-    }
-
-    public function getUserReviews($id) {
-        $user_reviews = DB::table('reviews')->where('user_id', $id)->get();
-        $user = DB::table('users')->where('id', $id)->get()->first();
-
-        // dump($user);
-
-        if ($user_reviews->isEmpty()) {
-            abort(404);
-        }
-
-        $reviews = [];
-
-        foreach($user_reviews as $review) {
-            $data = [
-                'dish' => DB::table('dishes')->where('id', $review->dish_id)->get()->first(),
-                'restaurant' => DB::table('restaurants')->where('id', $review->restaurant_id)->get()->first(),
-                'comment' => $review->comment,
-                'rate' => $review->rate,
-                'images' => json_decode($review->images),
-                'date' => $review->created_at,
-            ];
-            array_push($reviews, $data);
-        }
-
-        //dump($reviews);
-
-        return view('Review.user-review')->with([
-            'user' => $user,
-            'reviews' => $reviews
-        ]);
-
     }
 }
