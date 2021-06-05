@@ -47,12 +47,12 @@
             <!-- For table and desktop -->
             <div class="header__nav hide-on-768">
                 <ul class="header__nav-list --left ">
-                    <li class="header__nav-item --active">
+                    <li id="home-link" class="header__nav-item">
                         <a href="/">
                             Trang chủ
                         </a>
                     </li>
-                    <li class="header__nav-item">
+                    <li id="about-link" class="header__nav-item">
                         <a href="/about-us">
                             Giới thiệu
                         </a>

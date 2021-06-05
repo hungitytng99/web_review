@@ -30,7 +30,18 @@ mobileNavHandle.change(() => {
         $('body').css('overflow', 'scroll');
     }
 })
-
+// handle active tab
+let pathname = window.location.pathname;
+switch (pathname) {
+    case "/":
+        $("#home-link").addClass("--active");
+        $("#about-link").removeClass("--active");
+        break;
+    case "/about-us":
+        $("#about-link").addClass("--active");
+        $("#home-link").removeClass("--active");
+        break;
+}
 // Search
 let loadingImgHeader = `<img src="/assets/images/loading.svg" width="30px" height="30px" alt="loading"></img>`;
 let typingTimer;
@@ -145,8 +156,8 @@ function submitSearchForm() {
         window.location.href = "/search/params=" + searchParams;
     }
 }
-function handlePressEnter(event){
-    if(event.key == "Enter"){
+function handlePressEnter(event) {
+    if (event.key == "Enter") {
         submitSearchForm();
     }
 }

@@ -24,10 +24,10 @@ let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30p
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    // getmore dishes
+    // get more dishes
     $.ajax({
         type: 'POST',
-        url: '/get-more-outstanding-dishes',
+        url: '/api/get-more-outstanding-dishes',
         dataType: 'json',
         success: (data) => {
             let outstandingFoodHtml = ``;
@@ -74,10 +74,10 @@ let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30p
             console.log(error);
         }
     });
-    //get restaurants
+    // api/get restaurants
     $.ajax({
         type: 'POST',
-        url: '/get-more-restaurants',
+        url: '/api/get-more-restaurants',
         dataType: 'json',
         data: {
             itemStart: 1,
@@ -141,7 +141,7 @@ function handleExplorePanel(element) {
         case "2":
             $.ajax({
                 type: 'GET',
-                url: '/get-auth-status',
+                url: '/api/get-auth-status',
                 dataType: 'json',
                 beforeSend: () => {
                     $("#loading-explore").html(loadingImg);
@@ -175,7 +175,7 @@ function handleExplorePanel(element) {
 function handleGetMoreRestaurants(btn) {
     $.ajax({
         type: 'POST',
-        url: '/get-more-restaurants',
+        url: '/api/get-more-restaurants',
         dataType: 'json',
         data: {
             itemStart: restaurantsItem + 1,
@@ -242,7 +242,7 @@ function showDetailDish(event, element) {
         $('#loading-img').show();
         $.ajax({
             type: 'POST',
-            url: '/get-more-outstanding-dishes',
+            url: '/api/get-more-outstanding-dishes',
             dataType: 'json',
             data: {
                 href: modalHref,
@@ -304,7 +304,7 @@ function getInfinityRestaurant() {
     let InfinityRestaurantsHtml = ``;
     $.ajax({
         type: 'GET',
-        url: '/get-infinity-restaurants',
+        url: '/api/get-infinity-restaurants',
         dataType: 'json',
         data: {
             itemLength: 8,
@@ -385,13 +385,13 @@ function getInfinityRestaurant() {
 function notifyFillInformation() {
     $.ajax({
         type: 'GET',
-        url: '/get-auth-status',
+        url: '/api/get-auth-status',
         dataType: 'json',
         success: (data) => {
             if (data == true) {
                 $.ajax({
                     type: 'GET',
-                    url: '/get-user-info',
+                    url: '/api/get-user-info',
                     dataType: 'json',
                     success: (data) => {
                         console.log(data);

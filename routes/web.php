@@ -19,11 +19,11 @@ Route::namespace('home')->group(function () {
     Route::post('/about-us', [AboutController::class, 'processContactForm']);
 
     //Ajax request
-    Route::post('/get-more-outstanding-dishes', [HomeController::class, 'getMoreOutstandingFood']);
-    Route::post('/get-more-restaurants', [HomeController::class, 'getMoreRestaurants']);
-    Route::get('/get-infinity-restaurants', [HomeController::class, 'getInfinityRestaurants']);
-    Route::get('/get-auth-status', [HomeController::class, 'getAuthStatus']);
-    Route::get('/get-user-info', [HomeController::class, 'getContactUser']);
+    Route::post('/api/get-more-outstanding-dishes', [HomeController::class, 'getMoreOutstandingFood']);
+    Route::post('/api/get-more-restaurants', [HomeController::class, 'getMoreRestaurants']);
+    Route::get('/api/get-infinity-restaurants', [HomeController::class, 'getInfinityRestaurants']);
+    Route::get('/api/get-auth-status', [HomeController::class, 'getAuthStatus']);
+    Route::get('/api/get-user-info', [HomeController::class, 'getContactUser']);
 
 });
 
@@ -68,6 +68,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'deleteAccount']);
     //get suggestion menu for user
     Route::get('/suggestion', [SuggestionController::class, 'index']);
+    Route::get('/api/get-suggestion-detail', [SuggestionController::class, 'getSuggestionDetail']);
 });
 
 // Route::get('/review', [ReviewController::class, 'getId']);
