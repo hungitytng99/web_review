@@ -1,6 +1,5 @@
 let sideNavItems = document.getElementsByClassName('side-nav')[0].getElementsByClassName('item');
 let topNavItems = document.getElementsByClassName('top-nav')[0].getElementsByClassName('item');
-//console.log(sideNavItems);
 
 let updateNav = (items) => {
     for (let i = 0; i < items.length; i++) {
@@ -27,7 +26,7 @@ let showPanel = (items) => {
                     content.setAttribute('hidden', '');
                 }
             }
-            
+
             let content = document.getElementById('content-' + i);
             content.removeAttribute('hidden');
 
@@ -42,6 +41,21 @@ updateNav(topNavItems);
 
 showPanel(sideNavItems);
 showPanel(topNavItems);
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+const activeTab = urlParams.get('activeTab');
+if (activeTab != null && activeTab != undefined) {
+    sideNavItems[activeTab - 1].click();
+} else {
+    sideNavItems[0].click();
+}
+
+const redirect = urlParams.get('redirect');
+if (redirect != null && redirect != undefined) {
+    $('#redirect').attr('value', redirect);
+}
 
 $(function () {
     setTimeout(function () { $(".auto-hide").fadeOut(1500); }, 5000)
@@ -72,7 +86,7 @@ document.getElementsByName('old_password')[0].addEventListener('change', functio
 document.getElementsByName('new_password')[0].addEventListener('change', function () {
     newPassword = this.value;
     isValid = true;
-    
+
     if (oldPassword) {
         if (newPassword.length < 8 || newPassword.length > 20) {
             console.log('false');
@@ -108,7 +122,7 @@ document.getElementsByName('retype_new_password')[0].addEventListener('change', 
             alertRNP.removeAttribute('hidden');
             alertRNP.innerHTML = 'Mật khẩu mới phải khác mật khẩu cũ';
             isValid = false;
-            
+
         } else {
             console.log('true');
             if (!alertRNP.hasAttribute('hidden')) {

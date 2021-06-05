@@ -136,6 +136,7 @@ small {
     /* display: none; */
     border-radius: 1rem;
     padding: 1rem 2rem;
+    z-index: 99999;
 }
 
 .top-nav > .filter {

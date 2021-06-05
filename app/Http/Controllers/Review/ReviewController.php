@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Review;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-
+use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use App\Models\Review;
 
@@ -67,8 +68,14 @@ class ReviewController extends Controller
     public function getUserReviews($id) {
         $user_reviews = DB::table('reviews')->where('user_id', $id)->get();
         $user = DB::table('users')->where('id', $id)->get()->first();
-
-        // dump($user);
+        
+        $code = Crypt::encrypt($id);
+        dump($code);
+        try {
+            dump(Crypt::decrypt($code));
+        } catch (DecryptException $e) {
+            
+        }
 
         if ($user_reviews->isEmpty()) {
             abort(404);
@@ -92,8 +99,6 @@ class ReviewController extends Controller
                 $restaurants[$data['restaurant']->id] = $data['restaurant']->name;
             }
         }
-
-        //dump($restaurants);
 
         return view('Review.user-review')->with([
             'user' => $user,
