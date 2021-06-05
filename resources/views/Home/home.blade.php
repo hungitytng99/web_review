@@ -223,10 +223,8 @@
                             </div>
                         </div>
                         <div class="review-content__container">
-                            <div class="small-row row">
-                                <!-- Infinity scroll -->
-                                <div id="infinity-restaurants"></div>
-                            </div>
+                            <!-- Infinity scroll -->
+                            <div class="small-row row" id="infinity-restaurants"></div>
                         </div>
                     </div>
                 </div>
@@ -259,12 +257,33 @@
                     </div>
                 </main>
                 <footer class="modal__footer --notify">
-                    
+
                     <button class="modal__notify-update-now">
                         <a href="/profile">Cập nhật ngay</a>
                     </button>
                     <button class="modal__notify-update-later" data-micromodal-close aria-label="Close this dialog window">
                         Cập nhật sau
+                    </button>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <!-- Modal notify fill information -->
+    <div class="modal micromodal-slide" id="notify-login" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container --notify" role="dialog" aria-modal="true" aria-labelledby="notify-login-title">
+                <main class="modal__content" id="notify-login-content">
+                    <div class="notify__fill-information">
+                        Bạn vui lòng đăng nhập để thực hiện chức năng này.
+                    </div>
+                </main>
+                <footer class="modal__footer --notify">
+
+                    <button class="modal__notify-update-now">
+                        <a href="/login">Đăng nhập</a>
+                    </button>
+                    <button class="modal__notify-update-later" data-micromodal-close aria-label="Close this dialog window">
+                        Hủy
                     </button>
                 </footer>
             </div>

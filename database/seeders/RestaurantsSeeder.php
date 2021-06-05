@@ -22,7 +22,7 @@ class RestaurantsSeeder extends Seeder
                 'type' =>'Quán ăn',
                 'location' => 'Ngõ 1 Nghĩa Tân, Cầu Giấy, Hà Nội',
                 'rate' => 4.5,
-                'phone' => '',
+                'phone' => '0969520657',
                 'image' => '/assets/images/nom-ong-phuc.jpg',
                 'sale_percent' => 15,
             ], [

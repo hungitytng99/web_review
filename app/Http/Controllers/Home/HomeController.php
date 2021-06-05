@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,6 @@ use function PHPUnit\Framework\isEmpty;
 
 class HomeController extends Controller
 {
-
 
     function index()
     {
@@ -78,10 +78,13 @@ class HomeController extends Controller
 
     function getMoreRestaurants(Request $request)
     {
+        $request->itemEnd = 12;
+        $request->itemStart = 1;
         $restaurants = DB::table('restaurants')
             ->where('id', '<=', $request->itemEnd)
             ->where('id', '>=', $request->itemStart)
             ->get();
+        $restaurants = $this->attachSavedRestaurantField($restaurants);
         return response()->json($restaurants);
     }
     function getNRandomNumber($n, $end, $arrayExcept = [], $start = 1)
@@ -98,6 +101,7 @@ class HomeController extends Controller
     {
         $restaurants = DB::table('restaurants')
             ->get();
+
         $totalRestaurant = count($restaurants);
         $restaurantsIdList = $this->getNRandomNumber($request->itemLength, $totalRestaurant);
         // return list of random record
@@ -109,7 +113,7 @@ class HomeController extends Controller
                 ->get();
             array_push($restaurantsList, $restaurantsItem[0]);
         }
-
+        $restaurantsList = $this->attachSavedRestaurantField($restaurantsList);
         return response()->json($restaurantsList);
     }
 
@@ -129,5 +133,67 @@ class HomeController extends Controller
             return true;
         }
         return false;
+    }
+    function getSavedRestaurants(Request $request)
+    {
+        $result = [];
+        $restaurantsList = DB::table('users_save_restaurants')
+            ->where('user_id', '=', Auth::user()->id)
+            ->select('restaurant_id')
+            ->get();
+        foreach ($restaurantsList as $restaurantId) {
+            $restaurant = DB::table('restaurants')
+                ->where('id', '=', $restaurantId->restaurant_id)
+                ->get();
+            array_push($result, $restaurant[0]);
+        }
+        return response()->json($result);
+    }
+    function checkSavedRestaurants($restaurantId)
+    {
+        $restaurantsList = DB::table('users_save_restaurants')
+            ->where('restaurant_id', '=', $restaurantId)
+            ->where('user_id', '=', Auth::user()->id)
+            ->get();
+        return !$restaurantsList->isEmpty();
+    }
+    function attachSavedRestaurantField($restaurantList)
+    {
+        $result = [];
+
+        foreach ($restaurantList as $restaurant) {
+            if (Auth::check()) {
+                if ($this->checkSavedRestaurants($restaurant->id)) {
+                    $restaurant->isSaved = 1;
+                }
+            }
+            array_push($result, $restaurant);
+        }
+        return $result;
+    }
+
+    function savedRestaurants(Request $request)
+    {
+        try {
+
+            DB::table('users_save_restaurants')->insert([
+                ['user_id' => Auth::user()->id, 'restaurant_id' => $request->restaurantId]
+            ]);
+            return response()->json(1);
+        } catch (Exception $e) {
+            return response()->json(0);
+        }
+    }
+
+    function deleteSavedRestaurants(Request $request)
+    {
+        try {
+            DB::table('users_save_restaurants')
+                ->where('restaurant_id', '=', $request->restaurantId)
+                ->delete();
+            return response()->json(1);
+        } catch (Exception $e) {
+            return response()->json(0);
+        }
     }
 }
