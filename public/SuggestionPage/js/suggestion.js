@@ -1,7 +1,7 @@
 let requiredFill = `
     <div class="suggestion__required">
         Bạn cần cập nhật đủ thông tin cá nhân (ngày sinh, cân nặng, chiều cao, nghề nghiệp) để chúng tôi có thể đưa ra gợi ý chính xác nhất.
-        <a href="/profile">Cập nhật ngay</a>
+        <a href="/profile?activeTab=2&redirect=suggestion">Cập nhật ngay</a>
     </div>
 `;
 let mainPanel = $("#suggestion-panel");
