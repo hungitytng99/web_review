@@ -108,7 +108,7 @@
 			<div class="panel shadow-sm bg-white">
 	
 			  <!-- Account page -->
-			  <div id="content-0">
+			  <div id="content-0" hidden>
 				<h1 class="mb-4">Tài khoản</h1>
 				<div class="section-avatar">
 				  <h3>Avatar</h3>
@@ -117,7 +117,7 @@
 					<form action="{{ url('/profile') }}" method="POST" enctype="multipart/form-data">
 					  @csrf
 					  <label for="upload_avatar" class="btn shadow-sm">Tải lên</label>
-					  <input type="file" onchange="this.form.submit()" name="upload_avatar" id="upload_avatar" hidden>
+					  <input type="file" accept=".png, .jpg, .jpeg" onchange="this.form.submit()" name="upload_avatar" id="upload_avatar" hidden>
 					</form>
 				  </div>
 				</div>
@@ -255,13 +255,22 @@
 				  <hr>
 				  <div class="d-flex align-items-center section-save-change-btn">
 					<input type="submit" class="btn primary shadow-sm ml-auto" value="Lưu thay đổi">
-				</div>
+				  </div>
+				  <input type="hidden" id="redirect" name="redirect" value="">
 				</form>
+
 				@if (session('status-success-1'))
 				<div class="alert alert-success auto-hide" role="alert">
 					{{ session('status-success-1') }}
 				</div>
 				@endif
+
+				@if (session('status-error-1'))
+				<div class="alert alert-danger auto-hide" role="alert">
+					{{ session('status-error-1') }}
+				</div>
+				@endif
+				
 			  </div>
 			  
 			  {{-- Change Password --}}
