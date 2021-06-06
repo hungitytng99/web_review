@@ -15,8 +15,14 @@ class RestaurantsDiscountsSeeder extends Migration
     {
         Schema::create('restaurants_discounts', function (Blueprint $table) {
             $table->id();
-            $table->integer('discounts_id');
-            $table->string('restaurants_id');
+            $table->foreignId('discounts_id')
+                ->constrained('discounts')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('restaurants_id')
+                ->constrained('restaurants')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

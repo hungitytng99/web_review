@@ -127,7 +127,6 @@ padding-left: 8px;
 
 .suggestion {
     background-color: white;
-    padding-bottom: 8px;
 }
 
 .suggestion__required {
@@ -186,6 +185,10 @@ padding-left: 8px;
     margin-top: 20px;
     width: 100%;
     /* background-color: white; */
+}
+
+.padding-bottom {
+    margin-bottom: 8px;
 }
 
 .suggestion__restaurants-title {

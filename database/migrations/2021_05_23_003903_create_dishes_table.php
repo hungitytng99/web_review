@@ -17,7 +17,10 @@ class CreateDishesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
-            $table->integer('type');
+            $table->foreignId('type')
+                ->constrained('dishes_type')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->string('price');
             $table->string('image')->nullable();
             $table->timestamp('created_at')->useCurrent();

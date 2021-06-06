@@ -15,8 +15,14 @@ class CreateUsersSaveRestaurantsTable extends Migration
     {
         Schema::create('users_save_restaurants', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->string('restaurant_id');
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('restaurant_id')
+                ->constrained('restaurants')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });

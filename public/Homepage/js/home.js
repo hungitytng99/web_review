@@ -26,7 +26,7 @@ let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30p
     });
     // get more dishes
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: '/api/get-more-outstanding-dishes',
         dataType: 'json',
         success: (data) => {
@@ -76,7 +76,7 @@ let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30p
     });
     // api/get restaurants
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: '/api/get-more-restaurants',
         dataType: 'json',
         data: {
@@ -139,7 +139,7 @@ function handleExplorePanel(element) {
             break;
         case "2":
             $.ajax({
-                type: 'GET',
+                type: 'POST',
                 url: '/api/get-auth-status',
                 dataType: 'json',
                 beforeSend: () => {
@@ -173,7 +173,7 @@ function handleGetSavedRestaurants() {
     let InfinityRestaurantsHtml = ``;
 
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: '/api/get-saved-restaurants',
         dataType: 'json',
         beforeSend: () => {
@@ -255,7 +255,7 @@ function handleGetSavedRestaurants() {
 
 function handleGetMoreRestaurants(btn) {
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: '/api/get-more-restaurants',
         dataType: 'json',
         data: {
@@ -319,7 +319,7 @@ function showDetailDish(event, element) {
     if (isExcuteLoading) {
         $('#loading-img').show();
         $.ajax({
-            type: 'GET',
+            type: 'POST',
             url: '/api/get-more-outstanding-dishes',
             dataType: 'json',
             data: {
@@ -384,7 +384,7 @@ function getInfinityRestaurant() {
     let InfinityRestaurantsHtml = ``;
 
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: '/api/get-infinity-restaurants',
         dataType: 'json',
         data: {
@@ -468,7 +468,7 @@ function getInfinityRestaurant() {
 // save restaurant
 function handleSavedRestaurant(element) {
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: '/api/get-auth-status',
         dataType: 'json',
         beforeSend: () => {
@@ -486,7 +486,7 @@ function handleSavedRestaurant(element) {
                     jElement.children("i").addClass("fas");
                     jElement.children("i").removeClass("far");
                     $.ajax({
-                        type: 'GET',
+                        type: 'POST',
                         url: '/api/saved-restaurants',
                         dataType: 'json',
                         data: {
@@ -504,7 +504,7 @@ function handleSavedRestaurant(element) {
                     jElement.children("i").addClass("far");
                     jElement.children("i").removeClass("fas");
                     $.ajax({
-                        type: 'GET',
+                        type: 'POST',
                         url: '/api/delete-saved-restaurants',
                         dataType: 'json',
                         data: {
@@ -533,13 +533,13 @@ function handleSavedRestaurant(element) {
 // handle if user don't fill full infomation
 function notifyFillInformation() {
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: '/api/get-auth-status',
         dataType: 'json',
         success: (data) => {
             if (data == true) {
                 $.ajax({
-                    type: 'GET',
+                    type: 'POST',
                     url: '/api/get-user-info',
                     dataType: 'json',
                     success: (data) => {

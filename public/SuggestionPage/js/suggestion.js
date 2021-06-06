@@ -6,6 +6,12 @@ let requiredFill = `
 `;
 let mainPanel = $("#suggestion-panel");
 (function () {
+    //AJAX
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     handleSuggestionTab();
 })();
 let currentTab = 1;
@@ -67,7 +73,7 @@ function getDate() {
 //
 function updateSuggesionPanel() {
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: '/api/get-suggestion-detail',
         dataType: 'json',
         beforeSend: () => {
@@ -121,7 +127,7 @@ function updateSuggesionPanel() {
 }
 function updateSavedRestaurantsPanel() {
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: '/api/get-saved-restaurants',
         dataType: 'json',
         beforeSend: () => {
@@ -139,7 +145,7 @@ function updateSavedRestaurantsPanel() {
             `;
             data.map((restaurants) => {
                 let restaurantsItem = `
-                        <div class="small-gutter col-xs-3 col-lg-4 col-sm-6 col-xs-12 col-12">
+                        <div class="small-gutter padding-bottom col-xs-3 col-lg-4 col-sm-6 col-xs-12 col-12">
                             <div class="search__result">
                                 <a href="/">
                                     <div class="search__result-img-box">
@@ -177,7 +183,7 @@ function handleSuggestionTab() {
     $("#suggestion-loading-img").hide();
     // let checkRequiredInfoInterval = setInterval(() => {
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: '/api/get-user-info',
         dataType: 'json',
         beforeSend: () => {
@@ -202,7 +208,7 @@ function handleSuggestionTab() {
 
 // let checkRequiredInfoInterval = setInterval(() => {
 //     $.ajax({
-//         type: 'GET',
+//         type: 'POST',
 //         url: '/api/get-user-info',
 //         dataType: 'json',
 //         success: (data) => {

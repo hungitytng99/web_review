@@ -8,3 +8,9 @@
 [06-Jun-2021 01:26:14] NOTICE: ready to handle connections
 [06-Jun-2021 01:26:14] NOTICE: systemd monitor interval set to 10000ms
 [06-Jun-2021 01:43:16] WARNING: [pool www] server reached pm.max_children setting (4), consider raising it
+[06-Jun-2021 04:30:03] NOTICE: Terminating ...
+[06-Jun-2021 04:30:03] NOTICE: exiting, bye-bye!
+[06-Jun-2021 13:12:37] NOTICE: fpm is running, pid 18
+[06-Jun-2021 13:12:37] NOTICE: ready to handle connections
+[06-Jun-2021 13:12:37] NOTICE: systemd monitor interval set to 10000ms
+[06-Jun-2021 13:53:11] WARNING: [pool www] server reached pm.max_children setting (4), consider raising it

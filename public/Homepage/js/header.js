@@ -63,7 +63,7 @@ function handleSearchAjax(keyType) {
     $('#header-search-result a').attr('href', '/search/params=' + keyType);
     $('#search-key').html(keyType);
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: '/api/search',
         dataType: 'json',
         data: {

@@ -98,7 +98,6 @@
     @include('Base.carousel',$carouselLists)
 
     <!-- Featured dishes -->
-
     <div class="booking-table">
         <div class="container">
             <div class="row">
