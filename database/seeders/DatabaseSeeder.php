@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             ReviewSeeder::class,
             DiscountsSeeder::class,
             UsersSaveRestaurantsSeeder::class,
+            RestaurantsDiscountsSeeder::class,
         ]);
     }
 }

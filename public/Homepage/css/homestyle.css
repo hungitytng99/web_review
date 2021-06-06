@@ -221,6 +221,12 @@ button:focus {
 
 .restaurant__discount-item {
     margin-bottom: 5px;
+    line-height: 1.6rem;
+    max-height: 1.6rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 .restaurant__discount-item i {

@@ -78,14 +78,27 @@ class HomeController extends Controller
 
     function getMoreRestaurants(Request $request)
     {
-        $request->itemEnd = 12;
-        $request->itemStart = 1;
-        $restaurants = DB::table('restaurants')
-            ->where('id', '<=', $request->itemEnd)
-            ->where('id', '>=', $request->itemStart)
+        $restaurantsList = DB::table('restaurants')
+            ->join('restaurants_discounts','restaurants.id','=','restaurants_discounts.restaurants_id')
+            ->join('discounts','discounts.id','=','restaurants_discounts.discounts_id')
+            ->where('restaurants.id', '<=', $request->itemEnd)
+            ->where('restaurants.id', '>=', $request->itemStart)
+            ->select('restaurants.id','restaurants.linkTo','restaurants.name','restaurants.type','restaurants.location','restaurants.rate','restaurants.phone','restaurants.image','discounts.name as discount_name')
             ->get();
-        $restaurants = $this->attachSavedRestaurantField($restaurants);
-        return response()->json($restaurants);
+        $restaurantsList = $this->attachSavedRestaurantField($restaurantsList);
+        
+        // dd($restaurantsList);
+        return response()->json($restaurantsList);
+    }
+    function attachDiscountField($restaurantList){
+        $result = [];
+        foreach ($restaurantList as $restaurant) {
+            if ($this->checkSavedRestaurants($restaurant->id)) {
+                $restaurant->isSaved = 1;
+            }
+            array_push($result, $restaurant);
+        }
+        return $result;
     }
     function getNRandomNumber($n, $end, $arrayExcept = [], $start = 1)
     {

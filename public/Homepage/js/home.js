@@ -103,11 +103,8 @@ let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30p
                         <div class="restaurant__discount">
                             <div class="restaurant__discount-item">
                                 <i class="fas fa-tag"></i>
-                                <span> Ăn trưa - Đi 4 tính 3</span>
+                                <span> ${restaurant.discount_name}</span>
                             </div>
-                            <a href="#" class="restaurant__discount-more">
-                                Xem thêm ưu đãi...
-                            </a>
                          </div>
                     </div>
                 </div>`
@@ -288,18 +285,15 @@ function handleGetMoreRestaurants(btn) {
                         <div class="restaurant__discount">
                             <div class="restaurant__discount-item">
                                 <i class="fas fa-tag"></i>
-                                <span> Ăn trưa - Đi 4 tính 3</span>
+                                <span> ${restaurant.discount_name}</span>
                             </div>
-                            <a href="#" class="restaurant__discount-more">
-                                Xem thêm ưu đãi...
-                            </a>
                          </div>
                     </div>
                 </div>`
                 restaurantsHtml += htmpTemp;
             });
             $('#sale-restaurants').html(restaurantsHtml);
-            if (restaurantsItem === 30) {
+            if (restaurantsItem === 24) {
                 $("button.bt-content__more").hide();
             }
         },
