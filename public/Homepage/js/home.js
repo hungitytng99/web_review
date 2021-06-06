@@ -130,6 +130,8 @@ function removeActiveExplorePanel() {
 }
 function handleExplorePanel(element) {
     removeActiveExplorePanel();
+    removeActiveExplore();
+    $("#explore-default-select").addClass("--active");
     $(element).addClass("--active");
     switch ($(element).attr('data-index')) {
         case "1":
@@ -365,6 +367,8 @@ function showDetailDish(event, element) {
 
 function handleClickExplore(element) {
     removeActiveExplore();
+    removeActiveExplorePanel();
+    $("#review-default-select").addClass("--active");
     $(element).addClass("--active");
     getInfinityRestaurant();
 }

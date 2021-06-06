@@ -173,7 +173,7 @@
                         </div>
                         <div class="review__menu-category">
                             <ul class="review__menu-category-list">
-                                <li class="review__menu-category-item --active" onclick="handleClickExplore(this)">
+                                <li id="explore-default-select" class="review__menu-category-item --active" onclick="handleClickExplore(this)">
                                     <span>Ở đâu</span>
                                     <i class="fas fa-angle-right"></i>
                                 </li>
@@ -199,7 +199,7 @@
                     <div class="review-content">
                         <div id="review-nav-r" class="review-content__header">
                             <div class="review-content__header-box --left">
-                                <p data-index="1" onclick="handleExplorePanel(this)" class="--active">Mới nhất</p>
+                                <p id="review-default-select" data-index="1" onclick="handleExplorePanel(this)" class="--active">Mới nhất</p>
                                 <p data-index="2" onclick="handleExplorePanel(this)">Đã lưu</p>
                             </div>
                             <div class="review-content__header-box">
