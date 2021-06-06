@@ -110,11 +110,11 @@
 
 /* 
 .user__action-item:last-child {
-    justify-content: center;
+justify-content: center;
 }
 
 .user__action-item:last-child i {
-    padding-left: 8px;
+padding-left: 8px;
 } */
 
 
@@ -127,6 +127,7 @@
 
 .suggestion {
     background-color: white;
+    padding-bottom: 8px;
 }
 
 .suggestion__required {
@@ -152,7 +153,7 @@
 }
 
 .suggestion__content-box {
-    padding: 10px 15px 15px 15px;
+    padding: 10px 15px 10px 15px;
     line-height: 2.8rem;
     text-indent: 20px;
 }
@@ -211,39 +212,12 @@
 }
 
 .row {
-    margin-left: -10px;
-    margin-right: -10px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .small-gutter {
     padding: 0px 10px;
-}
-
-@media screen and (max-width: 1200px) {
-    .search__result-img-box {
-        height: 180px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .col-sm-6 {
-        padding: 0px 5px;
-    }
-    .search__result-img-box {
-        height: 130px;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .search__result-img-box {
-        height: 225px;
-    }
-}
-
-@media screen and (max-width: 440px) {
-    .search__result-img-box {
-        height: 170px;
-    }
 }
 
 .search__result-img {
@@ -334,4 +308,43 @@
 
 .space {
     padding: 20px 0px;
+}
+
+.restaurants__saved-detail {
+    padding-bottom: 5px;
+}
+
+.search__result-detail.--box {
+    border: 1px solid rgb(211, 211, 211);
+    border-top: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .search__result-img-box {
+        height: 160px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .col-sm-6 {
+        padding: 0px 5px;
+    }
+    .search__result-img-box {
+        height: 130px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .search__result-img-box {
+        height: 225px;
+    }
+    .search__result-detail.--box {
+        border: none;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .search__result-img-box {
+        height: 170px;
+    }
 }

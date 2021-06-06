@@ -16,7 +16,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-3">
+        <div class="small-gutter col-lg-3 col-md-4 col-sm-4 col-12">
             <div class="user">
                 <div class="user__detail">
                     <a href="/">
@@ -32,9 +32,6 @@
                         Gợi ý thực đơn <i class="fas fa-chevron-right"></i>
                     </li>
                     <li class="user__action-item" tabindex="2" onclick="handleSelectTab(this)">
-                        Danh sách thực đơn <i class="fas fa-chevron-right"></i>
-                    </li>
-                    <li class="user__action-item" tabindex="3" onclick="handleSelectTab(this)">
                         Nhà hàng đã lưu <i class="fas fa-chevron-right"></i>
                     </li>
                 </ul>
@@ -51,10 +48,13 @@
             </div>
 
         </div>
-        <div class="col-lg-9">
+        <div class="small-gutter col-lg-9 col-md-8 col-sm-8 col-12">
+
             <div class="suggestion-box">
-                <div id="suggestion-panel" class="suggestion">
+                <div id="suggestion-title"></div>
+                <div id="suggestion-panel" class="suggestion row">
                 </div>
+
             </div>
         </div>
     </div>
