@@ -543,9 +543,12 @@ function notifyFillInformation() {
                     url: '/api/get-user-info',
                     dataType: 'json',
                     success: (data) => {
-                        if (data == false) {
+                        console.log(data);
+                        if (data == true) {
                             //Modal appear
                             if (!Cookies.get('isShowNotify')) {
+                                console.log("SHOWW");
+
                                 MicroModal.show('notify-fill', {
                                     disableScroll: false,
                                 });
