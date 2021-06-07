@@ -5,3 +5,18 @@
 [04-Jun-2021 01:13:56] NOTICE: fpm is running, pid 18
 [04-Jun-2021 01:13:56] NOTICE: ready to handle connections
 [04-Jun-2021 01:13:56] NOTICE: systemd monitor interval set to 10000ms
+[04-Jun-2021 01:46:03] WARNING: [pool www] server reached pm.max_children setting (4), consider raising it
+[04-Jun-2021 03:18:32] NOTICE: fpm is running, pid 18
+[04-Jun-2021 03:18:32] NOTICE: ready to handle connections
+[04-Jun-2021 03:18:32] NOTICE: systemd monitor interval set to 10000ms
+[06-Jun-2021 04:17:05] NOTICE: fpm is running, pid 19
+[06-Jun-2021 04:17:05] NOTICE: ready to handle connections
+[06-Jun-2021 04:17:05] NOTICE: systemd monitor interval set to 10000ms
+[07-Jun-2021 01:24:58] NOTICE: fpm is running, pid 18
+[07-Jun-2021 01:24:58] NOTICE: ready to handle connections
+[07-Jun-2021 01:24:58] NOTICE: systemd monitor interval set to 10000ms
+[07-Jun-2021 02:23:27] WARNING: [pool www] server reached pm.max_children setting (4), consider raising it
+[07-Jun-2021 05:29:46] NOTICE: fpm is running, pid 19
+[07-Jun-2021 05:29:46] NOTICE: ready to handle connections
+[07-Jun-2021 05:29:46] NOTICE: systemd monitor interval set to 10000ms
+[07-Jun-2021 05:40:39] WARNING: [pool www] server reached pm.max_children setting (4), consider raising it
