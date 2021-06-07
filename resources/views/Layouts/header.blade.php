@@ -26,12 +26,12 @@
                             <li class="mobile__nav-item">
                                 <a href="/suggestion">Gợi ý thực đơn</a>
                             </li>
+                            <li class="header__mobile-search">
+                                <input id="mobile-search-input" type="text" class="header__mobile-search-input" onkeyup="handlePressEnter(event)" placeholder="Tìm món ăn, nhà hàng..."></input>
+                                <i class="header__mobile-search-icon fas fa-search-location" onclick="submitSearchForm(this)"></i>
+                            </li>
                             <li class="mobile__nav-item">
                                 @if (Auth::check())
-                                <div class="header__mobile-search">
-                                    <input id="mobile-search-input" type="text" class="header__mobile-search-input" onkeyup="handlePressEnter(event)" placeholder="Tìm món ăn, nhà hàng..."></input>
-                                    <i class="header__mobile-search-icon fas fa-search-location" onclick="submitSearchForm(this)"></i>
-                                </div>
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();Cookies.remove('isShowNotify');">Đăng
                                     xuất</a>
                                 <form id="logout-form-mobile" action="{{ route('logout') }}" method="POST" hidden>@csrf
