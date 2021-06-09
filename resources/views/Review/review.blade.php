@@ -274,36 +274,30 @@
                         @endforeach
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="comment">
+                            <p v-for="items in item" v-text="items"></p>
+                        </div>
+                        <!--End Comment-->
+                    </div>
+                    <!--End col -->
+                </div><!-- End row -->
+                <div class="row">
+                    <div class="col-12">
+                        <textarea type="text" class="input" placeholder="Write a comment" v-model="newItem"
+                            @keyup.enter="addItem()"></textarea>
+                        <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add
+                            Comment</button>
+                    </div><!-- End col -->
+                </div>
+                <!--End Row -->
             </div>
 
 
-            <!-- Carousel -->
-            <!-- @php
-            $carouselLists = [
-            [
-            'img' => 'HomePage/images/carousel_1.jpg',
-            'linkTo' => '#',
-            'user' => 'VU',
-            'comment' => 'on ap ',
-            ],
-            [
-            'img' => 'HomePage/images/carousel_2.jpg',
-            'linkTo' => '#',
-            'user' => 'hung',
-            'comment' => 'k ngon ',
-            ],
-            [
-            'img' => 'HomePage/images/carousel_3.jpg',
-            'linkTo' => '#',
-            'user' => 'vinh',
-            'comment' => 'nhu shit',
-            ],
-            ];
-            @endphp
-            @include('ReviewBanner.carousel',$carouselLists) -->
-
         </div>
     </div>
+
     <div>
         <div id="type" style="background-image: url(HomePage/images/slide_3.jpg);" data-stellar-background-ratio="0.5">
             <div class="overlaybar"></div>
