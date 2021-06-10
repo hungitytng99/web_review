@@ -310,12 +310,12 @@ function showDetailDish(event, element) {
     event.preventDefault();
     MicroModal.show('detail-dish-modal', {
         disableScroll: true,
+        onClose: () => { $('#detail-dish-content').html('');},
     });
     let modalHref = element.getAttribute("href");
     let modalTitle = element.getElementsByClassName('restaurant__name')[0].innerText;
     $('#detail-dish-modal-title').html(modalTitle);
     let isExcuteLoading = $('#detail-dish-content').text() == '';
-
     if (isExcuteLoading) {
         $('#loading-img').show();
         $.ajax({

@@ -14,3 +14,6 @@
 [06-Jun-2021 13:12:37] NOTICE: ready to handle connections
 [06-Jun-2021 13:12:37] NOTICE: systemd monitor interval set to 10000ms
 [06-Jun-2021 13:53:11] WARNING: [pool www] server reached pm.max_children setting (4), consider raising it
+[10-Jun-2021 00:22:27] NOTICE: fpm is running, pid 18
+[10-Jun-2021 00:22:27] NOTICE: ready to handle connections
+[10-Jun-2021 00:22:27] NOTICE: systemd monitor interval set to 10000ms
