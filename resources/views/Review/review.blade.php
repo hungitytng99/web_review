@@ -6,7 +6,6 @@
 @section('content')
 {{-- Image intro --}}
 <div id="container">
-    @if (!Auth::check())
     <div id="home" class="js-fullheight" data-section="home">
         <div class="flexslider">
             <div class="overlay"></div>
@@ -30,7 +29,6 @@
         </div>
     </div>
 
-    @endif
     {{-- Header --}}
     @php
     $sang= 1 ;
@@ -186,16 +184,6 @@
                                     @endif
                                     @endforeach
 
-                                    <!-- <div class="item"><span id="1228514" title="Cà phê" class="item-link ">Cà phê</span>
-                                    </div>
-                                    <div class="item"><span id="1228515" title="Sinh tố hoa quả" class="item-link ">Sinh
-                                            tố hoa quả</span></div>
-                                    <div class="item"><span id="1228516" title="Nước ép hoa quả tươi"
-                                            class="item-link ">Nước ép hoa quả tươi</span></div>
-                                    <div class="item"><span id="1228519" title="Trà nhiệt đới các loại"
-                                            class="item-link ">Trà nhiệt đới các loại</span></div>
-                                    <div class="item"><span id="1318303" title="Sữa đặc biệt các loại"
-                                            class="item-link ">Sữa đặc biệt các loại</span></div> -->
                                     <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
                                         <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
                                     </div>
@@ -207,26 +195,28 @@
                         </div>
                     </div>
                     <div class="col-8">
-                        <!-- <div class="search-items">
-                                    <p class="input-group"><i class="fas fa-search"></i><input type="search"
-                                            name="searchKey" placeholder="Tìm món" value=""></p>
-                                </div> -->
+
                         <div id="restaurant-item">
                             <div class="restaurant-item__group">
                                 <div class="restaurant-item__group-title">Danh sách chi tiết </div>
                                 <ul class="restaurant-item__group-list">
                                     @foreach($disheds as $dished)
-                                    <li class="restaurant-item__group-item">
+                                    @php
+
+                                    $price_old =round($dished->price*(100-$dished->sale_percent)/100)*1000;
+                                    @endphp
+                                    <li class="restaurant-item__group-item" onclick="showDetailDish(event,this)">
                                         <div class="item__img-box">
                                             <img src="{{$dished->image}}" alt="{{$dished->linkTo}}"
                                                 class="restaurant-item__group-img"></img>
                                         </div>
                                         <div class="restaurant-item__group-name">{{$dished->name}}</div>
                                         <div class="restaurant-item__group-price">
-                                            <div class="old-price">{{$dished->price}} <span
+                                            <div class="old-price">{{ $dished->price }}
+                                                <span
                                                     style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                             </div>
-                                            <div class="new-price">{{$dished->price*900}}<span
+                                            <div class="new-price">{{$price_old}}<span
                                                     style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
                                             </div>
                                         </div>
@@ -240,16 +230,43 @@
                 <div class="row">
                     <div class="col-12 ">
                         @foreach ($reviews as $review)
+
                         <div class="review-item shadow-sm bg-white">
                             <div class="header d-flex">
-                                <img src="{{ url($user->avatar) }}" alt="avatar">
+                                <img src="{{ url($review->user_avatar) }}" alt="avatar">
                                 <div class="title flex-md-grow-1">
-                                    <a href="">{{ $user->name }}</a>
+                                    <a href="">{{ $review->user_name }}</a>
                                     <p class="dr mt-2 mb-1"><a href="#">{{ $review->dishes_name }}</a> | <a
                                             href="#">{{ $review->restaurant_name }}</a></p>
                                     <small>{{ date('d/m/Y', strtotime(16/7)) }}</small>
                                 </div>
-                                <span class="rate">{{ $review->reviews_rate }}</span>
+                                @if ($review->reviews_rate==1)
+                                <i class="fa fa-star" aria-hidden="true" style="color:#ffff00"></i>
+
+                                @elseif($review->reviews_rate==2)
+                                <i class="fa fa-star" aria-hidden="true" style="color:#ffff00"></i>
+                                <i class="fa fa-star" aria-hidden="true" style="font-size:24px;color:#ffff00"></i>
+
+                                @elseif($review->reviews_rate==3)
+                                <i class="fa fa-star" aria-hidden="true" style="color:#ffff00"></i>
+                                <i class="fa fa-star" aria-hidden="true" style="font-size:24px;color:#ffff00"></i>
+                                <i class="fa fa-star" aria-hidden="true" style="font-size:36px;color:#ffff00"></i>
+
+                                @elseif($review->reviews_rate==4)
+                                <i class="fa fa-star" aria-hidden="true" style="color:#ffff00"></i>
+                                <i class="fa fa-star" aria-hidden="true" style="font-size:24px;color:#ffff00"></i>
+                                <i class="fa fa-star" aria-hidden="true" style="font-size:36px;color:#ffff00"></i>
+                                <i class="fa fa-star" aria-hidden="true" style="font-size:48px;color:#ffff00"></i>
+
+                                @else
+                                <i class="fa fa-star" aria-hidden="true" style="color:#ffff00"></i>
+                                <i class="fa fa-star" aria-hidden="true" style="font-size:24px;color:#ffff00"></i>
+                                <i class="fa fa-star" aria-hidden="true" style="font-size:36px;color:#ffff00"></i>
+                                <i class="fa fa-star" aria-hidden="true" style="font-size:48px;color:#ffff00"></i>
+                                <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+
+                                @endif
+                                <!-- <span class="fa fa-star">{{ $review->reviews_rate }}</span> -->
                             </div>
                             <hr>
                             <div class="comment">
@@ -265,33 +282,69 @@
                                 </div>
                                 @endforeach
                             </div>
+                            @if (Auth::check() == true)
+
                             <div class="toolbar d-flex">
                                 <a href="#" class="fas fa-heart"> Thích</a>
                                 <a href="#" class="fas fa-comment ml-4"> Bình luận</a>
                                 <a href="#" class="fas fa-exclamation-triangle ml-4"> Báo lỗi</a>
                             </div>
+                            @endif
+
                         </div>
                         @endforeach
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="comment">
-                            <p v-for="items in item" v-text="items"></p>
+                @if (Auth::check() == true)
+                <div class="container">
+
+                    <form id="review-form" method="POST" action="/{{$Id}}">
+                        @csrf
+                        <div>
+                            <input type="text" name="user_id" hidden value="@php echo Auth::user()->id; @endphp">
                         </div>
-                        <!--End Comment-->
-                    </div>
-                    <!--End col -->
-                </div><!-- End row -->
-                <div class="row">
-                    <div class="col-12">
-                        <textarea type="text" class="input" placeholder="Write a comment" v-model="newItem"
-                            @keyup.enter="addItem()"></textarea>
-                        <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add
-                            Comment</button>
-                    </div><!-- End col -->
+                        <div>
+                            <input type="text" name="restaurant_id" hidden
+                                value="<?php echo $restaurantDetail[0]->id?>">
+                        </div>
+                        <div>
+                            <label>Món ăn bạn vừa thường thức </label>
+                            <select name="dish_id">
+                                @foreach($disheds as $dished)
+                                <option value="{{$dished->id}}">{{$dished->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div>
+                            <label>Cảm nhận của bạn về nhà hàng</label>
+                            <input type="text" name="comment" placeholder="Chất lượng phục vụ tốt">
+                        </div>
+                        <div>
+                            <label>Chất lượng phục vụ</label>
+                            <select name="rate">
+                                <option value="5">Xuất sắc</option>
+                                <option value="4">Rất tốt</option>
+                                <option value="3">Cao</option>
+                                <option value="2">Trung Bình</option>
+                                <option value="1">Tồi</option>
+                            </select>
+
+                        </div>
+                        <div>
+                            <label>images </label>
+                            <input type="text" name="images" placeholder="images">
+
+                        </div>
+
+                        <div>
+                            <input type="submit" value="Comment" onclick="submitReview(event)">
+
+                        </div>
+
+                    </form>
+
                 </div>
-                <!--End Row -->
+                @endif
             </div>
 
 
@@ -336,6 +389,23 @@
             </div>
         </div>
     </div>
+    <!-- Modal test -->
+    <div class="modal micromodal-slide" id="detail-dish-modal" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="detail-dish-modal-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="detail-dish-modal-title">
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="detail-dish-modal-content">
+                    <img id="loading-img" src="/assets/images/loading.svg" width="30px" height="30px"
+                        alt="loading"></img>
+                    <div id="detail-dish-content"></div>
+                </main>
+            </div>
+        </div>
+    </div>
     @include('Layouts.footer')
     @endsection
     @section('css')
@@ -350,7 +420,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <!-- Bootstrap cdn -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- My css -->
 
     <link rel="stylesheet" href="Review/css/style.css">
@@ -366,7 +436,8 @@
     @endsection
 
     @section('js')
-
+    <!-- Modal -->
+    <script src="Homepage/js/micromodal.min.js"></script>
     <!-- jQuery -->
     <script src="HomePage/js/jquery.min.js"></script>
     <!-- jQuery Easing -->
@@ -395,5 +466,9 @@
     <script src="HomePage/js/owl-carousel.js"></script>
     <!-- Main JS -->
     <script src="HomePage/js/main.js"></script>
+    <script src="Homepage/js/home.js"></script>
+
+
     <!-- <script src="HomePage/js/home.js"></script> -->
+
     @endsection

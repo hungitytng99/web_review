@@ -1,4 +1,3 @@
-
 //prevent scroll when open mobile nav
 let mobileNavControl = $('#mobile-nav-check');
 mobileNavControl.prop('checked', false);
@@ -16,7 +15,7 @@ mobileNavControl.change(() => {
 let restaurantsHtml = ``;
 let restaurantsItem = 12;
 let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30px" alt="loading"></img>`;
-(function () {
+(function() {
     //MODAL Setup
     //AJAX
     $.ajaxSetup({
@@ -124,11 +123,13 @@ let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30p
     getInfinityRestaurant();
 
 })();
+
 function removeActiveExplorePanel() {
     $('.review-content__header-box p').each((index, element) => {
         $(element).removeClass("--active");
     })
 }
+
 function handleExplorePanel(element) {
     removeActiveExplorePanel();
     $(element).addClass("--active");
@@ -143,7 +144,8 @@ function handleExplorePanel(element) {
                 dataType: 'json',
                 beforeSend: () => {
                     $("#loading-explore").html(loadingImg);
-                }, complete: function () {
+                },
+                complete: function() {
                     $("#loading-explore").html("");
                 },
                 success: (data) => {
@@ -181,7 +183,8 @@ function handleGetMoreRestaurants(btn) {
         },
         beforeSend: () => {
             $("#loading-more").html(loadingImg);
-        }, complete: function () {
+        },
+        complete: function() {
             $("#loading-more").html("");
         },
         success: (data) => {
@@ -312,9 +315,11 @@ function getInfinityRestaurant() {
         dataType: 'json',
         data: {
             itemLength: 8,
-        }, beforeSend: () => {
+        },
+        beforeSend: () => {
             $("#loading-explore").html(loadingImg);
-        }, complete: function () {
+        },
+        complete: function() {
             $("#loading-explore").html("");
         },
         success: (data) => {
@@ -384,7 +389,3 @@ function getInfinityRestaurant() {
         }
     })
 }
-
-
-
-

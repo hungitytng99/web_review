@@ -6,6 +6,7 @@ use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Review\ReviewController;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Review\CommentController;
 use App\Http\Controllers\Search\SearchResultController;
 
 Route::redirect('/home', '/');
@@ -57,6 +58,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile', [ProfileController::class, 'editProfile'])->name('edit_profile');
     Route::delete('/profile', [ProfileController::class, 'deleteAccount']);
 });
-// Route::get('/review', [ReviewController::class, 'getId']);
 //Review
+    // Route::get('/review', [CommentController::class, 'viewcomment'])->name('viewcomment');
 Route::get('{Id}', [ReviewController::class, 'getId']);
+Route::post('/{Id}', [CommentController::class, 'Comment']);
+// Route::post('/review2dd', [CommentController::class, 'Comment']);
+
+// Route::get('/review', 'CommentController@index');
+
+// Route::get('/review', 'CommentController@create');
+
+// Route::post('/review', 'Controller@storeComment');
