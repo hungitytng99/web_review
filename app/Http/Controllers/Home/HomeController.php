@@ -73,24 +73,28 @@ class HomeController extends Controller
         }
         // dd($outstandingDishes);
         $outstandingDishesList = $this->handleOutstandingFood($outstandingDishes);
+        // return response()->json([
+        //     'message' => 'Page Not Found. If error persists, contact info@website.com'
+        // ], 404);
         return response()->json($outstandingDishesList);
     }
 
     function getMoreRestaurants(Request $request)
     {
         $restaurantsList = DB::table('restaurants')
-            ->join('restaurants_discounts','restaurants.id','=','restaurants_discounts.restaurants_id')
-            ->join('discounts','discounts.id','=','restaurants_discounts.discounts_id')
+            ->join('restaurants_discounts', 'restaurants.id', '=', 'restaurants_discounts.restaurants_id')
+            ->join('discounts', 'discounts.id', '=', 'restaurants_discounts.discounts_id')
             ->where('restaurants.id', '<=', $request->itemEnd)
             ->where('restaurants.id', '>=', $request->itemStart)
-            ->select('restaurants.id','restaurants.linkTo','restaurants.name','restaurants.type','restaurants.location','restaurants.rate','restaurants.phone','restaurants.image','discounts.name as discount_name')
+            ->select('restaurants.id', 'restaurants.linkTo', 'restaurants.name', 'restaurants.type', 'restaurants.location', 'restaurants.rate', 'restaurants.phone', 'restaurants.image', 'discounts.name as discount_name')
             ->get();
         $restaurantsList = $this->attachSavedRestaurantField($restaurantsList);
-        
+
         // dd($restaurantsList);
         return response()->json($restaurantsList);
     }
-    function attachDiscountField($restaurantList){
+    function attachDiscountField($restaurantList)
+    {
         $result = [];
         foreach ($restaurantList as $restaurant) {
             if ($this->checkSavedRestaurants($restaurant->id)) {

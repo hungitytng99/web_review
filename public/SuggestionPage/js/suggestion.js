@@ -55,16 +55,16 @@ function getDate() {
         case 2:
             dayText = "Thứ 3";
             break;
-        case value:
+        case 3:
             dayText = "Thứ 4";
             break;
-        case value:
+        case 4:
             dayText = "Thứ 5";
             break;
-        case value:
+        case 5:
             dayText = "Thứ 6";
             break;
-        case value:
+        case 6:
             dayText = "Thứ 7";
             break;
     }
@@ -72,6 +72,14 @@ function getDate() {
 }
 //
 function updateSuggesionPanel() {
+    let suggestionTitle = `
+                <div class="suggestion__title">
+                    <div>Thực đơn cả ngày của bạn</div>
+                    <div id="current__time">${getDate()}</div>
+                </div>
+            `;
+    $("#suggestion-title").html(suggestionTitle);
+
     $.ajax({
         type: 'POST',
         url: '/api/get-suggestion-detail',
@@ -87,17 +95,9 @@ function updateSuggesionPanel() {
             data.menu.map((meal) => {
                 menuList += `<li class="suggestion__meal-item">${meal}</li>`;
             });
-            let suggestionTitle = `
-                <div class="suggestion__title">
-                    <div>Thực đơn cả ngày của bạn</div>
-                    <div id="current__time">${getDate()}</div>
-                </div>
-            `;
+
             let suggestionPanel = `
                 <div id="suggestion__result" class="suggestion__result">
-                   
-                       
-                  
                     <div class="suggestion__content-box">
                         <div class="suggestion__content">
                             Chào <a href="/" class="name">${data.name}</a>, cân nặng hiện tại của bạn là: <span class="weight">${data.weight}kg</span>, chiều cao của bạn là: <span class="height">${data.height}m</span>. Chúng tôi đã tính
@@ -117,7 +117,6 @@ function updateSuggesionPanel() {
                 </div>
             `;
             mainPanel.html(suggestionPanel);
-            $("#suggestion-title").html(suggestionTitle);
             // clearInterval(checkRequiredInfoInterval);
         },
         error: (error) => {
@@ -126,6 +125,12 @@ function updateSuggesionPanel() {
     });
 }
 function updateSavedRestaurantsPanel() {
+    let savedRestaurantTitle = `
+    <div class="suggestion__title">
+        <div>Danh sách nhà hàng đã lưu</div>
+    </div>
+`;
+    $("#suggestion-title").html(savedRestaurantTitle);
     $.ajax({
         type: 'POST',
         url: '/api/get-saved-restaurants',
@@ -138,11 +143,7 @@ function updateSavedRestaurantsPanel() {
         },
         success: (data) => {
             let savedRestaurantListHtml = ``;
-            let savedRestaurantTitle = `
-                <div class="suggestion__title">
-                    <div>Danh sách nhà hàng đã lưu</div>
-                </div>
-            `;
+
             data.map((restaurants) => {
                 let restaurantsItem = `
                         <div class="small-gutter padding-bottom col-xs-3 col-lg-4 col-sm-6 col-xs-12 col-12">
@@ -171,7 +172,6 @@ function updateSavedRestaurantsPanel() {
                 savedRestaurantListHtml += restaurantsItem;
             });
             mainPanel.html(savedRestaurantListHtml);
-            $("#suggestion-title").html(savedRestaurantTitle);
 
         },
         error: (error) => {
@@ -194,6 +194,7 @@ function handleSuggestionTab() {
         },
         success: (data) => {
             if (data == false) {
+                $("#suggestion-title").html("");
                 mainPanel.html(requiredFill);
             } else {
                 updateSuggesionPanel();
