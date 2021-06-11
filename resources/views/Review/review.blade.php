@@ -63,8 +63,39 @@
                         <li class="review__detail-restaurant-location">
                             <p>{{$restaurantDetail[0]->location}}</p>
                         </li>
+                        <li class="review__detail-restaurant-location">
+                            <p>{{$restaurantDetail[0]->phone}}</p>
+                        </li>
                         <div class="cost-restaurant">
                             <i></i>{{$min}} - {{$max}}
+                        </div>
+                        <div class="cost-restaurant">
+                            <!-- <i></i>{{$restaurantDetail[0]->rate}} -->
+                            @if($restaurantDetail[0]->rate ==1 ) <i class="fa fa-star" aria-hidden="true"
+                                style="font-size:60px;color:#ffff00"></i>
+
+                            @elseif($restaurantDetail[0]->rate==2)
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+
+                            @elseif($restaurantDetail[0]->rate==3)
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+
+                            @elseif($restaurantDetail[0]->rate==4)
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+
+                            @elseif($restaurantDetail[0]->rate==5)
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+                            <i class="fa fa-star" aria-hidden="true" style="font-size:60px;color:#ffff00"></i>
+                            @endif
                         </div>
                     </ul>
                 </div>
@@ -218,6 +249,7 @@
                                             </div>
                                             <div class="new-price">{{$price_old}}<span
                                                     style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
+
                                             </div>
                                         </div>
                                     </li>
@@ -238,6 +270,7 @@
                                     <a href="">{{ $review->user_name }}</a>
                                     <p class="dr mt-2 mb-1"><a href="#">{{ $review->dishes_name }}</a> | <a
                                             href="#">{{ $review->restaurant_name }}</a></p>
+
                                     <small>{{ date('d/m/Y', strtotime(16/7)) }}</small>
                                 </div>
                                 @if ($review->reviews_rate==1)
@@ -317,7 +350,8 @@
                         </div>
                         <div>
                             <label>Cảm nhận của bạn về nhà hàng</label>
-                            <input type="text" name="comment" placeholder="Chất lượng phục vụ tốt">
+                            <input class="comment__input" type="text" name="comment"
+                                placeholder="Chất lượng phục vụ tốt">
                         </div>
                         <div>
                             <label>Chất lượng phục vụ</label>
@@ -331,12 +365,12 @@
 
                         </div>
                         <div>
-                            <label>images </label>
-                            <input type="text" name="images" placeholder="images">
+                            <label>Images </label>
+                            <input class="comment__input" type="text" name="images" placeholder="images">
 
                         </div>
 
-                        <div>
+                        <div class="review__submit">
                             <input type="submit" value="Comment" onclick="submitReview(event)">
 
                         </div>
@@ -387,6 +421,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- Modal test -->

@@ -117,7 +117,11 @@ input:focus {
     margin-right: -5px;
 }
 
-.container {}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .noselect {
     -webkit-touch-callout: none;
@@ -126,4 +130,13 @@ input:focus {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+@media screen and (max-width:768px) {
+    .hide-on-768 {
+        display: none;
+    }
+    .show-on-768 {
+        display: block;
+    }
 }

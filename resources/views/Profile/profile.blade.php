@@ -4,11 +4,11 @@
 
 @section('css')
 <!-- Animate.css -->
-<link rel="stylesheet" href="Home/css/animate.css">
+<link rel="stylesheet" href="Homepage/css/animate.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="Home/css/flexslider.css">
+<link rel="stylesheet" href="Homepage/css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="Home/css/bootstrap.css">
+<link rel="stylesheet" href="Homepage/css/bootstrap.css">
 
 <!-- Fontawesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -17,37 +17,39 @@
 
 <!-- My css -->
 <link rel="stylesheet" href="Base/css/base.css">
-<link rel="stylesheet" href="Home/css/header.css">
-<link rel="stylesheet" href="Home/css/style.css">
+<link rel="stylesheet" href="Homepage/css/header.css">
+<link rel="stylesheet" href="Homepage/css/style.css">
 
-<link rel="stylesheet" href="Profile_files/css/style.css">
+<link rel="stylesheet" href="ProfilePage/css/style.css">
 @endsection
 
 @section('js')
 <!-- Modernizr JS -->
-<script src="Home/js/modernizr-2.6.2.min.js"></script>
+<script src="Homepage/js/modernizr-2.6.2.min.js"></script>
 <!-- jQuery -->
-<script src="Home/js/jquery.min.js"></script>
+<script src="Homepage/js/jquery.min.js"></script>
 <!-- jQuery Easing -->
-<script src="Home/js/jquery.easing.1.3.js"></script>
+<script src="Homepage/js/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
-<script src="Home/js/bootstrap.min.js"></script>
+<script src="Homepage/js/bootstrap.min.js"></script>
 <!-- Bootstrap DateTimePicker -->
-<script src="Home/js/moment.js"></script>
-<script src="Home/js/bootstrap-datetimepicker.min.js"></script>
+<script src="Homepage/js/moment.js"></script>
+<script src="Homepage/js/bootstrap-datetimepicker.min.js"></script>
 <!-- Waypoints -->
-<script src="Home/js/jquery.waypoints.min.js"></script>
+<script src="Homepage/js/jquery.waypoints.min.js"></script>
 <!-- Stellar Parallax -->
-<script src="Home/js/jquery.stellar.min.js"></script>
+<script src="Homepage/js/jquery.stellar.min.js"></script>
 <!-- Flexslider -->
-<script src="Home/js/jquery.flexslider-min.js"></script>
+<script src="Homepage/js/jquery.flexslider-min.js"></script>
 <!-- Modal -->
-<script src="Home/js/micromodal.min.js"></script>
+<script src="Homepage/js/micromodal.min.js"></script>
 <!-- Wow - animation when scroll page -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <!-- Owl carousel -->
 <script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-<script src="Home/js/owl-carousel.js"></script>
+<script src="Homepage/js/owl-carousel.js"></script>
+
+<script src="Homepage/js/home.js"></script>
 @endsection
 
 @section('content')
@@ -107,7 +109,7 @@
                 <div class="panel shadow-sm bg-white">
 
                     <!-- Account page -->
-                    <div id="content-0">
+                    <div id="content-0" hidden>
                         <h1 class="mb-4">Tài khoản</h1>
                         <div class="section-avatar">
                             <h3>Avatar</h3>
@@ -116,8 +118,8 @@
                                 <form action="{{ url('/profile') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <label for="upload_avatar" class="btn shadow-sm">Tải lên</label>
-                                    <input type="file" onchange="this.form.submit()" name="upload_avatar"
-                                        id="upload_avatar" hidden>
+                                    <input type="file" accept=".png, .jpg, .jpeg" onchange="this.form.submit()"
+                                        name="upload_avatar" id="upload_avatar" hidden>
                                 </form>
                             </div>
                         </div>
@@ -180,33 +182,8 @@
                                     value="Lưu thay đổi">
                             </div>
 
-                            <form id="delete_form" action="{{ url('/profile') }}" method="POST" hidden>
-                                @method('delete')
-                                @csrf
-                                <input type="hidden" name="delete_account" value="yes">
-                            </form>
-
-                            @if (session('status-success-0'))
-                            <div class="alert alert-success auto-hide" role="alert">
-                                {{ session('status-success-0') }}
-                            </div>
-                            @endif
-
-                            @if (session('status-success-1'))
-                            <div class="alert alert-success auto-hide" role="alert">
-                                {{ session('status-success-1') }}
-                            </div>
-                            @endif
-
-                            @if (session('status-error-1'))
-                            <div class="alert alert-danger auto-hide" role="alert">
-                                {{ session('status-error-1') }}
-                            </div>
-                            @endif
-
                         </div>
                     </div>
-
                     <!-- Info page -->
                     <div id="content-1" hidden>
                         <h1 class="mb-4">Thông tin cá nhân</h1>
@@ -323,10 +300,142 @@
                         @endif
                     </div>
 
+                    @if (session('status-error-1'))
+                    <div class="alert alert-danger auto-hide" role="alert">
+                        {{ session('status-error-1') }}
+                    </div>
+                    @endif
+
                 </div>
             </div>
+
+            <!-- Info page -->
+            <div id="content-1" hidden>
+                <h1 class="mb-4">Thông tin cá nhân</h1>
+                <form action="{{ url('/profile') }}" method="POST">
+                    @csrf
+                    <div class="row pb-4">
+                        <div class="col-md">
+                            <div class="section-input-label d-flex justify-content-between">
+                                <label for="date_of_birth">
+                                    <h4>Ngày sinh</h4>
+                                </label>
+                                <small>Cho các dịch vụ</small>
+                            </div>
+                            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth"
+                                value="{{ Auth::user()->date_of_birth ?? '' }}" min="1800-01-01" max="2021-12-31">
+                        </div>
+                        <div class="col-md">
+                            <div class="section-input-label d-flex justify-content-between">
+                                <label for="job">
+                                    <h4>Nghề nghiệp</h4>
+                                </label>
+                                <small>Cho các dịch vụ</small>
+                            </div>
+                            <input type="text" class="form-control" id="job" name="job"
+                                placeholder="{{ Auth::user()->job ?? '' }}">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row pb-4">
+                        <div class="col-md">
+                            <div class="section-input-label d-flex justify-content-between">
+                                <label for="weight">
+                                    <h4>Cân nặng (kg)</h4>
+                                </label>
+                                <small>Cho các dịch vụ</small>
+                            </div>
+                            <input type="number" class="form-control" id="weight" name="weight"
+                                placeholder="{{ Auth::user()->weight ?? '' }}">
+                        </div>
+                        <div class="col-md">
+                            <div class="section-input-label d-flex justify-content-between">
+                                <label for="height">
+                                    <h4>Chiều cao (cm)</h4>
+                                </label>
+                                <small>Cho các dịch vụ</small>
+                            </div>
+                            <input type="number" class="form-control" id="height" name="height"
+                                placeholder="{{ Auth::user()->height ?? '' }}">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex align-items-center section-save-change-btn">
+                        <input type="submit" class="btn primary shadow-sm ml-auto" value="Lưu thay đổi">
+                    </div>
+                    <input type="hidden" id="redirect" name="redirect" value="">
+                </form>
+
+                @if (session('status-success-1'))
+                <div class="alert alert-success auto-hide" role="alert">
+                    {{ session('status-success-1') }}
+                </div>
+                @endif
+
+                @if (session('status-error-1'))
+                <div class="alert alert-danger auto-hide" role="alert">
+                    {{ session('status-error-1') }}
+                </div>
+                @endif
+
+            </div>
+
+            {{-- Change Password --}}
+            <div id="content-2" hidden>
+                <h1 class="mb-4">Thay đổi mật khẩu</h1>
+                <form action="{{ url('/profile') }}" method="POST">
+                    @csrf
+                    <div class="row pb-4">
+                        <div class="col">
+                            <div class="section-input-label d-flex justify-content-between">
+                                <label for="old_password">
+                                    <h4>Mật khẩu hiên tại</h4>
+                                </label>
+                            </div>
+                            <input type="password" class="form-control" id="old_password" name="old_password">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row pb-4">
+                        <div class="col">
+                            <div class="section-input-label d-flex justify-content-between">
+                                <label for="new_password">
+                                    <h4>Mật khẩu mới</h4>
+                                </label>
+                            </div>
+                            <input type="password" class="form-control" id="new_password" name="new_password">
+                            <div class="alert alert-danger" id="alert_new_password" role="alert" hidden></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row pb-4">
+                        <div class="col">
+                            <div class="section-input-label d-flex justify-content-between">
+                                <label for="retype_new_password">
+                                    <h4>Xác nhận mật khẩu mới</h4>
+                                </label>
+                            </div>
+                            <input type="password" class="form-control" id="retype_new_password"
+                                name="retype_new_password">
+                            <div class="alert alert-danger" id="alert_retype_new_password" role="alert" hidden></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex align-items-center section-save-change-btn">
+                        <input type="submit" class="btn primary shadow-sm ml-auto" value="Lưu thay đổi">
+                    </div>
+                </form>
+                @if (session('status-success-1'))
+                <div class="alert alert-success auto-hide" role="alert">
+                    {{ session('status-success-1') }}
+                </div>
+                @endif
+            </div>
+
         </div>
     </div>
+</div>
+</div>
 
 </div>
 
@@ -337,6 +446,6 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
 </script>
 
-<script src="Profile_files/js/utils.js"></script>
+<script src="ProfilePage/js/utils.js"></script>
 
 @endsection

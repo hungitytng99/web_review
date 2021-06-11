@@ -47,15 +47,6 @@ class CommentController extends Controller
         // dd($request);
         // dd($request->getPathInfo());
         $link = $request->getPathInfo();
-
-        // $restaurants = DB::table('restaurants')
-        // ->where('id', "=", $request->restaurant_id)
-        // ->get();
-        // $link = "";
-        // foreach ($restaurants as $restaurant) {
-        //     $link = $restaurant->linkTo;
-        // }
-        // dd($restaurants);
         DB::insert('insert into reviews (user_id, restaurant_id,dish_id,comment,rate,images) values (?, ?,?, ?,?, ?)', [$request->user_id,$request->restaurant_id,$request->dish_id ,$request->comment, $request->rate,$request->images]);
         return redirect($link);
     }

@@ -59,6 +59,12 @@
 }
 
 .review__detail-restaurant-location {
+    font-size: 15px;
+    margin-bottom: 2px;
+    border-radius: 1rem;
+}
+
+.review__detail-restaurant-phone {
     font-size: 13px;
     margin-bottom: 2px;
     border-radius: 1rem;
@@ -328,30 +334,47 @@ button.primaryContained {
 
 button.primaryContained:hover {
     background: #9201A8;
+    padding: auto;
 }
 
-input[type=text],
-select,
-textarea {
+.comment__input,
+select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 6px;
-    margin-bottom: 16px;
     resize: vertical;
 }
 
 input[type=submit] {
     background-color: #4CAF50;
     color: white;
-    padding: 12px 20px;
+    padding: 12px 20px 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin: 10px 0px;
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #36c73e;
+    /* padding: 15px; */
+}
+
+label {
+    margin: 8px 0px;
+}
+
+#review-form {
+    padding: 0px 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.review__submit {
+    display: flex;
+    justify-content: flex-end;
 }

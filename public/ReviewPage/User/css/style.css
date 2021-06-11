@@ -1,0 +1,171 @@
+html, body{
+    line-height: normal;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h1, h3 {
+    font-weight: bold;
+}
+
+label {
+    margin: 0;
+}
+
+small {
+    color: gray;
+}
+
+.review-list {
+    padding-top: 2rem;
+}
+
+.review-item {
+    margin: 0 0 1rem 0;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+.review-item > .header > .title > a {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: initial;
+}
+
+.review-item > .header > .title {
+    padding: 0 1.5rem;
+}
+
+.review-item > .header img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.review-item > .header .dr > a {
+    color: #e94f37;
+}
+
+.review-item > .header .rate {
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: 4rem;
+    flex: 0 0 4rem;
+}
+
+.review-item > .header .rate.green {
+    background-color: green;
+}
+
+.review-item > .header .rate.yellow {
+    background-color: yellow;
+    color: black;
+}
+
+.review-item > .header .rate.red {
+    background-color: red;
+}
+
+.review-item > .comment {
+    margin: 2rem 0 0.5rem;
+    word-wrap: break-word;
+}
+
+.review-item > .images {
+    display: flex;
+}
+
+.review-item > .images > .column {
+    flex: 50%;
+    padding: 0 0.1rem;
+}
+
+.review-item > .toolbar {
+    margin-top: 2rem;
+    opacity: 0.75;
+}
+
+.user-info {
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.user-info > img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.side-nav {
+    border-radius: 1rem;
+    margin: 2rem 0;
+    padding-bottom: 0.5rem;
+}
+
+.side-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.side-nav ul li a{
+    display: block;
+    border-radius: 14px;
+    margin-bottom: 0.625rem;
+    padding: 0.8rem 1.8rem;
+    font-weight: bold;
+    color: gray;
+    text-decoration: none;
+}
+
+.side-nav ul li a.active{
+    background-color: lightblue;
+    color: black;
+}
+
+.top-nav {
+    /* display: none; */
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    z-index: 99999;
+}
+
+.top-nav > .filter {
+    margin: 0;
+}
+
+
+@media(max-width: 768px) {
+    .review-list {
+        padding: 2rem 0 0 0;
+    }
+
+    .review-item {
+        border-radius: 0;
+        padding: 2rem;
+    }
+
+    .section-side {
+        display: none;
+    }
+
+    .top-nav {
+        border-radius: 0;
+        display: block;
+    }
+}
+
+.sticky {
+    position: -webkit-sticky;
+	position: sticky;
+	top: 6rem;
+}

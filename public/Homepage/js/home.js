@@ -23,10 +23,10 @@ let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30p
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    // getmore dishes
+    // get more dishes
     $.ajax({
         type: 'POST',
-        url: '/get-more-outstanding-dishes',
+        url: '/api/get-more-outstanding-dishes',
         dataType: 'json',
         success: (data) => {
             let outstandingFoodHtml = ``;
@@ -73,10 +73,10 @@ let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30p
             console.log(error);
         }
     });
-    //get restaurants
+    // api/get restaurants
     $.ajax({
         type: 'POST',
-        url: '/get-more-restaurants',
+        url: '/api/get-more-restaurants',
         dataType: 'json',
         data: {
             itemStart: 1,
@@ -102,11 +102,8 @@ let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30p
                         <div class="restaurant__discount">
                             <div class="restaurant__discount-item">
                                 <i class="fas fa-tag"></i>
-                                <span> Ăn trưa - Đi 4 tính 3</span>
+                                <span> ${restaurant.discount_name}</span>
                             </div>
-                            <a href="#" class="restaurant__discount-more">
-                                Xem thêm ưu đãi...
-                            </a>
                          </div>
                     </div>
                 </div>`
@@ -121,6 +118,8 @@ let loadingImg = `<img src="/assets/images/loading.svg" width="30px" height="30p
     });
     //infinity scroll
     getInfinityRestaurant();
+    //notify fill information
+    notifyFillInformation();
 
 })();
 
@@ -132,6 +131,8 @@ function removeActiveExplorePanel() {
 
 function handleExplorePanel(element) {
     removeActiveExplorePanel();
+    removeActiveExplore();
+    $("#explore-default-select").addClass("--active");
     $(element).addClass("--active");
     switch ($(element).attr('data-index')) {
         case "1":
@@ -139,8 +140,8 @@ function handleExplorePanel(element) {
             break;
         case "2":
             $.ajax({
-                type: 'GET',
-                url: '/get-auth-status',
+                type: 'POST',
+                url: '/api/get-auth-status',
                 dataType: 'json',
                 beforeSend: () => {
                     $("#loading-explore").html(loadingImg);
@@ -150,7 +151,7 @@ function handleExplorePanel(element) {
                 },
                 success: (data) => {
                     if (data == true) {
-                        getInfinityRestaurant();
+                        handleGetSavedRestaurants();
                     } else {
                         let loginRequiredHtml = `
                             <div class="explore__login-required">    
@@ -171,11 +172,95 @@ function handleExplorePanel(element) {
 
 }
 
+function handleGetSavedRestaurants() {
+    let InfinityRestaurantsHtml = ``;
+
+    $.ajax({
+        type: 'POST',
+        url: '/api/get-saved-restaurants',
+        dataType: 'json',
+        beforeSend: () => {
+            $("#loading-explore").html(loadingImg);
+        },
+        complete: function() {
+            $("#loading-explore").html("");
+        },
+        success: (data) => {
+            console.log(data.length);
+            if (data.length != 0) {
+                data.map(restaurant => {
+                    let htmpTemp = ` 
+                    <div class="small-gutter col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="bt-content__item">
+                            <div class="restaurant">
+                                <a href=${restaurant.linkTo}>
+                                    <div class="restaurant__img-box">
+                                        <img class="restaurant__img" src=${restaurant.image} alt="res">
+                                    </div>
+                                    <div class="restaurant__info">
+                                        <div class="restaurant__name">${restaurant.name}</div>
+                                        <div class="restaurant__address">${restaurant.location}</div>
+                                    </div>
+                                </a>
+        
+                            </div>
+                            <div class="restaurant__discount">
+                                <div class="home-comment">
+                                    <div class="home-comment__user">
+                                        <div>
+                                            <a href="#">
+                                                <img src="https://images.foody.vn/usr/g836/8359063/avt/c100x100/qhmai-avatar-114-637186600244578770.jpg" alt="" class="home-comment__user-avatar">
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <span>Mai quỳnh </span>
+                                            <p>Quán sạch sẽ, đồ ăn và thức uống ngon miệng, phù hợp với túi tiền. Nhân viên phục vụ chu đáo</p>
+                                        </div>
+                                    </div>
+                                    <div class="home-comment__interactive">
+                                        <div class="home-comment__interactive-box">
+                                            <div class="home-comment__comment">
+                                                <i class="home-comment__interactive-comment fas fa-comment"></i>
+                                                <span>3</span>
+                                            </div>
+                                            <div class="home-comment__comment">
+                                                <i class="home-comment__interactive-comment fas fa-camera"></i>
+                                                <span>30</span>
+                                            </div>
+                                        </div>
+                                        <div class="home-comment__interactive-box">
+                                            <button class="home-comment__interactive-btn" restaurant-id=${restaurant.id} is-saved=1 onclick="handleSavedRestaurant(this)">
+                                                <span>Lưu</span>
+                                                <i class="fas fa-bookmark"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    `
+                    InfinityRestaurantsHtml += htmpTemp;
+                });
+            } else {
+                InfinityRestaurantsHtml = `
+                    <div class="explore__login-required">    
+                        Bạn chưa lưu nhà hàng nào.
+                    </div>`;
+            }
+
+            $('#infinity-restaurants').html(InfinityRestaurantsHtml);
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    });
+}
 
 function handleGetMoreRestaurants(btn) {
     $.ajax({
         type: 'POST',
-        url: '/get-more-restaurants',
+        url: '/api/get-more-restaurants',
         dataType: 'json',
         data: {
             itemStart: restaurantsItem + 1,
@@ -207,18 +292,15 @@ function handleGetMoreRestaurants(btn) {
                         <div class="restaurant__discount">
                             <div class="restaurant__discount-item">
                                 <i class="fas fa-tag"></i>
-                                <span> Ăn trưa - Đi 4 tính 3</span>
+                                <span> ${restaurant.discount_name}</span>
                             </div>
-                            <a href="#" class="restaurant__discount-more">
-                                Xem thêm ưu đãi...
-                            </a>
                          </div>
                     </div>
                 </div>`
                 restaurantsHtml += htmpTemp;
             });
             $('#sale-restaurants').html(restaurantsHtml);
-            if (restaurantsItem === 30) {
+            if (restaurantsItem === 24) {
                 $("button.bt-content__more").hide();
             }
         },
@@ -233,17 +315,17 @@ function showDetailDish(event, element) {
     event.preventDefault();
     MicroModal.show('detail-dish-modal', {
         disableScroll: true,
+        onClose: () => { $('#detail-dish-content').html(''); },
     });
     let modalHref = element.getAttribute("href");
     let modalTitle = element.getElementsByClassName('restaurant__name')[0].innerText;
     $('#detail-dish-modal-title').html(modalTitle);
     let isExcuteLoading = $('#detail-dish-content').text() == '';
-
     if (isExcuteLoading) {
         $('#loading-img').show();
         $.ajax({
             type: 'POST',
-            url: '/get-more-outstanding-dishes',
+            url: '/api/get-more-outstanding-dishes',
             dataType: 'json',
             data: {
                 href: modalHref,
@@ -288,14 +370,10 @@ function showDetailDish(event, element) {
 }
 
 
-
-
-function preventHideDropdown(e) {
-    e.preventDefault();
-}
-
 function handleClickExplore(element) {
     removeActiveExplore();
+    removeActiveExplorePanel();
+    $("#review-default-select").addClass("--active");
     $(element).addClass("--active");
     getInfinityRestaurant();
 }
@@ -309,9 +387,10 @@ function removeActiveExplore() {
 function getInfinityRestaurant() {
     // infinity restaurant
     let InfinityRestaurantsHtml = ``;
+
     $.ajax({
-        type: 'GET',
-        url: '/get-infinity-restaurants',
+        type: 'POST',
+        url: '/api/get-infinity-restaurants',
         dataType: 'json',
         data: {
             itemLength: 8,
@@ -324,11 +403,15 @@ function getInfinityRestaurant() {
         },
         success: (data) => {
             data.map(restaurant => {
+                let isSaved = `<i class="far fa-bookmark"></i>`;
+                if (restaurant.isSaved == 1) {
+                    isSaved = `<i class="fas fa-bookmark"></i>`
+                }
                 let htmpTemp = ` 
                 <div class="small-gutter col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
                 <div class="bt-content__item">
                     <div class="restaurant">
-                        <a href==${restaurant.linkTo}>
+                        <a href=${restaurant.linkTo}>
                             <div class="restaurant__img-box">
                                 <img class="restaurant__img" src=${restaurant.image} alt="res">
                             </div>
@@ -369,9 +452,9 @@ function getInfinityRestaurant() {
                                     </div>
                                 </div>
                                 <div class="home-comment__interactive-box">
-                                    <button class="home-comment__interactive-btn">
+                                    <button class="home-comment__interactive-btn" restaurant-id=${restaurant.id} is-saved=${restaurant.isSaved ? 1 : 0} onclick="handleSavedRestaurant(this)">
                                         <span>Lưu</span>
-                                        <i class="fas fa-bookmark"></i>
+                                        ${isSaved}
                                     </button>
                                 </div>
                             </div>
@@ -387,5 +470,107 @@ function getInfinityRestaurant() {
         error: (error) => {
             console.log(error);
         }
-    })
+    });
+}
+// save restaurant
+function handleSavedRestaurant(element) {
+    $.ajax({
+        type: 'POST',
+        url: '/api/get-auth-status',
+        dataType: 'json',
+        beforeSend: () => {
+            $("#loading-explore").html(loadingImg);
+        },
+        complete: function() {
+            $("#loading-explore").html("");
+        },
+        success: (data) => {
+            if (data == true) {
+                let jElement = $(element);
+                let saveStatus = jElement.attr('is-saved');
+                let restaurantId = jElement.attr('restaurant-id');
+                if (saveStatus == 0) {
+                    jElement.attr('is-saved', '1');
+                    jElement.children("i").addClass("fas");
+                    jElement.children("i").removeClass("far");
+                    $.ajax({
+                        type: 'POST',
+                        url: '/api/saved-restaurants',
+                        dataType: 'json',
+                        data: {
+                            restaurantId: restaurantId,
+                        },
+                        success: (data) => {},
+                        error: (error) => {
+                            console.log(error);
+                            jElement.children("i").toggleClass("fas");
+                        }
+                    });
+                } else if (saveStatus == 1) {
+                    jElement.attr('is-saved', '0');
+                    jElement.children("i").addClass("far");
+                    jElement.children("i").removeClass("fas");
+                    $.ajax({
+                        type: 'POST',
+                        url: '/api/delete-saved-restaurants',
+                        dataType: 'json',
+                        data: {
+                            restaurantId: restaurantId,
+                        },
+                        success: (data) => {},
+                        error: (error) => {
+                            console.log(error);
+                            jElement.children("i").toggleClass("fas");
+                        }
+                    });
+                }
+            } else {
+                MicroModal.show('notify-login', {
+                    disableScroll: false,
+                });
+            }
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    });
+
+}
+// handle if user don't fill full infomation
+function notifyFillInformation() {
+    $.ajax({
+        type: 'POST',
+        url: '/api/get-auth-status',
+        dataType: 'json',
+        success: (data) => {
+            if (data == true) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/get-user-info',
+                    dataType: 'json',
+                    success: (data) => {
+                        console.log(data);
+                        if (data == true) {
+                            //Modal appear
+                            if (!Cookies.get('isShowNotify')) {
+                                console.log("SHOWW");
+
+                                MicroModal.show('notify-fill', {
+                                    disableScroll: false,
+                                });
+                                Cookies.set('isShowNotify', 1, { expires: 1 });
+                            }
+                        }
+                    },
+                    error: (error) => {
+                        console.log(error);
+                    }
+                });
+            }
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    });
+
 }

@@ -15,8 +15,14 @@ class DishesRestaurantsTable extends Migration
     {
         Schema::create('dishes_restaurants', function (Blueprint $table) {
             $table->id();
-            $table->integer('dishes_id');
-            $table->string('restaurants_id');
+            $table->foreignId('dishes_id')
+                ->constrained('dishes')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('restaurants_id')
+                ->constrained('restaurants')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->boolean('isOutstandingDish')->default(false);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

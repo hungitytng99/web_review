@@ -3,15 +3,16 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Psy\CodeCleaner\IssetPass;
 
 use function PHPUnit\Framework\isEmpty;
 
 class HomeController extends Controller
 {
-
 
     function index()
     {
@@ -72,18 +73,36 @@ class HomeController extends Controller
         }
         // dd($outstandingDishes);
         $outstandingDishesList = $this->handleOutstandingFood($outstandingDishes);
+        // return response()->json([
+        //     'message' => 'Page Not Found. If error persists, contact info@website.com'
+        // ], 404);
         return response()->json($outstandingDishesList);
     }
 
     function getMoreRestaurants(Request $request)
     {
-        // request.itemLength
-
-        $restaurants = DB::table('restaurants')
-            ->where('id', '<=', $request->itemEnd)
-            ->where('id', '>=', $request->itemStart)
+        $restaurantsList = DB::table('restaurants')
+            ->join('restaurants_discounts', 'restaurants.id', '=', 'restaurants_discounts.restaurants_id')
+            ->join('discounts', 'discounts.id', '=', 'restaurants_discounts.discounts_id')
+            ->where('restaurants.id', '<=', $request->itemEnd)
+            ->where('restaurants.id', '>=', $request->itemStart)
+            ->select('restaurants.id', 'restaurants.linkTo', 'restaurants.name', 'restaurants.type', 'restaurants.location', 'restaurants.rate', 'restaurants.phone', 'restaurants.image', 'discounts.name as discount_name')
             ->get();
-        return response()->json($restaurants);
+        $restaurantsList = $this->attachSavedRestaurantField($restaurantsList);
+
+        // dd($restaurantsList);
+        return response()->json($restaurantsList);
+    }
+    function attachDiscountField($restaurantList)
+    {
+        $result = [];
+        foreach ($restaurantList as $restaurant) {
+            if ($this->checkSavedRestaurants($restaurant->id)) {
+                $restaurant->isSaved = 1;
+            }
+            array_push($result, $restaurant);
+        }
+        return $result;
     }
     function getNRandomNumber($n, $end, $arrayExcept = [], $start = 1)
     {
@@ -92,34 +111,106 @@ class HomeController extends Controller
             $restaurantsList = array_diff($restaurantsList, $arrayExcept);
         }
         shuffle($restaurantsList);
-        $result = array_slice($restaurantsList, $end - $n);
+        $result = array_slice($restaurantsList, count($restaurantsList) - $n);
         return $result;
     }
     function getInfinityRestaurants(Request $request)
     {
         $restaurants = DB::table('restaurants')
             ->get();
+
         $totalRestaurant = count($restaurants);
         $restaurantsIdList = $this->getNRandomNumber($request->itemLength, $totalRestaurant);
         // return list of random record
         $restaurantsList = [];
-        foreach( $restaurantsIdList as $restaurantsId){
+        foreach ($restaurantsIdList as $restaurantsId) {
 
             $restaurantsItem = $restaurants = DB::table('restaurants')
-            ->where('id', '=', $restaurantsId)
-            ->get();
+                ->where('id', '=', $restaurantsId)
+                ->get();
             array_push($restaurantsList, $restaurantsItem[0]);
         }
-        
+        $restaurantsList = $this->attachSavedRestaurantField($restaurantsList);
         return response()->json($restaurantsList);
     }
 
-    function getAuthStatus(Request $request){
+    function getAuthStatus(Request $request)
+    {
         return response()->json(Auth::check());
     }
 
-    function search($params){
-        
-        dd($params);
+    function getContactUser(Request $request)
+    {
+        return response()->json($this->checkEmptyInfo());
+    }
+
+    function checkEmptyInfo()
+    {
+        if (isset(Auth::user()->job) && isset(Auth::user()->date_of_birth) && isset(Auth::user()->weight) && isset(Auth::user()->height)) {
+            return true;
+        }
+        return false;
+    }
+    function getSavedRestaurants(Request $request)
+    {
+        $result = [];
+        $restaurantsList = DB::table('users_save_restaurants')
+            ->where('user_id', '=', Auth::user()->id)
+            ->select('restaurant_id')
+            ->get();
+        foreach ($restaurantsList as $restaurantId) {
+            $restaurant = DB::table('restaurants')
+                ->where('id', '=', $restaurantId->restaurant_id)
+                ->get();
+            array_push($result, $restaurant[0]);
+        }
+        return response()->json($result);
+    }
+    function checkSavedRestaurants($restaurantId)
+    {
+        $restaurantsList = DB::table('users_save_restaurants')
+            ->where('restaurant_id', '=', $restaurantId)
+            ->where('user_id', '=', Auth::user()->id)
+            ->get();
+        return !$restaurantsList->isEmpty();
+    }
+    function attachSavedRestaurantField($restaurantList)
+    {
+        $result = [];
+
+        foreach ($restaurantList as $restaurant) {
+            if (Auth::check()) {
+                if ($this->checkSavedRestaurants($restaurant->id)) {
+                    $restaurant->isSaved = 1;
+                }
+            }
+            array_push($result, $restaurant);
+        }
+        return $result;
+    }
+
+    function savedRestaurants(Request $request)
+    {
+        try {
+
+            DB::table('users_save_restaurants')->insert([
+                ['user_id' => Auth::user()->id, 'restaurant_id' => $request->restaurantId]
+            ]);
+            return response()->json(1);
+        } catch (Exception $e) {
+            return response()->json(0);
+        }
+    }
+
+    function deleteSavedRestaurants(Request $request)
+    {
+        try {
+            DB::table('users_save_restaurants')
+                ->where('restaurant_id', '=', $request->restaurantId)
+                ->delete();
+            return response()->json(1);
+        } catch (Exception $e) {
+            return response()->json(0);
+        }
     }
 }

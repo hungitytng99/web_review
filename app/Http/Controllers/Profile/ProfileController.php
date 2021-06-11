@@ -22,14 +22,15 @@ class ProfileController extends Controller
         $user = Auth::user();
 
         $validator = Validator::make($request->all(), [
-            'date_of_birth' => 'nullable|date',
-            'weight' => 'nullable|integer|numeric',
-            'height' => 'nullable|integer|numeric',
+            'date_of_birth' => 'required|date',
+            'weight' => 'required|integer|numeric',
+            'height' => 'required|integer|numeric',
         ]);
 
-        if ($validator->fails()) {
+        if ($validator->fails() && !($user->date_of_birth && $user->job
+                && $user->weight && $user->height)) {
             return redirect()->back()->withErrors($validator)->with([
-                'tab' => 1
+                'status-error-1' => 'Yêu cầu cập nhật thông tin đầy đủ'
             ]);       
         }
 
@@ -37,12 +38,12 @@ class ProfileController extends Controller
             $image = $request->file('upload_avatar');
             $path = $image->move('assets/avatars');
 
-            if ($user->avatar != 'assets/avatars/default.png') {
+            if ($user->avatar != '/assets/avatars/default.png') {
                 File::delete($user->avatar);
             }
 
             $query_user->update([
-                'avatar' => $path
+                'avatar' => '/' . $path
             ]);
 
             return redirect('/profile')->with([
@@ -68,6 +69,10 @@ class ProfileController extends Controller
                 'weight' => $request->input('weight') ?? $user->weight,
                 'height' => $request->input('height') ?? $user->height,
             ]);
+
+            if ($request->redirect != null) {
+                return redirect('/' . $request->redirect);
+            }
         }
 
         if($request->has('old_password') && $request->has('new_password') && $request->has('retype_new_password')) {

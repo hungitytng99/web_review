@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Restaurants extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+
 
     /**
      * The attributes that are mass assignable.
